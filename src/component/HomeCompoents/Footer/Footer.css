@@ -1,0 +1,133 @@
+*{
+    font-family: Roboto;
+}
+
+.footer {
+  background-color: #FDF8EE;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.footer .footer1 {
+  /* background-color: aquamarine; */
+  width: 85%;
+  padding: 20px 0;
+}
+.footer .footer1 .footer2 {
+  display: flex;
+  /* background-color: antiquewhite; */
+  justify-content: space-between;
+  align-items: start;
+  border-bottom: 1px solid #b7b7b7;
+}
+
+.footer .footer1 .footer2 .firstSide {
+  /* background-color: blue; */
+  width: 30%;
+}
+
+.footer .footer1 .footer2 .firstSide .FooterLogo {
+  display: flex;
+  align-items: center;
+  padding-bottom: 20px;
+}
+.footer .footer1 .footer2 .firstSide .FooterLogo span {
+  padding-left: 5px;
+  color: #1d1d1d;
+  font-size: 24px;
+  font-family: Roboto;
+  font-weight: 700;
+  line-height: 32.4px;
+  word-wrap: break-word;
+}
+
+.footer .footer1 .footer2 .firstSide .footerP p {
+  color: #606060;
+  font-weight: 400;
+  word-wrap: break-word;
+  width: 318px;
+  height: 155px;
+}
+
+.footer .footer1 .footer2 .secondSide .secondSideh3 h3 {
+  color: #00052e;
+  font-size: 20px;
+  font-family: Roboto;
+  font-weight: 600;
+  word-wrap: break-word;
+}
+
+.footer .footer1 .footer2 .secondSide .secondSidelist ul li{
+    list-style: none;
+    padding-top: 20px;
+    color: #606060;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+
+
+
+.footer .footer1 .footer2 .thirdSide .thirdSideh3 h3 {
+    color: #00052e;
+    font-size: 20px;
+    font-family: Roboto;
+    font-weight: 600;
+    word-wrap: break-word;
+  }
+  
+  .footer .footer1 .footer2 .thirdSide .thirdSidelist ul li{
+      list-style: none;
+      padding-top: 20px;
+      color: #606060;
+      font-size: 17px;
+      cursor: pointer;
+  }
+
+
+  .footer .footer1 .footer2 .forthSide .forthSideh3 h3 {
+    color: #00052e;
+    font-size: 20px;
+    font-family: Roboto;
+    font-weight: 600;
+    word-wrap: break-word;
+  }
+  
+  .footer .footer1 .footer2 .forthSide .forthSidelist ul li{
+      list-style: none;
+      padding-top: 20px;
+      color: #606060;
+      font-size: 17px;
+      cursor: pointer;
+  }
+
+
+
+  
+  .footer .footer1 .footer2 .fifthSide .fifthSideh3 h3 {
+    color: #00052e;
+    font-size: 20px;
+    font-family: Roboto;
+    font-weight: 600;
+    word-wrap: break-word;
+  }
+  
+  .footer .footer1 .footer2 .fifthSide .fifthSidelist ul li{
+      list-style: none;
+      padding-top: 20px;
+      color: #606060;
+      font-size: 17px;
+      cursor: pointer;
+  }
+  
+
+
+  .footer .footer1 .Reserved p{
+    align-items: center;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 17px;
+    color: #606060;
+    font-family: Roboto;
+  }

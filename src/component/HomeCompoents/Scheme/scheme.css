@@ -1,0 +1,15 @@
+.schema{
+    height: 150px;
+    /* background-color: aqua; */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.schema .schema1{
+    width: 85%;
+    height: 150px;
+    background-color: #4D2C5E;
+    border-radius: 10px;
+}

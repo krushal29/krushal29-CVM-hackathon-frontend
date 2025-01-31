@@ -1,0 +1,82 @@
+.feedback {
+  width: 100%;
+  /* background-color: aqua; */
+  display: flex;
+  justify-content: center;
+}
+
+.feedback .feedback1 {
+  width: 85%;
+  /* background-color: aquamarine; */
+  padding: 30px 0;
+}
+.feedback .feedback1 .feedbackHeading h1 {
+  text-align: center;
+  color: #050c26;
+  font-family: Poppins;
+  font-weight: 600;
+}
+
+.feedback .feedback1 .feedbackp p {
+  padding-top: 5px;
+  text-align: center;
+  color: #8a8a8a;
+  font-size: 18px;
+  font-family: Poppins;
+  font-weight: 500;
+}
+
+.feedback .feedback1 .feedbackCardall {
+  padding-top: 30px;
+  /* background-color: antiquewhite; */
+  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.feedback .feedback1 .feedbackCardall .feedbackCard {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  padding: 20px;
+}
+
+.feedback .feedback1 .feedbackCardall .feedbackCard .feedBackInformation p {
+  color: #acacac;
+  font-size: 17px;
+  font-family: Roboto;
+  font-weight: 400;
+  line-height: 21.73px;
+  letter-spacing: 0.38px;
+}
+.feedback .feedback1 .feedbackCardall .feedbackCard .StudentDetails{
+    display: flex;
+    align-items: center;
+    padding-top: 20px;
+}
+.feedback .feedback1 .feedbackCardall .feedbackCard .StudentDetails .studentlogo{
+    /* background-color: #8a8a8a; */
+    width: 12%;
+    border-radius: 50%;
+}
+.feedback .feedback1 .feedbackCardall .feedbackCard .StudentDetails .studentlogo img{
+    border-radius: 50%;
+    width: 100%;
+}
+
+.feedback .feedback1 .feedbackCardall .feedbackCard .StudentDetails .studentNameSkill{
+    padding-left: 10px;
+}
+
+.feedback .feedback1 .feedbackCardall .feedbackCard .StudentDetails .studentNameSkill h3{
+    color: #353535;
+    font-family: Roboto;
+    font-weight: 500;
+}
+
+.feedback .feedback1 .feedbackCardall .feedbackCard .StudentDetails .studentNameSkill p{
+    color: #8E8E8E;
+font-size: 15px;
+padding-top: 2px;
+font-family: Roboto;
+font-weight: 400;
+}

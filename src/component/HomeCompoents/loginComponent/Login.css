@@ -1,0 +1,110 @@
+.login {
+  width: 100%;
+  /* background-color: aqua; */
+}
+
+.login .login1 {
+  /* background-color: aquamarine; */
+  display: flex;
+  height: 100vh;
+}
+
+.login .login1 .loginfirstside {
+  width: 50%;
+  background-color: #fdf8ee;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.login .login1 .loginfirstside img {
+  width: 60%;
+  height: 60%;
+  padding-left: 120px;
+}
+
+.login .login1 .loginSecondside {
+    /* background-color: aliceblue; */
+    width: 50%;
+    display: flex;
+
+    justify-content: center;
+}
+.login .login1 .loginSecondside .loginSecondside1{
+    /* background-color: blue; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.login .login1 .loginSecondside .loginSecondside1 .loginSecondside2{
+    width: 100%;
+    /* background-color: blueviolet; */
+    padding: 40px;
+}
+
+.login .login1 .loginSecondside .loginSecondside1 .loginSecondside2 .loginHeading h2{
+    color: #525252;
+    font-weight: 700;
+}
+
+.login .login1 .loginSecondside .loginSecondside1 .loginSecondside2 .loginUserId .userId p{
+    color: #828282;
+    font-size: 14px;
+    padding-top: 20px;
+}
+
+.login .login1 .loginSecondside .loginSecondside1 .loginSecondside2 .loginUserId .userIdInput input{
+    width: 100%;
+    padding: 8px 0 ;
+    margin-top: 7px;
+    border-radius: 5px;
+    border: 1px solid #828282;
+}
+
+.login .login1 .loginSecondside .loginSecondside1 .loginSecondside2 .loginPassword .password p{
+    color: #828282;
+    font-size: 14px;
+    padding-top: 10px;
+}
+
+.login .login1 .loginSecondside .loginSecondside1 .loginSecondside2 .loginPassword .passwordInput input{
+    width: 100%;
+    padding: 8px 0 ;
+    margin-top: 7px;
+    border-radius: 5px;
+    border: 1px solid #828282;
+}
+
+.login .login1 .loginSecondside .loginSecondside1 .loginSecondside2 .RememberForgot{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 10px;
+}
+
+.login .login1 .loginSecondside .loginSecondside1 .loginSecondside2 .RememberForgot .RememberMe{
+    display: flex;
+}
+.login .login1 .loginSecondside .loginSecondside1 .loginSecondside2 .RememberForgot .RememberMe span{
+    padding-left: 4px;
+    color: #A1A1A1;
+    font-weight: 400;
+}
+.login .login1 .loginSecondside .loginSecondside1 .loginSecondside2 .RememberForgot .forgotPassword{
+    color: #4D2C5E;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.login .login1 .loginSecondside .loginSecondside1 .loginSecondside2 .Loginbtn button{
+    width: 100%;
+    margin-top: 30px;
+    padding: 10px 0;
+    border-radius: 5px;
+    background-color: #4D2C5E;
+    color: white;
+    font-size: 17px;
+    font-weight: 700;
+    cursor: pointer;
+}

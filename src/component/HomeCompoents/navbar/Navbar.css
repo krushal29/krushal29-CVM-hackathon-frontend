@@ -1,0 +1,62 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Roboto;
+}
+
+.navBar {
+  /* background-color: aqua; */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.navBar .navBar1 {
+  /* background-color: aquamarine; */
+  width: 85%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+}
+
+.navBar .navBar1 .navbarLogo {
+  /* background-color: antiquewhite; */
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+}
+.navBar .navBar1 .navbarLogo span{
+
+color: #1D1D1D;
+font-weight: 700;
+line-height: 32.40px;
+word-wrap: break-word
+}
+.navBar .navBar1 .navbarLogo img {
+  width: 50%;
+  padding-right: 5px;
+}
+.navBar .navBar1 .navbarDetail {
+  /* background-color: antiquewhite; */
+  min-width: 30%;
+}
+.navBar .navBar1 .navbarDetail ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navBar .navBar1 .navbarDetail ul li {
+  list-style: none;
+  font-size: 17px;
+  cursor: pointer;
+}
+
+.navBar .navBar1 .navbarDetail ul  .SignIn {
+  background-color: #4d2c5e;
+  color: white;
+  padding: 12px 35px;
+  font-size: 18px;
+  border-radius:50px;
+  cursor: pointer;
+}
+
