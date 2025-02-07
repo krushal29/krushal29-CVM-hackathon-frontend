@@ -26,19 +26,30 @@
   font-weight: 500;
 }
 
-.feedback .feedback1 .feedbackCardall {
-  padding-top: 30px;
-  /* background-color: antiquewhite; */
-  display: flex;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+.feedback .feedback1 .feedbackCardContainer {
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+  width: 100%;
+  position: relative;
 }
 
-.feedback .feedback1 .feedbackCardall .feedbackCard {
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  padding: 20px;
+.feedback .feedback1 .feedbackCardall {
+  padding-top: 30px;
+  display: flex; /* Use flexbox for horizontal scrolling */
+  gap: 30px;
+  /* Width will be set dynamically in JavaScript */
+  transition: transform 0s ease; /* Smooth transition */
 }
+
+
+.feedback .feedback1 .feedbackCard {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 350px; /* Set a fixed width for each card */
+}
+
 
 .feedback .feedback1 .feedbackCardall .feedbackCard .feedBackInformation p {
   color: #acacac;
@@ -48,35 +59,63 @@
   line-height: 21.73px;
   letter-spacing: 0.38px;
 }
-.feedback .feedback1 .feedbackCardall .feedbackCard .StudentDetails{
-    display: flex;
-    align-items: center;
-    padding-top: 20px;
+.feedback .feedback1 .feedbackCardall .feedbackCard .StudentDetails {
+  display: flex;
+  align-items: center;
+  padding-top: 20px;
 }
-.feedback .feedback1 .feedbackCardall .feedbackCard .StudentDetails .studentlogo{
-    /* background-color: #8a8a8a; */
-    width: 12%;
-    border-radius: 50%;
+.feedback
+  .feedback1
+  .feedbackCardall
+  .feedbackCard
+  .StudentDetails
+  .studentlogo {
+  /* background-color: #8a8a8a; */
+  width: 12%;
+  border-radius: 50%;
 }
-.feedback .feedback1 .feedbackCardall .feedbackCard .StudentDetails .studentlogo img{
-    border-radius: 50%;
-    width: 100%;
+.feedback
+  .feedback1
+  .feedbackCardall
+  .feedbackCard
+  .StudentDetails
+  .studentlogo
+  img {
+  border-radius: 50%;
+  width: 100%;
 }
 
-.feedback .feedback1 .feedbackCardall .feedbackCard .StudentDetails .studentNameSkill{
-    padding-left: 10px;
+.feedback
+  .feedback1
+  .feedbackCardall
+  .feedbackCard
+  .StudentDetails
+  .studentNameSkill {
+  padding-left: 10px;
 }
 
-.feedback .feedback1 .feedbackCardall .feedbackCard .StudentDetails .studentNameSkill h3{
-    color: #353535;
-    font-family: Roboto;
-    font-weight: 500;
+.feedback
+  .feedback1
+  .feedbackCardall
+  .feedbackCard
+  .StudentDetails
+  .studentNameSkill
+  h3 {
+  color: #353535;
+  font-family: Roboto;
+  font-weight: 500;
 }
 
-.feedback .feedback1 .feedbackCardall .feedbackCard .StudentDetails .studentNameSkill p{
-    color: #8E8E8E;
-font-size: 15px;
-padding-top: 2px;
-font-family: Roboto;
-font-weight: 400;
+.feedback
+  .feedback1
+  .feedbackCardall
+  .feedbackCard
+  .StudentDetails
+  .studentNameSkill
+  p {
+  color: #8e8e8e;
+  font-size: 15px;
+  padding-top: 2px;
+  font-family: Roboto;
+  font-weight: 400;
 }

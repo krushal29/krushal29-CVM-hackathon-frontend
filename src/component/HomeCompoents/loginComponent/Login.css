@@ -9,18 +9,22 @@
   height: 100vh;
 }
 
+
+
 .login .login1 .loginfirstside {
   width: 50%;
   background-color: #fdf8ee;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  position: relative;
 }
 
 .login .login1 .loginfirstside img {
   width: 60%;
   height: 60%;
   padding-left: 120px;
+  position: absolute;
 }
 
 .login .login1 .loginSecondside {

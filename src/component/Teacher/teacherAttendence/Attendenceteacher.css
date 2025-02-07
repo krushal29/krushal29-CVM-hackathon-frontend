@@ -1,0 +1,161 @@
+.Attendenceteacher {
+  background-color: #ccccdbb0;
+  width: 85vw;
+  height: 100%;
+}
+
+.Attendenceteacher .Attendenceteacher1 .Attendenceteacherh3 h3 {
+  color: #4d2c5e;
+  padding-left: 20px;
+  padding-top: 40px;
+}
+
+.Attendenceteacher .Attendenceteacher1 .selectAttendence {
+  background-color: white;
+  width: 95%;
+  margin-left: 25px;
+  padding-top: 60px;
+  padding-left: 20px;
+  padding-bottom: 20px;
+  margin-top: 30px;
+  display: flex;
+  border-radius: 5px;
+}
+
+.Attendenceteacher .Attendenceteacher1 .selectAttendence .AttendenceSubject {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #212529;
+  border-radius: 5px;
+  padding: 5px;
+}
+.Attendenceteacher
+  .Attendenceteacher1
+  .selectAttendence
+  .AttendenceSubject
+  label {
+  font-size: 15px;
+  color: #444444;
+}
+.Attendenceteacher
+  .Attendenceteacher1
+  .selectAttendence
+  .AttendenceSubject
+  select {
+  border: none;
+  font-size: 17px;
+}
+
+.Attendenceteacher .Attendenceteacher1 .selectAttendence .SectionAttendence {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #212529;
+  padding: 5px;
+  border-radius: 5px;
+  margin-left: 50px;
+}
+.Attendenceteacher
+  .Attendenceteacher1
+  .selectAttendence
+  .SectionAttendence
+  label {
+  font-size: 15px;
+  color: #444444;
+}
+.Attendenceteacher
+  .Attendenceteacher1
+  .selectAttendence
+  .SectionAttendence
+  select {
+  border: none;
+  font-size: 17px;
+  padding-right: 80px;
+}
+
+.Attendenceteacher .Attendenceteacher1 .selectAttendence .DateAttendence {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #212529;
+  padding: 5px;
+  border-radius: 5px;
+  margin-left: 50px;
+}
+.Attendenceteacher .Attendenceteacher1 .selectAttendence .DateAttendence label {
+  font-size: 15px;
+  color: #444444;
+}
+.Attendenceteacher .Attendenceteacher1 .selectAttendence .DateAttendence input {
+  border: none;
+  font-size: 17px;
+}
+
+.Attendenceteacher .Attendenceteacher1 .selectAttendence .GenerateSheet button {
+  background-color: #272757;
+  color: white;
+  padding: 8px 5px;
+  margin-top: 20px;
+  margin-left: 30px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+}
+
+.AttendenceSheet {
+  background-color: white;
+  width: 95%;
+  margin-top: 30px;
+  padding-top: 20px;
+  margin-left: 25px;
+  border-radius: 5px;
+  padding-left: 30px;
+}
+.AttendenceSheet .AttendenceSheetH3 h3 {
+  color: #272757;
+}
+.AttendenceSheet .AttendenceSheetHeading {
+  width: 100%;
+  background-color: #f6f6fe;
+  color: #444444;
+  font-weight: 700;
+  padding: 10px 0;
+}
+.AttendenceSheet .AttendenceSheetHeading .AttendenceSheetHeading1 {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.AttendenceSheet .AttendenceSheetHeading .AttendenceSheetHeading1 .NumberStart label{
+    padding-left: 5px;
+}
+.AttendenceSheet .AttendenceStudentDetail {
+  width: 100%;
+  color: #7d7d7d;
+  padding: 10px 0;
+}
+
+.AttendenceSheet .AttendenceStudentDetail .AttendenceStudentDetail1 {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 10px;
+}
+
+.AttendenceSheet .AttendenceStudentDetail .AttendenceStudentDetail1 .NumberStartCount {
+    display: flex;
+}
+
+.AttendenceSheet .AttendenceStudentDetail .AttendenceStudentDetail1 .NumberStartCount label{
+    padding-left: 5px;
+}
+.Attendenceteacher .Attendenceteacher1 .submitBtn button{
+  background-color: #272757;
+  color: white;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin: 20px 0 0 30px;
+  cursor: pointer;
+  border: none;
+  margin-bottom: 20px;
+
+}

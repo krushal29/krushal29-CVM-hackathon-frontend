@@ -1,0 +1,9 @@
+.LayoutFlex{
+    display: flex;
+
+}
+.LayoutFlex .navbar{
+    /* background-color: antiquewhite; */
+    background-color: #CCCCDB;
+    width: 15%;
+}

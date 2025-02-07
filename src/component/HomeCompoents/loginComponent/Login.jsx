@@ -3,10 +3,15 @@ import "../loginComponent/Login.css";
 //image
 import loginLogo from "../../../assets/5437683_1-removebg-preview 1.png";
 
+
+//logo
+
+
 const Login = () => {
   return (
     <div className="login">
       <div className="login1">
+
           <div className="loginfirstside">
             <img src={loginLogo} alt="" />
           </div>
