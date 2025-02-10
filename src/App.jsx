@@ -14,6 +14,9 @@ import LeavePage from './pages/Student side/leavepage/LeavePage'
 // import TeacherEventForm from './pages/Teacher side/TeacherEventForm/TeacherEventForm'
 import CreateNotice from './pages/Teacher side/TeacherNoticePage/CreateNotice'
 import Registration from './pages/Student side/registrationpage/Registration'
+import TeacherEventForm from './pages/Teacher side/TeacherEventForm/TeacherEventForm'
+import TeacherNoticePage from './pages/Teacher side/TeacherNoticePage/TeacherNoticePage'
+import TeacherAllEvent1 from './pages/Teacher side/TeacherEventForm/TeacherAllEvent1'
 // import AttendencePageteacher from './pages/Teacher side/Attendence/AttendencePagetecher'
 
 const App = () => {
@@ -31,7 +34,8 @@ const App = () => {
         <Route path='/StudentEvent' element={<Eventpage/>}/>
         <Route path='/StudentNotice' element={<NoticePage/>}/>
         <Route path='/StudentRegistration' element={<Registration/>}/>
-        <Route path='/teacherDashboard' element={<CreateNotice/>}/>
+        <Route path='/teacherEvent' element={<TeacherAllEvent1/>}/>
+        <Route path='/teacherEvent/teacherEventCreate' element={<TeacherEventForm/>}/>
       </Routes>
     </Router>
   )

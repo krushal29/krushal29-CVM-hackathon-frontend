@@ -1,4 +1,4 @@
-import  { useRef, useState } from "react";
+import { useRef, useState } from "react";
 import "./registration.css"; // Import the CSS file
 
 const RegistrationComp = () => {
@@ -34,13 +34,14 @@ const RegistrationComp = () => {
   // Trigger file input when Browse is clicked
   const triggerFileInput = () => {
     fileInputRef.current.click();
+    
   };
-
+  
   return (
     <div className="upload-container">
       <h2>Upload Document</h2>
       <p className="description">
-        Please upload files in PDF, DOCX, or DOC format (Max: 25MB).
+        Please upload files in PDF, DOCX, DOC, PPT, or PPTX format (Max: 25MB).
       </p>
 
       {/* Drag & Drop Area */}
@@ -54,7 +55,7 @@ const RegistrationComp = () => {
         <input
           type="file"
           multiple
-          accept=".pdf,.doc,.docx"
+          accept=".pdf,.doc,.docx,.ppt,.pptx"
           onChange={handleFileUpload}
           ref={fileInputRef}
           style={{ display: "none" }}

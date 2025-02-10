@@ -1,11 +1,12 @@
-import Layout from "../../../component/Student/layout/Layout"
+
+import TeacherLayout from "../../../component/Teacher/teacherlayout/TeacherLayout"
 import CreateNoticeComponent from "../../../component/Teacher/techerNotice/CreateNoticeComponent"
 
 const CreateNotice = () => {
   return (
-    <Layout>
+    <TeacherLayout>
         <CreateNoticeComponent/>
-    </Layout>
+    </TeacherLayout>
   )
 }
 
