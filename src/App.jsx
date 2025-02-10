@@ -8,16 +8,16 @@ import NoticePage from './pages/Student side/noticePage/NoticePage'
 import Home from './pages/Student side/HomePage/Home'
 import SubjectMaterialPage from './pages/Student side/SubjectDetail/SubjectMaterialPage'
 import AttendencePage from './pages/Student side/Attendence/AttendencePage'
-// import Registration from './pages/Student side/registrationpage/Registration'
-// import ParentRagistaration from './pages/parentPage/parentRegistration/ParentRagistaration'
 import LeavePage from './pages/Student side/leavepage/LeavePage'
-// import TeacherEventForm from './pages/Teacher side/TeacherEventForm/TeacherEventForm'
-import CreateNotice from './pages/Teacher side/TeacherNoticePage/CreateNotice'
 import Registration from './pages/Student side/registrationpage/Registration'
 import TeacherEventForm from './pages/Teacher side/TeacherEventForm/TeacherEventForm'
-import TeacherNoticePage from './pages/Teacher side/TeacherNoticePage/TeacherNoticePage'
 import TeacherAllEvent1 from './pages/Teacher side/TeacherEventForm/TeacherAllEvent1'
-// import AttendencePageteacher from './pages/Teacher side/Attendence/AttendencePagetecher'
+import TeacherMaterialPage from './pages/Teacher side/TeacherMaterialPage/TeacherMaterialPage'
+import TeacherMaterialFormPage from './pages/Teacher side/TeacherMaterialPage/TeacherMaterialFormPage'
+import AttendencePageteacher from './pages/Teacher side/Attendence/AttendencePagetecher'
+import TeacherNoticePage from './pages/Teacher side/TeacherNoticePage/TeacherNoticePage'
+import CreateNotice from './pages/Teacher side/TeacherNoticePage/CreateNotice'
+
 
 const App = () => {
   return (
@@ -34,8 +34,16 @@ const App = () => {
         <Route path='/StudentEvent' element={<Eventpage/>}/>
         <Route path='/StudentNotice' element={<NoticePage/>}/>
         <Route path='/StudentRegistration' element={<Registration/>}/>
+
+
+        {/* Teacher */}
         <Route path='/teacherEvent' element={<TeacherAllEvent1/>}/>
         <Route path='/teacherEvent/teacherEventCreate' element={<TeacherEventForm/>}/>
+        <Route path='/UploadMaterial' element={<TeacherMaterialPage/>}/>
+        <Route path='/UploadMaterial/addMaterial' element={<TeacherMaterialFormPage/>}/>
+        <Route path='/TeacherAttendence' element={<AttendencePageteacher/>}/>
+        <Route path='/TeacherNotice' element={<TeacherNoticePage/>}/>
+        <Route path='/TeacherNotice/TeacherNoticeCreate' element={<CreateNotice/>}/>
       </Routes>
     </Router>
   )

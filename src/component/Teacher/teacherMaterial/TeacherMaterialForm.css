@@ -1,0 +1,86 @@
+.TeacherMaterialForm{
+    /* background-color: aqua; */
+    width: 85vw;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.TeacherMaterialForm .TeacherMaterialForm1{
+        display: flex;
+}
+
+.TeacherMaterialForm .upload-container {
+    max-width: 500px;
+    margin: auto;
+    padding: 20px 40px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+.TeacherMaterialForm  .upload-container h2 {
+    text-align: center;
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+  
+ .TeacherMaterialForm .upload-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+ .TeacherMaterialForm .upload-form label {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    text-align: start;
+  }
+  
+ .TeacherMaterialForm .upload-form input,
+  .upload-form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+  
+ .TeacherMaterialForm .file-upload {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+ .TeacherMaterialForm .file-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  
+ .TeacherMaterialForm .file-label:hover {
+    background: #f0f0f0;
+  }
+  
+ .TeacherMaterialForm .upload-button {
+    background: #2c3e50;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+ .TeacherMaterialForm .upload-button:hover {
+    background: #34495e;
+  }
+  

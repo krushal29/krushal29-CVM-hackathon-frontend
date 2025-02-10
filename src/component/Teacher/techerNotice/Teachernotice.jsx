@@ -4,8 +4,10 @@ import "./teacherNotice.css";
 import { IoIosSearch } from "react-icons/io";
 
 import image from "../../../assets/Depth 6, Frame 0.png";
+import { useNavigate } from "react-router-dom";
 
 const Teachernotice = () => {
+  const navigate=useNavigate();
   return (
     <div className="Teachernotice">
       <div className="Teachernotice1">
@@ -14,7 +16,7 @@ const Teachernotice = () => {
             <h1>Notices</h1>
           </div>
           <div className="NoticeCreate">
-            <button>Create Notice</button>
+            <button onClick={()=>navigate('/TeacherNotice/TeacherNoticeCreate')}>Create Notice</button>
           </div>
         </div>
 

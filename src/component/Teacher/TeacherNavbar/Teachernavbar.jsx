@@ -6,8 +6,10 @@ import profile from "../../../assets/image 1.png";
 import { MdQuiz } from "react-icons/md";
 import { AiOutlineLogout } from "react-icons/ai";
 import { TbLayoutDashboardFilled } from "react-icons/tb";
+import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
+  const navigate=useNavigate();
   return (
     <div className="studentnavbar">
       <div className="studentnavbar1">
@@ -22,15 +24,15 @@ const Navbar = () => {
                 <TbLayoutDashboardFilled />
                <span>Dashboard</span>
               </li>
-              <li>Event/Calander</li>
-              <li>Mark Attendance</li>
+              <li onClick={()=>navigate('/teacherEvent')}>Event/Calander</li>
+              <li onClick={()=>navigate('/TeacherAttendence')}>Mark Attendance</li>
               <li>
                 <MdQuiz />
                 <span>Quiz</span>
               </li>
-              <li>Upload Material</li>
+              <li onClick={()=>navigate('/UploadMaterial')}>Upload Material</li>
               <li>Leave Status</li>
-              <li>
+              <li onClick={()=>navigate('/TeacherNotice')}>
                 <span>Notice Board</span>
               </li>
             </ul>
