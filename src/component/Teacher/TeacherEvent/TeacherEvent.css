@@ -1,0 +1,74 @@
+.TeacherEvent{
+    background-color: #E8EDF2;
+    width: 85vw;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.TeacherEvent .TeacherEvent1{
+    /* background-color: #334155; */
+    height: 100%;
+    width: 40%;
+    display: flex;
+}
+
+.TeacherEvent .event-container {
+    width: 80%;
+    max-width: 400px;
+    margin: auto;
+    padding: 20px 30px;
+    background: #f8fafc;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+ .TeacherEvent .event-title {
+    text-align: center;
+    color: #1e293b;
+  }
+  
+ .TeacherEvent .event-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+ .TeacherEvent .event-form label {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #334155;
+  }
+  
+ .TeacherEvent .event-form input,
+  .event-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #cbd5e1;
+    border-radius: 5px;
+    background: #e2e8f0;
+  }
+  
+.TeacherEvent  .time-inputs {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .TeacherEvent .time-inputs div {
+    width: 48%;
+  }
+  
+ .TeacherEvent .submit-btn {
+    margin-top: 15px;
+    background: #1e293b;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+ .TeacherEvent .submit-btn:hover {
+    background: #334155;
+  }
+  

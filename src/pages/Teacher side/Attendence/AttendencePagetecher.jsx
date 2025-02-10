@@ -2,7 +2,7 @@ import Attendenceteacher from "../../../component/Teacher/teacherAttendence/Atte
 import TeacherLayout from "../../../component/Teacher/teacherlayout/TeacherLayout"
 
 
-const AttendencePage = () => {
+const AttendencePageteacher = () => {
   return (
     <TeacherLayout>
         <Attendenceteacher/>
@@ -10,4 +10,4 @@ const AttendencePage = () => {
   )
 }
 
-export default AttendencePage
+export default AttendencePageteacher

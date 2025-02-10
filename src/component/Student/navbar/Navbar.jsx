@@ -7,8 +7,10 @@ import { MdQuiz } from "react-icons/md";
 import { GrAchievement } from "react-icons/gr";
 import { AiOutlineLogout } from "react-icons/ai";
 import { TbLayoutDashboardFilled } from "react-icons/tb";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
+  const navigate=useNavigate();
   return (
     <div className="studentnavbar">
       <div className="studentnavbar1">
@@ -19,22 +21,23 @@ const Navbar = () => {
           </div>
           <div className="studentNavbar">
             <ul>
-              <li>
+              <li onClick={()=>navigate('/StudentDashboard')}>
                 <TbLayoutDashboardFilled />
                <span>Dashboard</span>
               </li>
-              <li>Event/Calander</li>
-              <li>Subject Material</li>
+              <li onClick={()=>navigate('/StudentEvent')}>Event/Calander</li>
+              <li onClick={()=>navigate('/StudentsubjectMaterial')}>Subject Material</li>
               <li>
                 <MdQuiz />
                 <span>Quiz</span>
               </li>
-              <li>Attendence</li>
-              <li>Leave Application</li>
-              <li>
+              <li onClick={()=>navigate('/StudentAttence')}>Attendence</li>
+              <li onClick={()=>navigate('/StudentLeave')}>Leave Application</li>
+              <li onClick={()=>navigate('/Achievements')}>
                 <GrAchievement />
                 <span>Achievement</span>
               </li>
+              <li onClick={()=>navigate('/StudentNotice')}>Notice</li>
             </ul>
           </div>
         </div>

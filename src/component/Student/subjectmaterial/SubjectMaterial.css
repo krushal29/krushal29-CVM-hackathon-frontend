@@ -1,0 +1,112 @@
+.SubjectMaterial {
+  width: 85vw;
+  height: 100%;
+  background-color: #ccccdb;
+}
+
+.SubjectMaterial .SubjectMaterial1 {
+  width: 90%;
+  background-color: white;
+  margin: 0px auto;
+  padding: 20px 40px;
+}
+
+.SubjectMaterial .SubjectMaterial1 .SubjectMaterialPath p span {
+  color: #4a709c;
+}
+
+.SubjectMaterial .SubjectMaterial1 .SubjectMaterialSubject h1 {
+  padding-top: 20px;
+}
+
+.SubjectMaterial .SubjectMaterial1 .SubjectProfessor p {
+  color: #4a709c;
+  padding-top: 8px;
+}
+.SubjectMaterial .SubjectMaterial1 .SubjectMaterialNavbar {
+  border-bottom: 1px solid #cfdbe8;
+  padding-bottom: 5px;
+  padding-top: 20px;
+}
+.SubjectMaterial .SubjectMaterial1 .SubjectMaterialNavbar ul {
+  /* background-color: aqua; */
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.SubjectMaterial .SubjectMaterial1 .SubjectMaterialNavbar ul li {
+  list-style: none;
+  cursor: pointer;
+  color: #4a709c;
+  font-weight: 700;
+}
+
+.SubjectMaterial
+  .SubjectMaterial1
+  .SubjectMaterialDetail{
+    max-height: 70vh;
+    overflow-y: auto;
+  }
+
+.SubjectMaterial
+  .SubjectMaterial1
+  .SubjectMaterialDetail
+  .SubjectMaterialAssignment
+  h2 {
+  padding-top: 20px;
+}
+
+.SubjectMaterial
+  .SubjectMaterial1
+  .SubjectMaterialDetail
+  .Document
+  .DocumentpdfDetail {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+}
+
+.SubjectMaterial
+  .SubjectMaterial1
+  .SubjectMaterialDetail
+  .Document
+  .DocumentpdfDetail
+  .DocumentImgInfroamtion {
+  display: flex;
+
+}   
+
+.SubjectMaterial
+  .SubjectMaterial1
+  .SubjectMaterialDetail
+  .Document
+  .DocumentpdfDetail
+  .DocumentImgInfroamtion .DocumentImg img{
+    background-color: #E8EDF5;
+    padding: 10px 10px;
+    margin-right: 10px;
+  }
+
+
+  .SubjectMaterial
+  .SubjectMaterial1
+  .SubjectMaterialDetail
+  .Document
+  .DocumentpdfDetail
+  .DocumentImgInfroamtion .DocumentLastDate p{
+    color: #4A709C;
+  }
+
+
+  .SubjectMaterial
+  .SubjectMaterial1
+  .SubjectMaterialDetail
+  .Document .DocumentpdfDetail .DocumentDownload button{
+    background-color: #272757;
+    color: white;
+    padding: 10px 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+  }

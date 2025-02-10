@@ -1,0 +1,214 @@
+.StudentHome {
+  background-color: #ccccdb;
+  width: 85vw;
+  height: 100%;
+}
+.StudentHome .StudentHome1 {
+  background-color: aliceblue;
+  padding: 20px 50px;
+  height: 100%;
+}
+
+.StudentHome .StudentHome1 .StudentProfileh2 h2 {
+  padding-bottom: 20px;
+}
+ .StudentProfileDetail {
+  width: 70%;
+  /* background-color: aqua; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.StudentProfileDetail .profileDetail {
+  display: flex;
+  align-items: center;
+}
+.StudentProfileDetail .profileDetail .profileImg{
+    /* background-color: blue; */
+    border-radius: 50%;
+    width: 30%;
+}
+.StudentProfileDetail .profileDetail .profileImg img{
+    border-radius: 50%;
+    width: 100%;
+}
+
+.StudentProfileDetail .profileDetail .ProfileName{
+    /* background-color: aquamarine; */
+    line-height: 25px;
+    padding-left: 20px;
+}
+.StudentProfileDetail .profileDetail .ProfileName .profilenameDemo h4{
+    font-size: 18px;
+}
+
+.StudentProfileDetail .profileDetail .ProfileName p{
+    color: #272757;
+}
+.StudentProfileDetail .profileEdit{
+    display: flex;
+    /* background-color: aqua; */
+    width: 60%;
+    justify-content: space-between;
+}
+.StudentProfileDetail  .profileEdit button{
+    background-color: #272757;
+    padding: 10px 60px;
+    color: white;
+    border:  none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.StudentNavbar{
+    display: flex;
+    /* background-color: #ccccdb; */
+    border-bottom: 1px solid #CFDEE8;
+    padding-top: 30px;
+    padding-bottom: 0px;
+}
+.StudentNavbar .StudentNavbar1{
+    width: 18%;
+    /* background-color: aliceblue; */
+}
+
+.StudentNavbar .StudentNavbar1 ul{
+    display: flex;
+    justify-content: space-between;
+}
+
+.StudentNavbar .StudentNavbar1 ul li{
+    list-style: none;
+    cursor: pointer;
+}
+
+.profileLecture {
+    /* background-color: blue; */
+    padding: 20px 0;
+}
+
+.profileLecture .lectureh4 h4{
+    padding-bottom: 10px;
+}
+
+.profileLecture .nextLecture .upcommingLecture{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.profileLecture .nextLecture .upcommingLecture .upcommingLecture1{
+    display: flex;
+    align-items: center;
+}
+.profileLecture .nextLecture .upcommingLecture .upcommingLecture1 .lecturePhoto{
+    background-color: #ccccdb;
+    border-radius: 15px;
+    width:50%;
+    height: 75px;
+}
+
+.profileLecture .nextLecture .upcommingLecture .upcommingLecture1 .lecturePhoto img{
+    width: 100%;
+    height: 100%;
+}
+
+.profileLecture .nextLecture .upcommingLecture .upcommingLecture1 .lectureDetail{
+    /* background-color: red; */
+    margin-left: 20px;
+    width: 100%;
+}
+
+
+
+
+
+.profileTimetable {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 30px;
+}
+.profileTimetable .TimetableDetail{
+    /* background-color: #ccccdb; */
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.profileTimetable .timetablePhoto{
+    /* background-color: blue; */
+    width: 35%;
+}
+.profileTimetable .timetablePhoto img{
+    width: 100%;
+}
+
+.performance{
+    /* background-color: aqua; */
+    padding-top: 30px;
+}
+
+.performance .performanceh3 h3{
+    padding-bottom: 10px;
+}
+
+.performance .Allperformance{
+    display: flex;
+    justify-content: space-between;
+}
+
+.performance .Allperformance .box{
+    border: 1px solid #CFDEE8;
+    width: 10%;
+    padding: 0px 5px;
+    padding-top: 5px;
+}
+
+.performance .Allperformance .box h2{
+    padding-bottom: 10px;
+}
+
+.deadlines{
+    /* background-color: aqua; */
+    padding-top: 30px;
+}
+
+.deadlines .deadlinesh4 h4{
+    padding-bottom: 10px;
+}
+
+.deadlines .deadlinesDetail{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.deadlines .deadlinesDetail .deadlinesimgDetail{
+    /* background-color: aquamarine; */
+    display: flex;
+    align-items: center;
+    width: 25%;
+    justify-content: space-between;
+}
+
+.deadlines .deadlinesDetail .deadlinesimgDetail .deadlinesImg{
+    background-color: #E8EDF5;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+
+.CounsellorDetail{
+    /* background-color: aqua; */
+    padding-top: 40px;
+}
+
+.CounsellorDetail .CounsellorDetail1 {
+    /* background-color:aquamarine ; */
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}

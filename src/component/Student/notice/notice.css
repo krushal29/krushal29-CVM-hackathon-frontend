@@ -1,0 +1,80 @@
+.notice{
+    /* background-color: aqua; */
+    width: 85vw;
+    height: 100%;
+}
+
+.notice .notice1{
+    padding: 30px 50px;
+    /* background-color: aquamarine; */
+}
+
+
+.notice .notice1 .noticeh1 h1{
+    padding-bottom: 20px;
+}
+
+.notice .notice1 .noticeFind{
+    display: flex;
+    align-items: center;
+    /* text-align: center; */
+    background-color: #F0F2F5;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.notice .notice1 .noticeFind input{
+    border: none;
+    outline: none;
+    background-color: transparent;
+    width: 100%;
+}
+
+.notice .notice1 .noticeCart{
+    display: flex;
+    /* background-color: bisque; */
+    width: 60%;
+    margin-bottom: 20px;
+    justify-content: space-between;
+}
+
+
+.notice .notice1 .noticeCart .noticeImg{
+    /* background-color: black; */
+    width: 50%;
+    border-radius: 10px;
+}
+.notice .notice1 .noticeCart .noticeImg img{
+    width: 100%;
+    border-radius: 10px;
+}
+
+.notice .notice1 .noticeCart .noticeDetail1 {
+    padding: 0 20px;
+}
+.notice .notice1 .noticeCart .noticeDetail1 .noticeWidth{
+    /* background-color: blue; */
+    width: 50%;
+
+}
+
+.notice .notice1 .noticeCart .noticeDetail1 .noticeDetail{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.notice .notice1 .noticeCart .noticeDetail1 .noticeDetail .noticeInf{
+    /* background-color: blue; */
+    width: 60%;
+}
+
+.notice .notice1 .noticeCart .noticeDetail1 .noticeDetail .noticeBtn button{
+    background-color: #0D7DF2;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}

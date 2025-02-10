@@ -1,0 +1,91 @@
+.Achievements {
+  width: 85vw;
+  background-color: #ccccdb;
+  height: 100%;
+}
+
+.Achievements .Achievements1 {
+  /* background-color: aliceblue; */
+  width: 70%;
+  padding-top: 30px;
+  padding-left: 50px;
+}
+.Achievements .AchievementsHeading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Achievements .AchievementsHeading .Achievementsh3 h3{
+    color: #272757;
+    font-size: 25px;
+    font-weight: 800;
+}
+
+.Achievements .AchievementsHeading .AchievementsAddbtn button{
+    padding: 5px 20px;
+    background-color: #272757;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.Achievements .Achievements1 .Achievementsbtn{
+    /* background-color: white; */
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.Achievements .Achievements1 .Achievementsbtn .AllBtn button{
+    padding: 5px 20px;
+    background-color: #272757;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.Achievements .Achievements1 .Achievementsbtn .CertificatesBtn button{
+    padding: 5px 20px;
+    background-color: #272757;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.Achievements .Achievements1 .Achievementsbtn .AwardsBtn button{
+    padding: 5px 20px;
+    background-color: #272757;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.Achievements .Achievements1 .cardDetail{
+    display: flex;
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    gap: 20px;
+}
+
+.Achievements .Achievements1 .cardDetail .CardDetailAwards .Eventphoto img{
+    width: 100%;
+    border-radius: 15px;
+    /* background-color: #272757; */
+}
+
+.Achievements .Achievements1 .cardDetail .CardDetailAwards .EventHeading h5{
+    padding-top: 5px;
+    color: #272757;
+}
+
+.Achievements .Achievements1 .cardDetail .CardDetailAwards .EventYear p{
+    padding-top: 5px;
+    color: #272757;
+}

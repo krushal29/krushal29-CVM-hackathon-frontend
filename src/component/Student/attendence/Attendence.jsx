@@ -1,40 +1,85 @@
-//CSS
-import './attendence.css'
+import './attendence.css';
 
-const obj=[
+const data = [
     {
-        SubjectName:"DBMS",
-        CourseCode:"#2123123",
-        From:"21/07/24",
-        To:"21/07/24",
-        TotalDays:100,
-        PresentDays:70
-    }
-]
+        SubjectName: "DBMS",
+        CourseCode: "#2123123",
+        From: "21/07/24",
+        To: "21/07/24",
+        TotalDays: 100,
+        PresentDays: 70
+    },
+    {
+        SubjectName: "DBMS",
+        CourseCode: "#2123123",
+        From: "21/07/24",
+        To: "21/07/24",
+        TotalDays: 100,
+        PresentDays: 70
+    },
 
+    {
+        SubjectName: "DBMS",
+        CourseCode: "#2123123",
+        From: "21/07/24",
+        To: "21/07/24",
+        TotalDays: 100,
+        PresentDays: 70
+    },
+    {
+        SubjectName: "DBMS",
+        CourseCode: "#2123123",
+        From: "21/07/24",
+        To: "21/07/24",
+        TotalDays: 100,
+        PresentDays: 70
+    },
+    {
+        SubjectName: "DBMS",
+        CourseCode: "#2123123",
+        From: "21/07/24",
+        To: "21/07/24",
+        TotalDays: 9,
+        PresentDays: 7
+    },
 
-const Attendence = () => {
-  return (
-    <div className="StudentAttendence">
-        <div className="StudentAttendence1">
-            <div className="AttendenceH3">
-                <h3>Attendance Sheet</h3>
-            </div>
-            <div className="AttendenceTable">
-                <div className="AttendenceHeading">
-                    <p>Subject Name</p>
-                    <p>Course Code</p>
-                    <p>From</p>
-                    <p>To</p>
-                    <p>Total Present/Out of</p>
-                </div>
-                <div className="AttendenceDetail">
-                    <p>DBMS</p>
-                </div>
-            </div>
+];
+
+const Attendance = () => {
+    return (
+        <div className="StudentAttendance">
+            <div className="AttendenceDetail">
+            <h1>Attendance Sheet</h1>
+
+            <table className="AttendanceTable">
+                <thead>
+                    <tr>
+                        <th>Course code</th>
+                        <th>Subject</th>
+                        <th>From</th>
+                        <th>To</th>
+                        <th>Attended</th>
+                        <th>Total</th>
+                        <th>Percentage</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {data.map((item, index) => (
+                        <tr key={index}>
+                            <td>{item.CourseCode}</td>
+                            <td>{item.SubjectName}</td>
+                            <td>{item.From}</td>
+                            <td>{item.To}</td>
+                            <td>{item.PresentDays}</td>
+                            <td>{item.TotalDays}</td>
+                            <td>{((parseFloat(item.PresentDays)/parseFloat(item.TotalDays))*100).toFixed(2)}%</td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
+                    </div>
         </div>
-    </div>
-  )
-}
+    );
+};
 
-export default Attendence
+export default Attendance;
