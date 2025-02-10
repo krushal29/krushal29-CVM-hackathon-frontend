@@ -45,6 +45,11 @@
     padding: 10px;
     border-radius: 5px;
 }
+.studentNavbar ul li.active {
+    background-color: #667A8A; /* Active background color */
+    color: white;
+    border-radius: 5px;
+  }
 .studentnavbar .studentnavbar1 .studentProfileNavbar .studentNavbar ul li:hover{
     background-color: #667A8A;
 }

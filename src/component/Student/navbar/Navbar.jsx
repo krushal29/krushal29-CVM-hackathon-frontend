@@ -1,16 +1,24 @@
 import "./navbar.css";
-
 import profile from "../../../assets/image 1.png";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faClipboardUser } from '@fortawesome/free-solid-svg-icons';
 
-//icons
+// Icons
 import { MdQuiz } from "react-icons/md";
 import { GrAchievement } from "react-icons/gr";
 import { AiOutlineLogout } from "react-icons/ai";
+import { MdEvent } from "react-icons/md";
 import { TbLayoutDashboardFilled } from "react-icons/tb";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const Navbar = () => {
-  const navigate=useNavigate();
+  const navigate = useNavigate();
+  const location = useLocation();
+  
+  const handleNavigation = (path) => {
+    navigate(path);
+  };
+
   return (
     <div className="studentnavbar">
       <div className="studentnavbar1">
@@ -21,30 +29,65 @@ const Navbar = () => {
           </div>
           <div className="studentNavbar">
             <ul>
-              <li onClick={()=>navigate('/StudentDashboard')}>
+              <li
+                className={location.pathname === "/StudentDashboard" ? "active" : ""}
+                onClick={() => handleNavigation("/StudentDashboard")}
+              >
                 <TbLayoutDashboardFilled />
-               <span>Dashboard</span>
+                <span>Dashboard</span>
               </li>
-              <li onClick={()=>navigate('/StudentEvent')}>Event/Calander</li>
-              <li onClick={()=>navigate('/StudentsubjectMaterial')}>Subject Material</li>
-              <li>
+              <li
+                className={location.pathname === "/StudentEvent" ? "active" : ""}
+                onClick={() => handleNavigation("/StudentEvent")}
+              ><MdEvent/>
+              <span>
+                Event/Calendar
+              </span>
+              </li>
+              <li
+                className={location.pathname === "/StudentsubjectMaterial" ? "active" : ""}
+                onClick={() => handleNavigation("/StudentsubjectMaterial")}
+              >
+                Subject Material
+              </li>
+              <li
+                className={location.pathname === "/StudentQuiz" ? "active" : ""}
+              >
                 <MdQuiz />
                 <span>Quiz</span>
               </li>
-              <li onClick={()=>navigate('/StudentAttence')}>Attendence</li>
-              <li onClick={()=>navigate('/StudentLeave')}>Leave Application</li>
-              <li onClick={()=>navigate('/Achievements')}>
+              <li
+                className={location.pathname === "/StudentAttendance" ? "active" : ""}
+                onClick={() => handleNavigation("/StudentAttence")}
+              ><FontAwesomeIcon icon={faClipboardUser} />
+               <span> Attendance</span>
+              </li>
+              <li
+                className={location.pathname === "/StudentLeave" ? "active" : ""}
+                onClick={() => handleNavigation("/StudentLeave")}
+              >
+                Leave Application
+              </li>
+              <li
+                className={location.pathname === "/Achievements" ? "active" : ""}
+                onClick={() => handleNavigation("/Achievements")}
+              >
                 <GrAchievement />
                 <span>Achievement</span>
               </li>
-              <li onClick={()=>navigate('/StudentNotice')}>Notice</li>
+              <li
+                className={location.pathname === "/StudentNotice" ? "active" : ""}
+                onClick={() => handleNavigation("/StudentNotice")}
+              >
+                Notice
+              </li>
             </ul>
           </div>
         </div>
         <div className="studentLogout">
           <p>
             <AiOutlineLogout />
-           <span>Logout</span> 
+            <span>Logout</span>
           </p>
         </div>
       </div>

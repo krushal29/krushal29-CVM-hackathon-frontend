@@ -1,13 +1,13 @@
 .Teachernotice{
-    background-color: aqua;
+    background-color: white;
     width: 85vw;
     height: 100%;
 }
 
 .Teachernotice .Teachernotice1{
-    background-color: aquamarine;
+    /* background-color: aquamarine; */
     width: 90%;
-    height: 100%;
+    /* height: 100%; */
     margin: 0 auto;
     padding: 30px 0;
 }
@@ -41,4 +41,40 @@
     background-color: transparent;
     outline: none;
     padding-left: 5px;
+    width: 100%;
+}
+
+.Teachernotice .Teachernotice1 .NoticeDetails .NoticeDetail1{
+    display: flex;
+    /* background-color: white; */
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+
+.Teachernotice .Teachernotice1 .NoticeDetails .NoticeDetail1 .NoticeDetail2{
+    display: flex;
+    align-items: center;
+
+}
+
+.Teachernotice .Teachernotice1 .NoticeDetails .NoticeDetail1 .NoticeDetail2 .NoticeImage{
+    /* background-color: #0D141C; */
+    width: 30%;
+}
+
+
+.Teachernotice .Teachernotice1 .NoticeDetails .NoticeDetail1 .NoticeDetail2 .NoticeImage img{
+    width: 100%;
+}
+
+.Teachernotice .Teachernotice1 .NoticeDetails .NoticeDetail1 .NoticeDetail2 .NoticeInformation{
+    padding-left: 10px;
+    /* background-color: aliceblue; */
+}
+
+
+.Teachernotice .Teachernotice1 .NoticeDetails .NoticeDetail1 .NoticeDetail2 .NoticeInformation .Noticep p{
+    padding-top: 10px;
 }

@@ -44,6 +44,146 @@ const Teachernotice = () => {
               <p>Yesterday</p>
             </div>
           </div>
+
+
+          <div className="NoticeDetail1">
+            <div className="NoticeDetail2">
+              <div className="NoticeImage">
+                <img src={image} alt="" />
+              </div>
+              <div className="NoticeInformation">
+                <div className="NoticeH3">
+                  <h3>Homework due tomorrow</h3>
+                </div>
+                <div className="Noticep">
+                  <p>Sent to students in your class</p>
+                </div>
+              </div>
+            </div>
+            <div className="NoticeTime">
+              <p>Yesterday</p>
+            </div>
+          </div>
+
+
+
+          <div className="NoticeDetail1">
+            <div className="NoticeDetail2">
+              <div className="NoticeImage">
+                <img src={image} alt="" />
+              </div>
+              <div className="NoticeInformation">
+                <div className="NoticeH3">
+                  <h3>Homework due tomorrow</h3>
+                </div>
+                <div className="Noticep">
+                  <p>Sent to students in your class</p>
+                </div>
+              </div>
+            </div>
+            <div className="NoticeTime">
+              <p>Yesterday</p>
+            </div>
+          </div>
+
+
+          <div className="NoticeDetail1">
+            <div className="NoticeDetail2">
+              <div className="NoticeImage">
+                <img src={image} alt="" />
+              </div>
+              <div className="NoticeInformation">
+                <div className="NoticeH3">
+                  <h3>Homework due tomorrow</h3>
+                </div>
+                <div className="Noticep">
+                  <p>Sent to students in your class</p>
+                </div>
+              </div>
+            </div>
+            <div className="NoticeTime">
+              <p>Yesterday</p>
+            </div>
+          </div>
+
+          <div className="NoticeDetail1">
+            <div className="NoticeDetail2">
+              <div className="NoticeImage">
+                <img src={image} alt="" />
+              </div>
+              <div className="NoticeInformation">
+                <div className="NoticeH3">
+                  <h3>Homework due tomorrow</h3>
+                </div>
+                <div className="Noticep">
+                  <p>Sent to students in your class</p>
+                </div>
+              </div>
+            </div>
+            <div className="NoticeTime">
+              <p>Yesterday</p>
+            </div>
+          </div>
+
+
+          <div className="NoticeDetail1">
+            <div className="NoticeDetail2">
+              <div className="NoticeImage">
+                <img src={image} alt="" />
+              </div>
+              <div className="NoticeInformation">
+                <div className="NoticeH3">
+                  <h3>Homework due tomorrow</h3>
+                </div>
+                <div className="Noticep">
+                  <p>Sent to students in your class</p>
+                </div>
+              </div>
+            </div>
+            <div className="NoticeTime">
+              <p>Yesterday</p>
+            </div>
+          </div>
+
+
+          <div className="NoticeDetail1">
+            <div className="NoticeDetail2">
+              <div className="NoticeImage">
+                <img src={image} alt="" />
+              </div>
+              <div className="NoticeInformation">
+                <div className="NoticeH3">
+                  <h3>Homework due tomorrow</h3>
+                </div>
+                <div className="Noticep">
+                  <p>Sent to students in your class</p>
+                </div>
+              </div>
+            </div>
+            <div className="NoticeTime">
+              <p>Yesterday</p>
+            </div>
+          </div>
+
+
+          <div className="NoticeDetail1">
+            <div className="NoticeDetail2">
+              <div className="NoticeImage">
+                <img src={image} alt="" />
+              </div>
+              <div className="NoticeInformation">
+                <div className="NoticeH3">
+                  <h3>Homework due tomorrow</h3>
+                </div>
+                <div className="Noticep">
+                  <p>Sent to students in your class</p>
+                </div>
+              </div>
+            </div>
+            <div className="NoticeTime">
+              <p>Yesterday</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>

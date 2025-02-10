@@ -1,0 +1,55 @@
+.CreateNotice{
+    width: 85vw;
+    background-color: white;
+    height: 100%;
+}
+
+.CreateNotice .CreateNotice1{
+    padding-top: 150px;
+}
+
+.CreateNotice .notice-form-container {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    border-radius: 8px;
+  }
+  
+.CreateNotice  h2 {
+    text-align: center;
+  }
+  
+.CreateNotice  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+ .CreateNotice label {
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  
+ .CreateNotice input,
+  textarea {
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+  }
+  
+ .CreateNotice button {
+    margin-top: 15px;
+    padding: 10px;
+    background: #1a1a40;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+.CreateNotice  button:hover {
+    background: #333366;
+  }
+  
