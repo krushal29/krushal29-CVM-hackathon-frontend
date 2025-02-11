@@ -13,12 +13,13 @@ import { useState } from "react";
 const HomeComp = () => {
   const [CounsellorDetail1, setCounsellorDetail] = useState(true);
 
+  
+
   return (
     <div className="StudentHome">
       <div className="StudentHome1">
         <div className="StudentProfile">
           <ProfileDetail props={CounsellorDetail1}/>
-
           <div className="StudentNavbar">
             <div className="StudentNavbar1">
               <ul>
