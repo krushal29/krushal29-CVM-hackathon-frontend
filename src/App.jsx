@@ -17,6 +17,8 @@ import TeacherMaterialFormPage from './pages/Teacher side/TeacherMaterialPage/Te
 import AttendencePageteacher from './pages/Teacher side/Attendence/AttendencePagetecher'
 import TeacherNoticePage from './pages/Teacher side/TeacherNoticePage/TeacherNoticePage'
 import CreateNotice from './pages/Teacher side/TeacherNoticePage/CreateNotice'
+import TeacherLandingPage from './pages/Teacher side/TeacherLandingPage/TeacherLandingPage'
+import TeacherLeave from './pages/Teacher side/TeacherLeave/TeacherLeave'
 
 
 const App = () => {
@@ -37,6 +39,7 @@ const App = () => {
 
 
         {/* Teacher */}
+        <Route path='/TeacherDashboard' element={<TeacherLandingPage/>}/>
         <Route path='/teacherEvent' element={<TeacherAllEvent1/>}/>
         <Route path='/teacherEvent/teacherEventCreate' element={<TeacherEventForm/>}/>
         <Route path='/UploadMaterial' element={<TeacherMaterialPage/>}/>
@@ -44,6 +47,7 @@ const App = () => {
         <Route path='/TeacherAttendence' element={<AttendencePageteacher/>}/>
         <Route path='/TeacherNotice' element={<TeacherNoticePage/>}/>
         <Route path='/TeacherNotice/TeacherNoticeCreate' element={<CreateNotice/>}/>
+        <Route path="/TecherLeaveStatus" element={<TeacherLeave/>}/>
       </Routes>
     </Router>
   )

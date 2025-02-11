@@ -20,7 +20,7 @@ const Navbar = () => {
           </div>
           <div className="studentNavbar">
             <ul>
-              <li>
+              <li onClick={()=>navigate('/TeacherDashboard')}>
                 <TbLayoutDashboardFilled />
                <span>Dashboard</span>
               </li>
@@ -31,7 +31,7 @@ const Navbar = () => {
                 <span>Quiz</span>
               </li>
               <li onClick={()=>navigate('/UploadMaterial')}>Upload Material</li>
-              <li>Leave Status</li>
+              <li onClick={()=>navigate('/TecherLeaveStatus')}>Leave Status</li>
               <li onClick={()=>navigate('/TeacherNotice')}>
                 <span>Notice Board</span>
               </li>
