@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+.AddUser{
+    width: 85vw;
+}
+
+
+.AddUser .new-user-form {
+  font-family: 'Poppins', sans-serif;
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.AddUser .form-title {
+  color: #272757;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.AddUser .form-section {
+  margin-bottom: 1.5rem;
+}
+
+.AddUser .form-label {
+  display: block;
+  color: #272757;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.AddUser .form-input {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  font-family: 'Poppins', sans-serif;
+  color: #272757;
+  margin-bottom: 1rem;
+}
+
+.AddUser .form-input:focus {
+  outline: none;
+  border-color: #272757;
+}
+
+.AddUser .user-type-select {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  background: white;
+  color: #272757;
+  font-family: 'Poppins', sans-serif;
+}
+
+.AddUser .upload-container {
+  border: 2px dashed #e0e0e0;
+  border-radius: 6px;
+  padding: 1.5rem;
+  text-align: center;
+  margin: 1rem 0;
+  cursor: pointer;
+}
+
+.AddUser .upload-input {
+  display: none;
+}
+
+.AddUser .login-button {
+  background: #272757;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  width: 100%;
+  font-size: 1rem;
+  margin-top: 1rem;
+  transition: background 0.3s ease;
+}
+
+.AddUser .login-button:hover {
+  background: #1a1a3d;
+}

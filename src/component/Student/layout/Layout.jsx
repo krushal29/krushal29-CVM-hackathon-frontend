@@ -1,6 +1,4 @@
 import Navbar from "../navbar/Navbar";
-
-//css
 import './layout.css'
 
 const Layout = ({ children }) => {

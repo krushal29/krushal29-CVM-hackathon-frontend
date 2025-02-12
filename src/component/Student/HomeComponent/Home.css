@@ -249,3 +249,30 @@
   flex-direction: column;
   justify-content: space-between;
 }
+
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 30px;
+  font-weight: bold;
+}
+
+.nav-list li {
+  cursor: pointer;
+  padding: 10px 15px;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.nav-list li:hover {
+  color: #272757;
+}
+
+.active-tab {
+  border-bottom: 3px solid #272757;
+  color: #272757;
+  padding-bottom: 10px;
+}

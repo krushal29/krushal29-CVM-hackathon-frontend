@@ -33,11 +33,11 @@
 }
 
 .studentnavbar .studentnavbar1 .studentProfileNavbar .studentNavbar ul{
-    padding-top: 20px;
+    padding-top: 0px;
 }
 .studentnavbar .studentnavbar1 .studentProfileNavbar .studentNavbar ul li{
     list-style: none;
-    margin-top: 12px;
+    margin-top: 10px;
     display: flex;
     align-items: center;
     color: white;

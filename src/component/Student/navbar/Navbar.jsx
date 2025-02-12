@@ -81,11 +81,23 @@ const Navbar = () => {
               >
                 Notice
               </li>
+              <li
+                className={location.pathname === "/StudentPlacementOffer" ? "active" : ""}
+                onClick={() => handleNavigation("/StudentPlacementOffer")}
+              >
+                Placement
+              </li>
+              <li
+                className={location.pathname === "/StudentFees" ? "active" : ""}
+                onClick={() => handleNavigation("/StudentFees")}
+              >
+                Fees
+              </li>
             </ul>
           </div>
         </div>
         <div className="studentLogout">
-          <p>
+          <p onClick={()=>handleNavigation('/')}>
             <AiOutlineLogout />
             <span>Logout</span>
           </p>

@@ -74,19 +74,23 @@ const Attendenceteacher = () => {
         </div>
 
         <div className="AttendenceSheet">
-          <h3>Attendance Sheet</h3>
+          <h3 style={{paddingBottom:"20px",color:"#272757"}}>Attendance Sheet</h3>
           <div className="AttendenceSheetHeading">
             <div className="AttendenceSheetHeading1">
               <input type="checkbox" onChange={handleSelectAll} />
               <p>#</p>
               <p>Student Name</p>
               <p>Student ID</p>
-              <p>Status</p>
             </div>
           </div>
           <div className="AttendenceStudentDetail">
             {studentDetails.map((student, index) => (
-              <div key={student.StudentId} className="AttendenceStudentDetail1">
+              <div
+                key={student.StudentId}
+                className={`AttendenceStudentDetail1 ${
+                  checkedStudents.includes(student.StudentId) ? "checked-row" : ""
+                }`}
+              >
                 <input
                   type="checkbox"
                   checked={checkedStudents.includes(student.StudentId)}
@@ -95,7 +99,6 @@ const Attendenceteacher = () => {
                 <p>{index + 1}</p>
                 <p>{student.Name}</p>
                 <p>{student.StudentId}</p>
-                <p>{checkedStudents.includes(student.StudentId) ? "Present" : "Absent"}</p>
               </div>
             ))}
           </div>

@@ -13,22 +13,23 @@
 }
 
 .Teachernotice .Teachernotice1 .NoticeNavbar{
-    width: 50%;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
 .Teachernotice .Teachernotice1 .NoticeNavbar .NoticeCreate button{
-    padding: 5px 15px;
+    padding: 8px 15px;
     border: none;
     border-radius: 10px;
-    color: #0D141C;
+    background-color: #272757;
     cursor: pointer;
+    color: white;
 }
 
 .Teachernotice .Teachernotice1 .NoticeSearch{
-    background-color: azure;
+    background-color: #f5f5f5;
     display: flex;
     align-items: center;    
     padding: 10px 5px;
@@ -46,7 +47,7 @@
 
 .Teachernotice .Teachernotice1 .NoticeDetails .NoticeDetail1{
     display: flex;
-    /* background-color: white; */
+    /* background-color: #0D141C; */
     justify-content: space-between;
     align-items: center;
     margin-top: 20px;
@@ -56,6 +57,8 @@
 .Teachernotice .Teachernotice1 .NoticeDetails .NoticeDetail1 .NoticeDetail2{
     display: flex;
     align-items: center;
+    /* background-color: #272757; */
+    width: 30%;
 
 }
 

@@ -66,7 +66,7 @@ const TeacherLeaveComp = () => {
 
   return (
     <div className="leave-applications-container">
-      <h2 className="table-title">Leave Applications</h2>
+      <h2 className="table-title" style={{fontSize:"25px"}}>Leave Applications</h2>
       <div className="table-wrapper">
         <table className="leave-table">
           <thead>

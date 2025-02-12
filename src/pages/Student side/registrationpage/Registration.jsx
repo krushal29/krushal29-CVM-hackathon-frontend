@@ -1,12 +1,13 @@
 
+import AdminLayout from "../../../component/administrationComponent/AdminLayout/AdminLayout"
 import RegistrationComp from "../../../component/Student/registrationComponent/RegistrationComp"
 
 
 const Registration = () => {
   return (
-    <div>
+    <AdminLayout>
       <RegistrationComp/>
-    </div>
+    </AdminLayout>
   )
 }
 

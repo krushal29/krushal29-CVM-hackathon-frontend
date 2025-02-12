@@ -1,11 +1,11 @@
 import { useRef, useState } from "react";
-import "./registration.css"; // Import the CSS file
+import "./registration.css";
 
 const RegistrationComp = () => {
   const [files, setFiles] = useState([]);
   const fileInputRef = useRef(null);
+  const previousMarksheetRef = useRef(null);
 
-  // Handle file selection via input
   const handleFileUpload = (event) => {
     const uploadedFiles = Array.from(event.target.files);
     const newFiles = uploadedFiles.map((file) => ({
@@ -15,7 +15,6 @@ const RegistrationComp = () => {
     setFiles([...files, ...newFiles]);
   };
 
-  // Handle Drag and Drop
   const handleDrop = (event) => {
     event.preventDefault();
     const droppedFiles = Array.from(event.dataTransfer.files);
@@ -26,62 +25,67 @@ const RegistrationComp = () => {
     setFiles([...files, ...newFiles]);
   };
 
-  // Remove a file from the list
   const removeFile = (fileName) => {
     setFiles(files.filter((file) => file.name !== fileName));
   };
 
-  // Trigger file input when Browse is clicked
   const triggerFileInput = () => {
-    fileInputRef.current.click();
-    
+    if (fileInputRef.current) {
+      fileInputRef.current.click();
+    }
   };
-  
+
+  const triggerPreviousMarksheetUpload = (event) => {
+    event.stopPropagation(); // Prevents triggering parent click event
+    previousMarksheetRef.current?.click();
+  };
+
   return (
     <div className="upload-container">
       <h2>Upload Document</h2>
       <p className="description">
-        Please upload files in PDF, DOCX, DOC, PPT, or PPTX format (Max: 25MB).
+        Please upload files in pdf, docx or doc format and make sure the file size is under 25 MB.
       </p>
-
-      {/* Drag & Drop Area */}
-      <div
-        className="drop-zone"
-        onDragOver={(e) => e.preventDefault()}
-        onDrop={handleDrop}
-        onClick={triggerFileInput}
+      <div 
+        className="file-upload-area" 
+        onDragOver={(e) => e.preventDefault()} 
+        onDrop={handleDrop} 
+        onClick={(e) => {
+          if (!e.target.closest(".upload-btn")) {
+            triggerFileInput();
+          }
+        }}
       >
-        <p>Drop files here or click to upload</p>
+        <p>Drag and drop files here or click to upload</p>
+        {files.map((file, index) => (
+          <div key={index} className="file-item">
+            <span className="file-name">📄 {file.name}</span>
+            <button className="delete-btn" onClick={() => removeFile(file.name)}>🗑️</button>
+          </div>
+        ))}
         <input
           type="file"
           multiple
-          accept=".pdf,.doc,.docx,.ppt,.pptx"
+          accept=".pdf,.doc,.docx"
           onChange={handleFileUpload}
           ref={fileInputRef}
           style={{ display: "none" }}
         />
+        <input
+          type="file"
+          accept=".pdf,.doc,.docx"
+          onChange={handleFileUpload}
+          ref={previousMarksheetRef}
+          style={{ display: "none" }}
+        />
       </div>
 
-      {/* Uploaded Files List */}
-      <ul className="file-list">
-        {files.map((file, index) => (
-          <li key={index} className="file-item">
-            <span>{file.name}</span>
-            <button className="delete-btn" onClick={() => removeFile(file.name)}>
-              ❌
-            </button>
-          </li>
-        ))}
-      </ul>
-
-      {/* Action Buttons */}
       <div className="button-group">
         <button className="scan-btn">📷 Scan</button>
-        <button className="browse-btn" onClick={triggerFileInput}>
-          📂 Browse
-        </button>
+        <button className="upload-btn" onClick={triggerFileInput}>⬆ Upload Adhar</button>
+        <button className="upload-btn" onClick={(e) => triggerPreviousMarksheetUpload(e)}>⬆ Previous Marksheet</button>
       </div>
-
+      
       <div className="action-buttons">
         <button className="cancel-btn">Cancel</button>
         <button className="done-btn">Done</button>

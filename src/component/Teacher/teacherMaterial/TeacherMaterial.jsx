@@ -29,10 +29,10 @@ const TeacherMaterial = () => {
       <div className="TeacherMaterial1">
         <div className="TeacherMaterial2">
           <div className="TeacherMaterialh2">
-            <h2>Materials</h2>
+            <h2 style={{color:"#272757",fontSize:"25px"}}>Materials</h2>
           </div>
           <div className="TeacherMaterialAdd">
-            <button onClick={()=>navigate('/UploadMaterial/addMaterial')}>Add Material</button>
+            <button onClick={()=>navigate('/UploadMaterial/addMaterial')} style={{backgroundColor:"#272757"}}>Add Material</button>
           </div>
         </div>
         <div className="MaterialsInput">

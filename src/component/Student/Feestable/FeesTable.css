@@ -1,0 +1,63 @@
+
+.fees-container {
+  width: 75vw;
+  padding: 30px 50px;
+
+  border-radius: 10px;
+}
+
+.fees-title {
+  color: #272757;
+  font-size: 24px;
+  font-weight: bold;
+  padding-bottom: 20px;
+}
+
+.fees-subtitle {
+  color: #999;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.fees-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #272757;
+  color: white;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.fees-table th,
+.fees-table td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.fees-table th {
+  background-color: #1e1b4b;
+}
+
+.fees-table tbody tr:nth-child(even) {
+  background-color: #33306b;
+}
+
+.fees-table tbody tr:hover {
+  background-color: #3c3980;
+}
+
+.download-btn {
+  background-color: #ffffff;
+  color: #272757;
+  font-weight: bold;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.download-btn:hover {
+  background-color: #d1d1ff;
+  color: #272757;
+}

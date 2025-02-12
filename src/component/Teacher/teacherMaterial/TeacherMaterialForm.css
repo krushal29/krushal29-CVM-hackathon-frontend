@@ -1,5 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+*{
+  font-family: 'Poppins', sans-serif;
+}
+
 .TeacherMaterialForm{
-    /* background-color: aqua; */
+  /* background-color: aqua; */
+  color: #272757;
     width: 85vw;
     height: 100%;
     display: flex;
@@ -71,7 +78,7 @@
   }
   
  .TeacherMaterialForm .upload-button {
-    background: #2c3e50;
+    background: #272757;
     color: white;
     padding: 10px;
     border: none;
@@ -81,6 +88,6 @@
   }
   
  .TeacherMaterialForm .upload-button:hover {
-    background: #34495e;
+    background: #373767;
   }
   

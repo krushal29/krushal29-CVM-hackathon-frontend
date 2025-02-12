@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+.subject-table-container {
+  font-family: 'Poppins', sans-serif;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+}
+
+.table-header {
+  margin-bottom: 20px;
+}
+
+.table-title {
+  color: #272757;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.table-wrapper {
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.subject-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+}
+
+.subject-table thead {
+  background-color: #272757;
+  color: white;
+}
+
+.subject-table th {
+  padding: 16px;
+  text-align: left;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.subject-table tbody tr {
+  border-bottom: 1px solid #f0f0f0;
+  transition: background-color 0.2s ease;
+}
+
+.subject-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.subject-table tbody tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+.subject-table tbody tr:hover {
+  background-color: #f0f2f5;
+}
+
+.subject-table td {
+  padding: 16px;
+  font-size: 0.9rem;
+  color: #272757;
+}
+
+.subject-table .course-code {
+  color: #4a5568;
+  font-family: 'Poppins', monospace;
+}
+
+.subject-table .credits {
+  text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .subject-table-container {
+    padding: 10px;
+  }
+
+  .subject-table th,
+  .subject-table td {
+    padding: 12px;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .subject-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}

@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+*{
+    font-family: 'Poppins', sans-serif;
+}
+
+
 .notice{
     /* background-color: aqua; */
     width: 85vw;
@@ -11,13 +18,14 @@
 
 
 .notice .notice1 .noticeh1 h1{
-    padding-bottom: 20px;
+    padding-bottom:30px;
+    color: #272757;
 }
 
 .notice .notice1 .noticeFind{
     display: flex;
     align-items: center;
-    /* text-align: center; */
+    text-align: center;
     background-color: #F0F2F5;
     padding: 5px 10px;
     border-radius: 5px;
@@ -30,7 +38,9 @@
     background-color: transparent;
     width: 100%;
 }
-
+.notice .notice1 .noticeFind input::placeholder{
+    padding-left: 10px;
+}
 .notice .notice1 .noticeCart{
     display: flex;
     /* background-color: bisque; */
@@ -51,7 +61,7 @@
 }
 
 .notice .notice1 .noticeCart .noticeDetail1 {
-    padding: 0 20px;
+    padding: 0 40px;
 }
 .notice .notice1 .noticeCart .noticeDetail1 .noticeWidth{
     /* background-color: blue; */
@@ -71,7 +81,7 @@
 }
 
 .notice .notice1 .noticeCart .noticeDetail1 .noticeDetail .noticeBtn button{
-    background-color: #0D7DF2;
+    background-color: #272757;
     color: white;
     border: none;
     padding: 8px 20px;

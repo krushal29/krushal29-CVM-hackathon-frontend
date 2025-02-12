@@ -1,13 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+* {
+  font-family: "Poppins", sans-serif;
+}
+
 .Attendenceteacher {
-  background-color: #ccccdbb0;
+  /* background-color: #ccccdbb0; */
   width: 85vw;
   height: 100%;
 }
-
+.Attendenceteacher .Attendenceteacher1 {
+  /* background-color: #272757; */
+  padding: 30px 50px;
+}
 .Attendenceteacher .Attendenceteacher1 .Attendenceteacherh3 h3 {
-  color: #4d2c5e;
+  color: #272757;
   padding-left: 20px;
-  padding-top: 40px;
+  font-size: 25px;
 }
 
 .Attendenceteacher .Attendenceteacher1 .selectAttendence {
@@ -87,6 +96,7 @@
 .Attendenceteacher .Attendenceteacher1 .selectAttendence .DateAttendence input {
   border: none;
   font-size: 17px;
+
 }
 
 .Attendenceteacher .Attendenceteacher1 .selectAttendence .GenerateSheet button {
@@ -101,7 +111,7 @@
 }
 
 .AttendenceSheet {
-  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
   width: 95%;
   margin-top: 30px;
   padding-top: 20px;
@@ -111,6 +121,7 @@
 }
 .AttendenceSheet .AttendenceSheetH3 h3 {
   color: #272757;
+
 }
 .AttendenceSheet .AttendenceSheetHeading {
   width: 100%;
@@ -125,8 +136,12 @@
   justify-content: space-between;
 }
 
-.AttendenceSheet .AttendenceSheetHeading .AttendenceSheetHeading1 .NumberStart label{
-    padding-left: 5px;
+.AttendenceSheet
+  .AttendenceSheetHeading
+  .AttendenceSheetHeading1
+  .NumberStart
+  label {
+  padding-left: 5px;
 }
 .AttendenceSheet .AttendenceStudentDetail {
   width: 100%;
@@ -141,14 +156,21 @@
   padding-bottom: 10px;
 }
 
-.AttendenceSheet .AttendenceStudentDetail .AttendenceStudentDetail1 .NumberStartCount {
-    display: flex;
+.AttendenceSheet
+  .AttendenceStudentDetail
+  .AttendenceStudentDetail1
+  .NumberStartCount {
+  display: flex;
 }
 
-.AttendenceSheet .AttendenceStudentDetail .AttendenceStudentDetail1 .NumberStartCount label{
-    padding-left: 5px;
+.AttendenceSheet
+  .AttendenceStudentDetail
+  .AttendenceStudentDetail1
+  .NumberStartCount
+  label {
+  padding-left: 5px;
 }
-.Attendenceteacher .Attendenceteacher1 .submitBtn button{
+.Attendenceteacher .Attendenceteacher1 .submitBtn button {
   background-color: #272757;
   color: white;
   border-radius: 5px;
@@ -157,5 +179,12 @@
   cursor: pointer;
   border: none;
   margin-bottom: 20px;
+}
 
+
+.checked-row {
+  padding-top:10px ;
+  background-color: #e5e5ff; /* Light green */
+  transition: background-color 0.3s ease;
+  color: #272757;
 }
