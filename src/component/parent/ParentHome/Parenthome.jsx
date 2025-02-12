@@ -1,4 +1,4 @@
-
+import './Home.css'
 
 const Parenthome = () => {
   return (

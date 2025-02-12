@@ -8,7 +8,7 @@ import { MdPlayLesson } from "react-icons/md";
 import { CgProfile } from "react-icons/cg";
 import { IoIosTrophy } from "react-icons/io";
 import { FaChevronRight } from "react-icons/fa";
-import { IoMdAdd } from "react-icons/io";
+
 
 // Image
 import subjectImg from "../../../assets/unsplash_7uSKXpksCKg.png";
@@ -117,7 +117,7 @@ const Subject = () => {
                   onChange={() => handleFilterChange("name")}
                   checked={filters.name}
                 />
-                <label>Name</label>
+                <label style={{fontSize:"15px"}}>Name</label>
               </div>
               <div className="filterCredit">
                 <input
@@ -125,7 +125,7 @@ const Subject = () => {
                   onChange={() => handleFilterChange("credit")}
                   checked={filters.credit}
                 />
-                <label>Credit (4+)</label>
+                <label style={{fontSize:"15px"}}>Credit (4+)</label>
               </div>
               <div className="filterlesson">
                 <input
@@ -133,14 +133,7 @@ const Subject = () => {
                   onChange={() => handleFilterChange("lesson")}
                   checked={filters.lesson}
                 />
-                <label>Lesson (8+)</label>
-              </div>
-              <div className="filterShowmore">
-                <IoMdAdd />
-                <span>Show more</span>
-              </div>
-              <div className="filterApply">
-                <p>Apply</p>
+                <label style={{fontSize:"15px"}}>Lesson (8+)</label>
               </div>
             </div>
           </div>

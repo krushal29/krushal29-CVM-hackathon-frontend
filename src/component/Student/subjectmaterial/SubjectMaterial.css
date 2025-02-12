@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+*{
+  font-family: 'Poppins', sans-serif;
+
+}
+
+
 .SubjectMaterial {
   width: 85vw;
   height: 100%;
@@ -8,7 +15,7 @@
   width: 90%;
   background-color: white;
   margin: 0px auto;
-  padding: 20px 20px;
+  padding: 30px 50px;
 }
 
 .SubjectMaterial .SubjectMaterial1 .navbarFixed{
@@ -20,15 +27,16 @@
 }
 
 .SubjectMaterial .SubjectMaterial1 .SubjectMaterialPath p span {
-  color: #4a709c;
+  color: #272757
 }
 
 .SubjectMaterial .SubjectMaterial1 .SubjectMaterialSubject h1 {
   padding-top: 20px;
+  color: #272757;
 }
 
 .SubjectMaterial .SubjectMaterial1 .SubjectProfessor p {
-  color: #4a709c;
+  color: #272757;
   padding-top: 8px;
 }
 .SubjectMaterial .SubjectMaterial1 .SubjectMaterialNavbar {
@@ -46,7 +54,7 @@
 .SubjectMaterial .SubjectMaterial1 .SubjectMaterialNavbar ul li {
   list-style: none;
   cursor: pointer;
-  color: #4a709c;
+  color: #272757;
   font-weight: 700;
 }
 
@@ -58,6 +66,7 @@
   .SubjectMaterialAssignment
   h2 {
   padding-top: 20px;
+  /* font-weight: 400; */
 }
 
 .SubjectMaterial

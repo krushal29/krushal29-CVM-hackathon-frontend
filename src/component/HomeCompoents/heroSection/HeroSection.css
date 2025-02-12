@@ -2,9 +2,46 @@
     /* background-image: url('../../../assets/HeroSection.png'); */
     height: 80vh;
     background-color: #ccccdb;
+    display: flex;
+    justify-content: center;
 }
 
 .HeroSection .heroSection1{
+    width: 92%;
     display: flex;
-    background-color: aqua;
+    /* background-color: aqua; */
+    padding-top: 20px;
+}
+
+.HeroSection .heroSection1 .heroSectionFirstSide{
+    /* background-color: aquamarine; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+}
+
+
+.HeroSection .heroSection1 .heroSectionFirstSide .heroSectionHeading h1{
+    color: #0F0E47;
+    font-size: 52px;
+}
+
+.HeroSection .heroSection1 .heroSectionFirstSide .heroSectionHeading h1 span{
+    color: white;
+}
+
+.HeroSection .heroSection1 .heroSectionFirstSide .heroSectionP p{
+    color: #8A8A8A;
+}
+
+.HeroSection .heroSection1 .heroSecionImg{
+    width: 40%;
+    /* background-color: azure; */
+    padding-left: 40px;
+    padding-top: 50px;
+}
+
+.HeroSection .heroSection1 .heroSecionImg img{
+    width: 100%;
 }

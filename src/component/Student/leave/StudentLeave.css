@@ -1,24 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+*{
+  font-family: 'Poppins', sans-serif;
+}
+
+
+
 .StudentLeave {
-  background-color: #ccccdb;
+  /* background-color: #ccccdb; */
   width: 85vw;
   height: 100%;
 }
 
 .StudentLeave .StudentLeave1 .ApplyLeave{
-  background-color: #272757;
+  box-shadow: 2px 2px 10px 4px rgba(32, 32, 32, 0.25);
   width: 35%;
-  color: white;
+  color: #272757;
   margin: 0 auto;
   border-radius: 10px;
   padding: 10px 20px; 
+  margin-top: 60px;
 }
 
 .StudentLeave .StudentLeave1 .submitbtn button{
  padding: 10px 40px;
  border-radius: 5px;
- background-color: white;
- color: #272757;
- font-weight: 800;
+ background-color: #272757;
+ color: white;
+ font-weight: 500;
  border: none;
  outline: none;
  margin-top: 10px;
@@ -28,6 +37,7 @@
 
 .StudentLeave .StudentLeave1 .ApplyLeave .ApplyLeaveH3 h3{
   padding-top: 10px;
+  padding-bottom: 10px;
   text-align: center;
 }
 
@@ -36,13 +46,17 @@
   padding: 8px 0;
   border-radius: 5px;
   margin: 5px 0;
+  border: 1px solid #212121;
 }
+
+
 
 .StudentLeave .StudentLeave1 .ApplyLeave .ApplyEndDate input{
   width: 100%;
   padding: 8px 0;
   border-radius: 5px;
   margin: 5px 0;
+  border: 1px solid #212121;
 }
 
 .StudentLeave .StudentLeave1 .ApplyLeave .ApplyReasonLeave textarea{
@@ -50,6 +64,7 @@
   padding: 5px 0;
   border-radius: 5px;
   margin: 5px 0;
+  border: 1px solid #212121;
 }
 
 
@@ -58,34 +73,35 @@
   padding: 10px 0;
 }
 
-.StudentLeave .PastApplication {
+ .PastApplication {
   background-color: white;
   box-shadow: 2px 2px 10px 4px rgba(32, 32, 32, 0.25);
-  width: 75%;
-  margin: 30px auto;
-  padding: 20px 30px;
+  width: 100%;
+  margin: 40px 150px;
+  padding: 20px 10px;
   border-radius: 10px;
+
 }
 
-.StudentLeave .PastApplication .pastApplicationh3 h3 {
-  color: #202020;
+ .PastApplication .pastApplicationh3 h3 {
+  padding-bottom: 10px;
+  color: #272757;
+  font-size: 22px;
 }
-
-.StudentLeave .PastApplication .filterApplication {
+ .PastApplication .filterApplication {
   display: flex;
   padding-top: 20px;
   justify-content: space-between;
 }
-
-.StudentLeave .PastApplication .filterApplication .filterYear {
+ .PastApplication .filterApplication .filterYear {
   display: flex;
   align-items: center;
 }
 
-.StudentLeave .PastApplication .filterApplication .filterYear label {
+ .PastApplication .filterApplication .filterYear label {
   padding-right: 20px;
 }
-.StudentLeave .PastApplication .filterApplication .filterYear select {
+ .PastApplication .filterApplication .filterYear select {
   padding: 5px 20px;
   box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.25) inset;
   border-radius: 20px;
@@ -93,14 +109,14 @@
   border: none;
   outline: none;
 }
-.StudentLeave .PastApplication .filterApplication .AddFilter{
+ .PastApplication .filterApplication .AddFilter{
     display: flex;
     /* background-color: #ccccdb; */
-    width: 30%;
+    width: 33%;
     align-items: center;
 }
 
-.StudentLeave .PastApplication .filterApplication .AddFilter select{
+ .PastApplication .filterApplication .AddFilter select{
     padding: 5px 20px;
   box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.25) inset;
   border-radius: 20px;
@@ -108,30 +124,33 @@
   border: none;
   outline: none;
   margin-left: 20px;
-  width: 70%;
+  width: 50%;
 }
 
-.StudentLeave .PastApplication .filterApplication .SearchFilter button{
+ .PastApplication .filterApplication .SearchFilter button{
     background-color: #272757;
     color: white;
     font-weight: 500;
     display: flex;
     align-items: center;
-    padding: 5px 15px;
+    padding: 5px 20px;
     border-radius: 20px;
     border: none;
     outline: none;
     cursor: pointer;
 }
-.StudentLeave .PastApplication .filterApplication .SearchFilter button span{
+ .PastApplication .filterApplication .SearchFilter button span{
     padding-right:20px;
 }
 
-.StudentLeave .StudentLeave1 .PastApplication .StatusDetail{
-  padding-top: 70px;
+ .PastApplication .StatusDetail{
+  padding-top:30px;
   width: 100%;
 }
+.StatusDetail th{
+  font-weight: 300;
 
+}
 .StatusDetail th, .StatusDetail td {
   padding: 10px;
   text-align: center;
@@ -157,10 +176,12 @@
 .ViewPastApplication button{
   background-color: #272757;
   color: white;
-  padding: 10px 25px;
-  margin-top: 20px;
-  margin-left: 130px;
+  padding: 15px 25px;
+  margin-top: 30px;
+  margin-left: 400px;
   border-radius: 10px;
   border: none;
   cursor: pointer;
+
+
 }

@@ -21,6 +21,8 @@ import TeacherLandingPage from './pages/Teacher side/TeacherLandingPage/TeacherL
 import TeacherLeave from './pages/Teacher side/TeacherLeave/TeacherLeave'
 import ParentHomePage from './pages/parentPage/ParentLandingPage/ParentHomePage'
 import Subjectpage from './pages/Student side/SubjectDetail/Subjectpage'
+import StudentLeave from './component/Student/leave/StudentLeave'
+import ViewLeave from './pages/Student side/leavepage/ViewLeave'
 
 
 const App = () => {
@@ -38,6 +40,7 @@ const App = () => {
         <Route path='/Achievements' element={<AchievementsPage/>}/>
         <Route path='/Achievements/FormPage' element={<AchievementsFormPage/>}/>
         <Route path='/StudentLeave' element={<LeavePage/>}/>
+        <Route path='/viewLeaveApplication' element={<ViewLeave/>}/>
         <Route path='/StudentEvent' element={<Eventpage/>}/>
         <Route path='/StudentNotice' element={<NoticePage/>}/>
         <Route path='/StudentRegistration' element={<Registration/>}/>
@@ -59,6 +62,14 @@ const App = () => {
         {/* Parent */}
 
         <Route path='/ParentDashBoard' element={<ParentHomePage/>}/>
+        {/* <Route path='' element={</>}/> */}
+
+
+
+        {/* administration */}
+
+        
+
       </Routes>
     </Router>
   )

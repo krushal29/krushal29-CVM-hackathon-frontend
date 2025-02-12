@@ -30,7 +30,7 @@ const SubjectMaterial = () => {
   // Reusable function to display documents
   const renderDocuments = (dataArray, title) => (
     <div>
-      <h2 style={{marginTop:"20px"}}>{title}</h2>
+      <h2 style={{marginTop:"20px",fontWeight:"600"}}>{title}</h2>
       <div className="Document">
         {dataArray.map((data, index) => (
           <div key={index} className="DocumentpdfDetail">
@@ -40,10 +40,10 @@ const SubjectMaterial = () => {
               </div>
               <div className="DocumentDetail">
                 <div className="DocumentChapter">
-                  <h3>{data.Chapter}</h3>
+                  <h3 style={{fontWeight:"450",fontSize:"15px"}}>{data.Chapter}</h3>
                 </div>
                 <div className="DocumentLastDate">
-                  <p>{data.Date}</p>
+                  <p style={{color:"#272757",fontSize:"14px"}}>{data.Date}</p>
                 </div>
               </div>
             </div>

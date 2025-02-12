@@ -6,7 +6,7 @@
 }
 
 .StudentSubject {
-  background-color: #ccccdb;
+  /* background-color: #ccccdb; */
   width: 85vw;
   height: 100%;
   display: flex;
@@ -30,7 +30,7 @@
 }
 
 .StudentSubject .StudentSubject1 .filterSubject .filterInput {
-    background-color: rgba(250, 250, 250, 0.93);;
+    background-color:#f5f5f5 ;
     width: 70%;
     display: flex;
     align-items: center;
@@ -44,6 +44,7 @@
     background-color: transparent;
     padding: 8px 0;
     outline: none;
+    
 }
 .StudentSubject .StudentSubject1 .filterSubject .filterbtn .FilterDetail{
     position: absolute;
@@ -89,7 +90,6 @@
 
 
 .StudentSubject .StudentSubject1 .SubjectCard {
-  /* background-color: aquamarine; */
   display: grid;
   grid-template-columns: repeat(4, 250px);
   row-gap: 20px;
@@ -99,7 +99,8 @@
 }
 
 .StudentSubject .StudentSubject1 .SubjectCard .SubjectCard1 {
-  background-color: white;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  /* background-color: white; */
   height: 90%;
   width: 100%;
   padding: 15px;
@@ -113,6 +114,7 @@
   padding-top: 8px;
   font-size: 13px;
   /* background-color: #272757; */
+  font-weight: 400;
   height: 40px;
 }
 
@@ -122,7 +124,7 @@
   align-items: center;
   padding-top: 13px;
   font-size: 10px;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .StudentSubject

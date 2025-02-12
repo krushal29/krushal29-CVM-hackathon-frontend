@@ -45,7 +45,7 @@ const Navbar = () => {
               </span>
               </li>
               <li
-                className={location.pathname === "/StudentsubjectMaterial" ? "active" : ""}
+                className={location.pathname === "/Studentsubject" ? "active" : ""}
                 onClick={() => handleNavigation("/Studentsubject")}
               >
                 Subject Material
@@ -57,7 +57,7 @@ const Navbar = () => {
                 <span>Quiz</span>
               </li>
               <li
-                className={location.pathname === "/StudentAttendance" ? "active" : ""}
+                className={location.pathname === "/StudentAttence" ? "active" : ""}
                 onClick={() => handleNavigation("/StudentAttence")}
               ><FontAwesomeIcon icon={faClipboardUser} />
                <span> Attendance</span>
