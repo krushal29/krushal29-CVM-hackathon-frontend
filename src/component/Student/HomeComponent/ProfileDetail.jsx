@@ -1,6 +1,6 @@
 import profile from "../../../assets/Depth 7, Frame 0.png";
 
-const ProfileDetail = ({props}) => {
+const ProfileDetail = () => {
   return (
     <div>
       <div className="StudentProfileh2">
@@ -27,9 +27,7 @@ const ProfileDetail = ({props}) => {
           </div>
         </div>
         <div className="profileEdit">
-          <button style={!props?{backgroundColor:"#E8EDF5",color:"#0D141C",fontWeight:"800"}:{}}>Edit Profile</button>
-          {!props&&<button style={{backgroundColor:"#2194F2",color:"#F7FAFC"}}>Add Public Profile</button>}
-          {/* <button>View Public Profile</button> */}
+          <button>Edit Profile</button>
         </div>
       </div>
     </div>

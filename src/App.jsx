@@ -19,6 +19,8 @@ import TeacherNoticePage from './pages/Teacher side/TeacherNoticePage/TeacherNot
 import CreateNotice from './pages/Teacher side/TeacherNoticePage/CreateNotice'
 import TeacherLandingPage from './pages/Teacher side/TeacherLandingPage/TeacherLandingPage'
 import TeacherLeave from './pages/Teacher side/TeacherLeave/TeacherLeave'
+import ParentHomePage from './pages/parentPage/ParentLandingPage/ParentHomePage'
+import Subjectpage from './pages/Student side/SubjectDetail/Subjectpage'
 
 
 const App = () => {
@@ -27,7 +29,10 @@ const App = () => {
       <Routes>
         <Route path='/' element={<HomePage/>}/>
         <Route path='/login' element={<LoginPage/>}/>
+
+        {/* Student */}
         <Route path='/StudentDashboard' element={<Home/>}/>
+        <Route path='/Studentsubject' element={<Subjectpage/>}/>
         <Route path='/StudentsubjectMaterial' element={<SubjectMaterialPage/>}/>
         <Route path='/StudentAttence' element={<AttendencePage/>}/>
         <Route path='/Achievements' element={<AchievementsPage/>}/>
@@ -48,6 +53,12 @@ const App = () => {
         <Route path='/TeacherNotice' element={<TeacherNoticePage/>}/>
         <Route path='/TeacherNotice/TeacherNoticeCreate' element={<CreateNotice/>}/>
         <Route path="/TecherLeaveStatus" element={<TeacherLeave/>}/>
+
+
+
+        {/* Parent */}
+
+        <Route path='/ParentDashBoard' element={<ParentHomePage/>}/>
       </Routes>
     </Router>
   )

@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+*{
+  font-family: 'Poppins', sans-serif;
+}
+
+
 .feedback {
   width: 100%;
   /* background-color: aqua; */
@@ -12,8 +18,7 @@
 }
 .feedback .feedback1 .feedbackHeading h1 {
   text-align: center;
-  color: #050c26;
-  font-family: Poppins;
+  color: #272757;
   font-weight: 600;
 }
 
@@ -22,7 +27,6 @@
   text-align: center;
   color: #8a8a8a;
   font-size: 18px;
-  font-family: Poppins;
   font-weight: 500;
 }
 
@@ -30,6 +34,7 @@
   overflow-x: hidden; /* Hide horizontal scrollbar */
   width: 100%;
   position: relative;
+  /* background-color: transparent; */
 }
 
 .feedback .feedback1 .feedbackCardall {
@@ -53,8 +58,7 @@
 
 .feedback .feedback1 .feedbackCardall .feedbackCard .feedBackInformation p {
   color: #acacac;
-  font-size: 17px;
-  font-family: Roboto;
+  font-size: 15px;
   font-weight: 400;
   line-height: 21.73px;
   letter-spacing: 0.38px;
@@ -102,7 +106,6 @@
   .studentNameSkill
   h3 {
   color: #353535;
-  font-family: Roboto;
   font-weight: 500;
 }
 
@@ -116,6 +119,5 @@
   color: #8e8e8e;
   font-size: 15px;
   padding-top: 2px;
-  font-family: Roboto;
   font-weight: 400;
 }

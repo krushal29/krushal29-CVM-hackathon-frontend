@@ -57,7 +57,7 @@ const Feedback = () => {
           <h1>What students say</h1>
         </div>
         <div className="feedbackp">
-          <p>Lorem Ipsum is simply dummy text of the printing.</p>
+          <p>Hear from our students about their learning experience</p>
         </div>
         <div className="feedbackCardContainer">
           <div className="feedbackCardall"ref={cardContainerRef}>

@@ -1,9 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 *{
-    font-family: Roboto;
+  font-family: 'Poppins', sans-serif;
 }
 
 .footer {
-  background-color: #FDF8EE;
+  background-color: #272757;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -34,26 +36,26 @@
 }
 .footer .footer1 .footer2 .firstSide .FooterLogo span {
   padding-left: 5px;
-  color: #1d1d1d;
+  color: white;
   font-size: 24px;
-  font-family: Roboto;
   font-weight: 700;
   line-height: 32.4px;
   word-wrap: break-word;
+
 }
 
 .footer .footer1 .footer2 .firstSide .footerP p {
-  color: #606060;
-  font-weight: 400;
+  color: white;
   word-wrap: break-word;
   width: 318px;
   height: 155px;
+  font-size: 14px;
+  font-weight: 350px;
 }
 
 .footer .footer1 .footer2 .secondSide .secondSideh3 h3 {
-  color: #00052e;
-  font-size: 20px;
-  font-family: Roboto;
+  color: white;
+  font-size: 17px;
   font-weight: 600;
   word-wrap: break-word;
 }
@@ -61,8 +63,8 @@
 .footer .footer1 .footer2 .secondSide .secondSidelist ul li{
     list-style: none;
     padding-top: 20px;
-    color: #606060;
-    font-size: 17px;
+    color: white;
+    font-size: 14px;
     cursor: pointer;
 }
 
@@ -70,9 +72,8 @@
 
 
 .footer .footer1 .footer2 .thirdSide .thirdSideh3 h3 {
-    color: #00052e;
-    font-size: 20px;
-    font-family: Roboto;
+  color: white;
+    font-size: 17px;
     font-weight: 600;
     word-wrap: break-word;
   }
@@ -80,16 +81,15 @@
   .footer .footer1 .footer2 .thirdSide .thirdSidelist ul li{
       list-style: none;
       padding-top: 20px;
-      color: #606060;
-      font-size: 17px;
+      color: white;
+      font-size: 14px;
       cursor: pointer;
   }
 
 
   .footer .footer1 .footer2 .forthSide .forthSideh3 h3 {
-    color: #00052e;
-    font-size: 20px;
-    font-family: Roboto;
+    color: white;
+    font-size: 17px;
     font-weight: 600;
     word-wrap: break-word;
   }
@@ -97,8 +97,8 @@
   .footer .footer1 .footer2 .forthSide .forthSidelist ul li{
       list-style: none;
       padding-top: 20px;
-      color: #606060;
-      font-size: 17px;
+      color: white;
+      font-size: 14px;
       cursor: pointer;
   }
 
@@ -106,9 +106,8 @@
 
   
   .footer .footer1 .footer2 .fifthSide .fifthSideh3 h3 {
-    color: #00052e;
-    font-size: 20px;
-    font-family: Roboto;
+    color: white;
+    font-size: 17px;
     font-weight: 600;
     word-wrap: break-word;
   }
@@ -116,8 +115,8 @@
   .footer .footer1 .footer2 .fifthSide .fifthSidelist ul li{
       list-style: none;
       padding-top: 20px;
-      color: #606060;
-      font-size: 17px;
+      color: white;
+      font-size: 14px;
       cursor: pointer;
   }
   
@@ -127,7 +126,6 @@
     align-items: center;
     text-align: center;
     padding: 10px 0;
-    font-size: 17px;
-    color: #606060;
-    font-family: Roboto;
+    font-size: 14px;
+    color: white;
   }

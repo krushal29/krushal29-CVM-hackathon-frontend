@@ -1,7 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+
+
+
 * {
   margin: 0;
   padding: 0;
-  font-family: Roboto;
+  font-family: 'Poppins', sans-serif;
 }
 
 .navBar {
@@ -12,7 +17,7 @@
 }
 .navBar .navBar1 {
   /* background-color: aquamarine; */
-  width: 85%;
+  width: 92%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -32,13 +37,10 @@ font-weight: 700;
 line-height: 32.40px;
 word-wrap: break-word
 }
-.navBar .navBar1 .navbarLogo img {
-  width: 50%;
-  padding-right: 5px;
-}
+
 .navBar .navBar1 .navbarDetail {
   /* background-color: antiquewhite; */
-  min-width: 30%;
+  min-width: 40%;
 }
 .navBar .navBar1 .navbarDetail ul {
   display: flex;
@@ -47,15 +49,15 @@ word-wrap: break-word
 }
 .navBar .navBar1 .navbarDetail ul li {
   list-style: none;
-  font-size: 17px;
+  font-size: 15px;
   cursor: pointer;
 }
 
 .navBar .navBar1 .navbarDetail ul  .SignIn {
-  background-color: #4d2c5e;
+  background-color: #272757;
   color: white;
-  padding: 12px 35px;
-  font-size: 18px;
+  padding: 5px 30px;
+  font-size: 15px;
   border-radius:50px;
   cursor: pointer;
 }

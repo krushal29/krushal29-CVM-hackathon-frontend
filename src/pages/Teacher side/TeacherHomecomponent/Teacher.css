@@ -1,0 +1,61 @@
+.TeacherHome{
+    background-color: aqua;
+    width: 85vw;
+    height: 100%;
+}
+
+.TeacherHome .TeacherHome1{
+    background-color: #eef;
+    
+}
+.TeacherHome .dashboard-container {
+    font-family: Arial, sans-serif;
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+  }
+  
+ .TeacherHome .highlight {
+    color: #2c3e50;
+    font-weight: bold;
+  }
+  
+.TeacherHome  .profile-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+  
+ .TeacherHome .profile-pic {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+  }
+  
+ .TeacherHome .qualifications {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+  
+.TeacherHome  .qualification-card {
+    background: #f8f8f8;
+    padding: 10px;
+    border-radius: 8px;
+  }
+  
+.TeacherHome  .next-class, .notices {
+    background: #eef;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+  
+ .TeacherHome .notice-item {
+    background: #ffefc1;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+  

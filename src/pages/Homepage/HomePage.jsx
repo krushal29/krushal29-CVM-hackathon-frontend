@@ -28,7 +28,7 @@ const HomePage = () => {
     <div>
       <Navbar />
       <HeroSection />
-      <SchemeCom />
+      {/* <SchemeCom /> */}
       <Feedback />
       <Ourfaculty />
       <FooterCom />

@@ -1,6 +1,6 @@
 .Achievements {
   width: 85vw;
-  background-color: #ccccdb;
+  /* background-color: #ccccdb; */
   height: 100%;
 }
 
@@ -8,7 +8,7 @@
   /* background-color: aliceblue; */
   width: 70%;
   padding-top: 30px;
-  padding-left: 50px;
+  padding-left: 60px;
 }
 .Achievements .AchievementsHeading {
   display: flex;
@@ -16,7 +16,7 @@
   align-items: center;
 }
 
-.Achievements .AchievementsHeading .Achievementsh3 h3{
+.Achievements .AchievementsHeading .Achievementsh3 h2{
     color: #272757;
     font-size: 25px;
     font-weight: 800;

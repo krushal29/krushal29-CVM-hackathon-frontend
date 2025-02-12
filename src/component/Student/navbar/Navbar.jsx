@@ -46,7 +46,7 @@ const Navbar = () => {
               </li>
               <li
                 className={location.pathname === "/StudentsubjectMaterial" ? "active" : ""}
-                onClick={() => handleNavigation("/StudentsubjectMaterial")}
+                onClick={() => handleNavigation("/Studentsubject")}
               >
                 Subject Material
               </li>

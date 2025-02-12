@@ -70,7 +70,7 @@ const Achievements = () => {
       <div className="Achievements1">
         <div className="AchievementsHeading">
           <div className="Achievementsh3">
-            <h3>Your Achievements</h3>
+            <h2>Your Achievements</h2>
           </div>
           <div className="AchievementsAddbtn">
             <button onClick={() => navigate("/Achievements/FormPage")}>

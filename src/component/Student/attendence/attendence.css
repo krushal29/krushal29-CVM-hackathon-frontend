@@ -1,22 +1,29 @@
 .StudentAttendance {
     text-align: center;
     font-family: Arial, sans-serif;
-    background-color: #CCCCDB;
-    width:85vw ;
+    background-color: white;
+    width:80vw ;
     height: 100%;
 }
 
 .AttendanceTable {
-    width: 100%;
+    width: 93%;
     border-collapse: collapse;
     margin-top: 20px;
-    /* background-color: white; */
+    background-color: white;
+    margin: 0 auto;
 }
  .AttendenceDetail{
     background-color: white;
     padding: 20px;
     width: 100%;
     margin: 0px auto;
+}
+.AttendenceDetail h1{
+    color: #272757;
+    text-align: start;
+    padding: 12px 40px;
+    font-size: 25px;
 }
 
 .AttendanceTable th, .AttendanceTable td {

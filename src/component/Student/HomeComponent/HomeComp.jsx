@@ -13,18 +13,38 @@ import { useState } from "react";
 const HomeComp = () => {
   const [CounsellorDetail1, setCounsellorDetail] = useState(true);
 
-  
-
   return (
     <div className="StudentHome">
       <div className="StudentHome1">
         <div className="StudentProfile">
-          <ProfileDetail props={CounsellorDetail1}/>
+          <ProfileDetail />
           <div className="StudentNavbar">
             <div className="StudentNavbar1">
               <ul>
-                <li style={CounsellorDetail1?{borderBottom:"2px solid black",paddingBottom:"10px",color:"#4A789C"}:{}} onClick={() => setCounsellorDetail(true)}>Overview</li>
-                <li style={!CounsellorDetail1?{borderBottom:"2px solid black",paddingBottom:"10px",color:"#4A789C"}:{}}
+                <li
+                  style={
+                    CounsellorDetail1
+                      ? {
+                          borderBottom: "2px solid black",
+                          paddingBottom: "10px",
+                          color: "#272757",
+                        }
+                      : {}
+                  }
+                  onClick={() => setCounsellorDetail(true)}
+                >
+                  Overview
+                </li>
+                <li
+                  style={
+                    !CounsellorDetail1
+                      ? {
+                          borderBottom: "2px solid black",
+                          paddingBottom: "10px",
+                          color: "#272757",
+                        }
+                      : {}
+                  }
                   onClick={() => setCounsellorDetail(false)}
                 >
                   Counsellor Detail
@@ -32,14 +52,16 @@ const HomeComp = () => {
               </ul>
             </div>
           </div>
-          {CounsellorDetail1? (
+          {CounsellorDetail1 ? (
             <div>
               <Lecture />
               <Timetable />
               <Performance />
               <Deadline />
             </div>
-          ) : (<CounsellorDetail/>)}
+          ) : (
+            <CounsellorDetail />
+          )}
         </div>
       </div>
     </div>

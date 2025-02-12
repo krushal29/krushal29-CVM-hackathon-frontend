@@ -4,7 +4,7 @@ const Performance = () => {
   return (
        <div className="performance">
                <div className="performanceh3">
-                 <h3>Academic performance</h3>
+                 <h4>Academic performance</h4>
                </div>
                <div className="Allperformance">
                  <div className="GPA box">

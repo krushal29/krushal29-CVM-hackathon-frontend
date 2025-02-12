@@ -1,6 +1,10 @@
 .HeroSection{
-    background-image: url('../../../assets/HeroSection.png');
+    /* background-image: url('../../../assets/HeroSection.png'); */
     height: 80vh;
+    background-color: #ccccdb;
+}
 
-
+.HeroSection .heroSection1{
+    display: flex;
+    background-color: aqua;
 }

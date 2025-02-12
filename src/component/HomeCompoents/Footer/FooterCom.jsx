@@ -1,8 +1,7 @@
 //css
 import "./Footer.css";
 
-//image
-import logo from "../../../assets/Group.jpg";
+
 
 const FooterCom = () => {
   return (
@@ -12,7 +11,6 @@ const FooterCom = () => {
           <div className="footer2">
             <div className="firstSide">
               <div className="FooterLogo">
-                <img src={logo} alt="" />
                 <span>Logo</span>
               </div>
               <div className="footerP">

@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*{
+  font-family: 'Poppins', sans-serif;
+}
+
+
 .Ourfaculty {
   /* background-color: aquamarine; */
   width: 100%;
@@ -13,14 +20,13 @@
 
 .Ourfaculty .Ourfaculty1 .OurFacultyH1 {
   text-align: center;
-  font-family: Jost;
   padding-bottom: 5px;
+  color: #272757;
 }
 
 .Ourfaculty .Ourfaculty1 .OurFacultyp {
   text-align: center;
   color: #8a8a8a;
-  font-family: Poppins;
 }
 
 .Ourfaculty .Ourfaculty1 .allCardFaculty {
@@ -43,22 +49,19 @@
 }
 
 .Ourfaculty .Ourfaculty1 .allCardFaculty .CardFaculty .facultyName h5 {
-  font-size: 18px;
-  font-family: Poppins;
+  font-size: 17px;
   padding-top: 10px;
 }
 
 .Ourfaculty .Ourfaculty1 .allCardFaculty .CardFaculty .facultyCollege p {
   color: #868686;
-  font-family: Poppins;
-  font-size: 17px;
+  font-size: 15px;
   font-weight: 500;
 }
 
 .Ourfaculty .Ourfaculty1 .allCardFaculty .CardFaculty .facultyinformation p {
   color: #acacac;
-  font-size: 15px;
-  font-family: Roboto;
+  font-size: 17px;
   font-weight: 400;
   padding-top: 10px;
 }
@@ -70,17 +73,16 @@
 }
 
 .Ourfaculty .Ourfaculty1 .allCardFaculty .CardFaculty .professionLinks .facultySubject p{
-    font-family: Poppins;
     color: #FF7426;
     font-weight: 500;
-    font-size: 18px;
+    font-size: 17px;
 }
 
 .Ourfaculty .Ourfaculty1 .allCardFaculty .CardFaculty .professionLinks .socialMedia{
-    /* background-color: red; */
-    width: 15%;
+    width: 18%;
     display: flex;
     justify-content: space-between;
+    /* background-color: #868686; */
 }
 .Ourfaculty .Ourfaculty1 .allCardFaculty .CardFaculty .professionLinks .socialMedia img{
     cursor: pointer;
