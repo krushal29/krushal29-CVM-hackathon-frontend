@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import "./AddSubject.css";
 import { useState } from "react";
 import AddSubjectComponent from './AddSubjectComponent'

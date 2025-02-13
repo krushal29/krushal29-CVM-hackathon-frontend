@@ -28,7 +28,7 @@ import AddResultPage from "./pages/AdminPage/AdminAddResultPage/AddResultPage";
 import Adminnewsemcreation from "./pages/AdminPage/Adminnewsemcreation/Adminnewsemcreation";
 import AdminCreateUser from "./pages/AdminPage/AdminCreateUserPage/AdminCreateUser";
 import AdminFeesPage from "./pages/AdminPage/AdminFees/AdminFeesPage";
-import CreateNewYear from "./pages/AdminPage/CreateNewYearPage/CreateNewYear";
+// import CreateNewYear from "./pages/AdminPage/CreateNewYearPage/CreateNewYear";
 import FeesPage from "./pages/Student side/Fees/FeesPage";
 import Subjecttable from "./pages/AddSubjectPage/Subjecttable";
 import AdminPlacementPage from "./pages/AdminPlacement/AdminPlacementPage";
@@ -38,6 +38,7 @@ import ParentHomePage from "./pages/parentPage/ParentLandingPage/ParentHomePage"
 import PPlacement from "./pages/parentPage/ParentPlacement/PPlacement";
 import AAttendenecepage from "./pages/parentPage/ParentAttendencs/AAttendenecepage";
 import PCompititve from "./pages/parentPage/PCompitivePage/PCompititve";
+// import DoYouWant from "./component/administrationComponent/CreateYear/DoYouWant";
 
 const App = () => {
   return (
@@ -104,7 +105,7 @@ const App = () => {
         <Route path="/CreateUser" element={<AdminCreateUser />} />
         <Route path="/RegistationStudent" element={<Registration />} />
         <Route path="/AdminFees" element={<AdminFeesPage />} />
-        <Route path="/CreateNewYear" element={<CreateNewYear />} />
+        {/* <Route path="/CreateNewYear" element={<DoYouWant />} /> */}
         <Route path="/ShowSubject" element={<Subjecttable />} />
         <Route path="/AdminPlacement" element={<AdminPlacementPage />} />
 

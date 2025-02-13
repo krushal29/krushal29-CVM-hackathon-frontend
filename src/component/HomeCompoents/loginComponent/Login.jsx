@@ -1,6 +1,8 @@
-import { useState } from "react";
+import {  useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../loginComponent/Login.css";
+import axios from "axios";
+import Cookies from 'js-cookie';
 
 // Image
 import loginLogo from "../../../assets/WhatsApp_Image_2025-02-11_at_22.39.35_73ad3a50-removebg-preview.png";
@@ -13,19 +15,42 @@ const Login = () => {
   const [password, setPassword] = useState("");
 
   // Handle Login Click
-  const handleLogin = () => {
+  const handleLogin = async () => {
     if (userId === "" || password === "") {
       alert("Please enter UserID and Password.");
       return;
     }
 
-    // Dummy login check (Replace with actual API request)
-    if (userId === "admin" && password === "1234") {
-      navigate("/StudentDashboard");
-    } else {
-      alert("Invalid credentials! Try again.");
-    }
+      try {
+        const response = await axios.post(
+          "https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/auth/login",
+         JSON.stringify({ username: userId, password: password })
+        );
+        console.log("Success:", response.data);
+        const role=response.data.role;
+        const user_id=response.data.user_id;
+        const token=response.data.token;
+
+        sessionStorage.setItem("Role",role);
+        sessionStorage.setItem("user_id",user_id);
+        // Cookies.set("Token",token, { expires: 1/96 });
+         Cookies.set("Token",token, { expires: 15 });
+        if(role=="student") navigate('/StudentDashboard');
+        else if(role=="teacher"||role=="hod"||role=="principal") navigate('/TeacherDashboard');
+        else if(role=="admin"||role=="account_staff"||role=="academic_staff") navigate('/adminDashboard');
+        else if(role=="parents") navigate('/ParentDashboard');
+        else navigate('/'); 
+      } catch (error) {
+        console.error("Error:", error);
+      }
+
   };
+
+
+
+  // useEffect(() => {
+    // fetchData();
+  // }, []);
 
   return (
     <div className="login">

@@ -2,7 +2,7 @@
 import { useState } from "react";
 import "./CreateYear.css";
 import DoYouWant from "./DoYouWant";
-import DoYouDonotWant from "./DoYouDonotWant";
+// import DoYouDonotWant from "./DoYouDonotWant";
 
 const CreateYear = () => {
      const [showPopup, setShowPopup] = useState(false);
@@ -17,7 +17,7 @@ const CreateYear = () => {
           {showPopup && <DoYouWant onClose={() => setShowPopup(false)} />}
 
           <button className="no" onClick={()=>setShowPopup1(true)}>No</button>
-          {ShowPopup1&&<DoYouDonotWant onClose={()=>setShowPopup1(false)}/>}
+          {/* {ShowPopup1&&<DoYouDonotWant onClose={()=>setShowPopup1(false)}/>} */}
         </div>
       </div>
     </div>
