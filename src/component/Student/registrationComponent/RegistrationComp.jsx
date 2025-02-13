@@ -32,24 +32,34 @@ const RegistrationComp = () => {
     setFiles((prevFiles) => [...prevFiles, ...newFiles]);
   };
 
-  const removeFile = (fileName) => {
+  const removeFile = (fileName, event) => {
+    event.stopPropagation(); // Prevent click from bubbling to upload area
     setFiles((prevFiles) => prevFiles.filter((file) => file.name !== fileName));
   };
 
-  const triggerFileInput = () => {
+  const triggerFileInput = (event) => {
+    event.stopPropagation(); // Prevent click from bubbling
     if (fileInputRef.current) {
       fileInputRef.current.click();
     }
   };
 
   const triggerPreviousMarksheetUpload = (event) => {
-    event.stopPropagation(); // Prevents triggering parent click event
+    event.stopPropagation();
     if (previousMarksheetRef.current) {
       previousMarksheetRef.current.click();
     }
   };
-  console.log(files);
-  
+
+  const handleCancel = (event) => {
+    event.stopPropagation(); // Prevent click from bubbling to upload area
+    // Add your cancel logic here
+  };
+
+  const handleDone = (event) => {
+    event.stopPropagation(); // Prevent click from bubbling to upload area
+    // Add your done logic here
+  };
 
   return (
     <div className="RegistrationForm">
@@ -64,19 +74,23 @@ const RegistrationComp = () => {
             onDragOver={(e) => e.preventDefault()}
             onDrop={handleDrop}
             onClick={(e) => {
-              if (!e.target.closest(".upload-btn")) {
-                triggerFileInput();
+              // Only trigger if clicking directly on the upload area
+              if (e.target === e.currentTarget) {
+                triggerFileInput(e);
               }
             }}
           >
             <p>Drag and drop files here or click to upload</p>
             {files.map((file, index) => (
-              <div key={index} className="file-item">
+              <div key={index} className="file-item" onClick={(e) => e.stopPropagation()}>
                 <span className="file-name" style={{ width: "150%" }}>
                   📄 {file.name}
                 </span>
-                <button className="delete-btn" onClick={() => removeFile(file.name)}>
-                  🗑️
+                <button 
+                  className="delete-btn" 
+                  onClick={(e) => removeFile(file.name, e)}
+                >
+                  🗑
                 </button>
               </div>
             ))}
@@ -97,8 +111,10 @@ const RegistrationComp = () => {
             />
           </div>
 
-          <div className="button-group">
-            <button className="scan-btn">📷 Scan</button>
+          <div className="button-group" onClick={(e) => e.stopPropagation()}>
+            <button className="scan-btn" onClick={(e) => e.stopPropagation()}>
+              📷 Scan
+            </button>
             <button className="upload-btn" onClick={triggerFileInput}>
               ⬆ Upload Aadhaar
             </button>
@@ -107,9 +123,13 @@ const RegistrationComp = () => {
             </button>
           </div>
 
-          <div className="action-buttons">
-            <button className="cancel-btn">Cancel</button>
-            <button className="done-btn">Done</button>
+          <div className="action-buttons" onClick={(e) => e.stopPropagation()}>
+            <button className="cancel-btn" onClick={handleCancel}>
+              Cancel
+            </button>
+            <button className="done-btn" onClick={handleDone}>
+              Done
+            </button>
           </div>
         </div>
       </div>
