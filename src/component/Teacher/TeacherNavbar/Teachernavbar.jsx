@@ -31,7 +31,7 @@ const Navbar = () => {
               </li>
               <li className={location.pathname === "/teacherEvent" ? "active" : ""} onClick={()=>handleNavigation('/teacherEvent')}>Event/Calander</li>
               <li className={location.pathname === "/TeacherAttendence" ? "active" : ""} onClick={()=>handleNavigation('/TeacherAttendence')}>Mark Attendance</li>
-              <li className={location.pathname === "/TeacherDashboard" ? "active" : ""}>
+              <li className={location.pathname === "" ? "active" : ""}>
                 <MdQuiz />
                 <span>Quiz</span>
               </li>

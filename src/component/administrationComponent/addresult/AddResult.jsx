@@ -46,7 +46,7 @@ const AddResult = () => {
             <input
               type="text"
               className="form-input"
-              placeholder="Enter SOPA"
+              placeholder="Enter SGPA"
               name="sopa"
               value={formData.sopa}
               onChange={handleInputChange}
@@ -58,7 +58,7 @@ const AddResult = () => {
             <input
               type="text"
               className="form-input"
-              placeholder="Enter COPA"
+              placeholder="Enter CGPA"
               name="copa"
               value={formData.copa}
               onChange={handleInputChange}

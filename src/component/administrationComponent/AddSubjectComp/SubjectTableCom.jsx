@@ -4,7 +4,6 @@ import { useState } from "react";
 import AddSubjectComponent from './AddSubjectComponent'
 
 const SubjectTableCom = () => {
-  const navigate=useNavigate();
   const [showPopup, setShowPopup] = useState(false);
   const subjects = [
     {

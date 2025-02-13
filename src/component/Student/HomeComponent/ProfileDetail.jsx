@@ -4,7 +4,8 @@ const ProfileDetail = () => {
   return (
     <div>
       <div className="StudentProfileh2">
-        <h2>Student Profile</h2>
+        {location.pathname=='/ParentDashBoard'?" ":<h2>Student Profile</h2>}
+        
       </div>
       <div className="StudentProfileDetail">
         <div className="profileDetail">
@@ -16,13 +17,13 @@ const ProfileDetail = () => {
               <h4>Jenny Kim</h4>
             </div>
             <div className="profileID">
-              <p>Student Id: 1232123321231</p>
+            {location.pathname=='/ParentDashBoard'?<p>Father & Mother</p>:" "}
             </div>
             <div className="profileDegree">
-              <p>BACHELOR OF TECHNOLOGY</p>
+            {location.pathname=='/ParentDashBoard'?<p>Krushal@gmail.com</p>: " "}
             </div>
             <div className="profileBranch">
-              <p>(COMPUTER SCIENCE AND DESIGN, ACD 2024-25)</p>
+            {location.pathname=='/ParentDashBoard'?<p>9409859500</p>:" "}
             </div>
           </div>
         </div>

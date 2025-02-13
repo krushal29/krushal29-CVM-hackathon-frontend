@@ -33,6 +33,11 @@ import FeesPage from "./pages/Student side/Fees/FeesPage";
 import Subjecttable from "./pages/AddSubjectPage/Subjecttable";
 import AdminPlacementPage from "./pages/AdminPlacement/AdminPlacementPage";
 import CompetitiveExamStatus from "./pages/Student side/CompetitiveExampage/CompetitiveExamStatus";
+import CompetitiveExamForm from "./pages/Student side/CompetitiveExampage/CompetitiveExamForm";
+import ParentHomePage from "./pages/parentPage/ParentLandingPage/ParentHomePage";
+import PPlacement from "./pages/parentPage/ParentPlacement/PPlacement";
+import AAttendenecepage from "./pages/parentPage/ParentAttendencs/AAttendenecepage";
+import PCompititve from "./pages/parentPage/PCompitivePage/PCompititve";
 
 const App = () => {
   return (
@@ -54,8 +59,8 @@ const App = () => {
           path="/Achievements/FormPage"
           element={<AchievementsFormPage />}
         />
-        <Route path="/StudentLeave" element={<LeavePage />} />
-        <Route path="/viewLeaveApplication" element={<ViewLeave />} />
+        <Route path="/viewLeaveApplication" element={<LeavePage />} />
+        <Route path="/StudentLeave" element={<  ViewLeave/>} />
         <Route path="/StudentEvent" element={<Eventpage />} />
         <Route path="/StudentNotice" element={<NoticePage />} />
         <Route path="/StudentRegistration" element={<Registration />} />
@@ -63,6 +68,7 @@ const App = () => {
         <Route path="/StudentPlacementOffer" element={<PlacementOfferPage />} />
         <Route path="/StudentFees" element={<FeesPage />} />
         <Route path='/CompetitiveExam' element={<CompetitiveExamStatus/>}/>
+        <Route path='/CompetitiveExamForm' element={<CompetitiveExamForm/>}/>
 
         {/* Teacher */}
         <Route path="/TeacherDashboard" element={<TeacherLandingPage />} />
@@ -86,8 +92,10 @@ const App = () => {
 
         {/* Parent */}
 
-        <Route path="/ParentDashboard" element={<Home />} />
-        {/* <Route path='' element={</>}/> */}
+        <Route path="/ParentDashboard" element={<ParentHomePage />} />
+        <Route path='/Placement' element={<PPlacement/>}/>
+        <Route path='/PAttendence' element={<AAttendenecepage/>}/>
+        <Route path='/PCompetitiveExam' element={<PCompititve/>}/>
 
         {/* administration */}
         <Route path="/adminDashboard" element={<AdminHome />} />

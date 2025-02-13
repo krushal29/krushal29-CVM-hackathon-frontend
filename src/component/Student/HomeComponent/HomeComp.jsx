@@ -28,6 +28,7 @@ const HomeComp = () => {
                       navigate('/StudentPlacementOffer');
                     }
                     else if(tab==="Attendance") navigate('/StudentAttence');
+                    else if(tab=="Competitive Exam") navigate('/CompetitiveExam');
                     else{     
                       setActiveTab(tab)}}
                     }

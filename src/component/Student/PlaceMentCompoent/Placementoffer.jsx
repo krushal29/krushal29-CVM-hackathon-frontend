@@ -1,9 +1,10 @@
 import  { useState } from "react";
 import "./Placement.css"; // Import CSS file
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const PlacementOffers = () => {
     const navigate=useNavigate();
+     const location=useLocation();
   const offers = [
     { id: 1, company: "Microsoft" },
     { id: 2, company: "Google" },
@@ -63,9 +64,12 @@ const PlacementOffers = () => {
         </table>
       </div>
             </div>
+            {
+              location.pathname!='/Placement'&&
             <div className="offersBtn">
                 <button onClick={()=>navigate('/StudentPlacement')}>Placement offers</button>
             </div>
+            }
     </div>
   );
 };

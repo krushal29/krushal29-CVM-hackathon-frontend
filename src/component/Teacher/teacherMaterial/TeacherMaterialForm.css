@@ -11,20 +11,21 @@
     height: 100%;
     display: flex;
     justify-content: center;
-}
-
-.TeacherMaterialForm .TeacherMaterialForm1{
-        display: flex;
-}
-
-.TeacherMaterialForm .upload-container {
+  }
+  
+  .TeacherMaterialForm .TeacherMaterialForm1{
+    display: flex;
+  }
+  
+  .TeacherMaterialForm .upload-container {
     max-width: 500px;
+    background: #f8fafc;
     margin: auto;
     padding: 20px 40px;
-    background: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
+
   
 .TeacherMaterialForm  .upload-container h2 {
     text-align: center;

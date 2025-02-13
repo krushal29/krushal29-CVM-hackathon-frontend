@@ -2,6 +2,8 @@ import { useState } from 'react';
 import "./StudentLeave.css";
 
 import { CiSearch } from "react-icons/ci";
+import { useNavigate } from 'react-router-dom';
+
 
 const obj = [
     {
@@ -51,6 +53,7 @@ const ViewStudentLeave = () => {
      const [Year, setYear] = useState("All Year");
       const [AddFilter, setaddFilter] = useState("All");
       const [filterData, setFilterData] = useState(obj);
+      const navigate=useNavigate();
       // console.log(Year,AddFilter);
     
       const handleFilterData = () => {
@@ -134,6 +137,9 @@ const ViewStudentLeave = () => {
               </tbody>
             </table>
           </div>
+          <div className="ViewPastApplication">
+          <button onClick={()=>navigate('/viewLeaveApplication')}>Past Application</button>
+        </div>
 
     </div>
   )

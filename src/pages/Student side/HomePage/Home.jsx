@@ -1,5 +1,6 @@
+
 import HomeComp from "../../../component/Student/HomeComponent/HomeComp"
-import Layout from "../../../component/Student/layout/Layout"
+import Layout from "../../../component/Student/layout/Layout";
 
 
 const Home = () => {

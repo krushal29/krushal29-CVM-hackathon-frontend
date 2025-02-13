@@ -1,0 +1,51 @@
+import "../../Student/navbar/navbar.css";
+import profile from "../../../assets/image 1.png";
+
+
+// Icons
+
+import { AiOutlineLogout } from "react-icons/ai";
+import { TbLayoutDashboardFilled } from "react-icons/tb";
+import { useNavigate, useLocation } from "react-router-dom";
+
+const PNavbar = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+  
+  const handleNavigation = (path) => {
+    navigate(path);
+  };
+
+  return (
+    <div className="studentnavbar">
+      <div className="studentnavbar1">
+        <div className="studentProfileNavbar">
+          <div className="studentPrpfile">
+            <img src={profile} alt="" />
+            <span>Admin</span>
+          </div>
+          <div className="studentNavbar">
+            <ul>
+              <li
+                className={location.pathname === "/ParentDashBoard" ? "active" : ""}
+                onClick={() => handleNavigation("/ParentDashBoard")}
+              >
+                <TbLayoutDashboardFilled />
+                <span>Dashboard</span>
+              </li>
+              
+            </ul>
+          </div>
+        </div>
+        <div className="studentLogout">
+          <p onClick={()=>handleNavigation('/')}>
+            <AiOutlineLogout />
+            <span>Logout</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default PNavbar;

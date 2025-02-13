@@ -1,11 +1,11 @@
 .RegistrationForm{
   width: 85vw;
-  background-color: #4f46e5;
+  /* background-color: #4f46e5; */
   height: 100%;
 }
 
 .RegistrationForm .RegistrationForm1{
-  padding-top: 100px;
+  padding-top: 160px;
 }
 
 

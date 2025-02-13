@@ -55,6 +55,7 @@ const TeacherMaterialForm = () => {
               <option value="Assignments">Assignments</option>
               <option value="Lectures">Lectures</option>
               <option value="Syllabus">Syllabus</option>
+              <option value="labmanual">lab manual</option>
             </select>
 
             <div className="file-upload">

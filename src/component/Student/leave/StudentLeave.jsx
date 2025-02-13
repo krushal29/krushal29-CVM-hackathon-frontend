@@ -11,7 +11,6 @@ const StudentLeave = () => {
   const [StartDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
   const [Reason, setReason] = useState("");
-const navigate=useNavigate();
 
   console.log(StartDate, endDate, Reason);
 
@@ -50,9 +49,7 @@ const navigate=useNavigate();
           </div>
         </div>
 
-        <div className="ViewPastApplication">
-          <button onClick={()=>navigate('/viewLeaveApplication')}>Past Application</button>
-        </div>
+     
 
        
       </div>

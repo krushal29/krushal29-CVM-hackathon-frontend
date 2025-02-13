@@ -78,7 +78,7 @@ const Attendenceteacher = () => {
           <div className="AttendenceSheetHeading">
             <div className="AttendenceSheetHeading1">
               <input type="checkbox" onChange={handleSelectAll} />
-              <p>#</p>
+              <p>enrollment </p>
               <p>Student Name</p>
               <p>Student ID</p>
             </div>

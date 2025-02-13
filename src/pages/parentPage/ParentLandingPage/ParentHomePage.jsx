@@ -1,12 +1,13 @@
 import Parenthome from "../../../component/parent/ParentHome/Parenthome"
-import Layout from "../../../component/Student/layout/Layout"
+import PLayout from "../../../component/parent/parentLayout/PLayout"
+
 
 
 const ParentHomePage = () => {
   return (
-    <Layout>
+    <PLayout>
       <Parenthome/>
-    </Layout>
+    </PLayout>
   )
 }
 
