@@ -1,7 +1,11 @@
 import { useState } from "react";
 import "./FeesReceipt.css";
+import Cookies from "js-cookie";
+import axios from "axios";
 
 const FeesReceipt = () => {
+  const cook = Cookies.get("Token");
+
   const [formData, setFormData] = useState({
     enrollmentNo: "",
     paymentDate: "",
@@ -9,16 +13,34 @@ const FeesReceipt = () => {
     feeType: "",
     amount: "",
   });
+  console.log(formData);
+  
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit =async (e) => {
     e.preventDefault();
     // Handle form submission
     console.log(formData);
+    const response = await axios.post(
+      "https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/fees",
+      JSON.stringify({
+        enrollment_id:formData.enrollmentNo,
+        date:formData.paymentDate,
+        payment_type:formData.paymentType,
+        type:formData.feeType,
+        transaction_id:"NA",
+        amount:formData.amount
+
+      }),
+      { headers: { Authorization: `Bearer ${cook}`,  "Content-Type": "application/json"} }
+    );
+
+    console.log(response);
+    
   };
 
   return (
@@ -42,7 +64,7 @@ const FeesReceipt = () => {
           <div className="form-group">
             <label className="form-label">Date of Payment</label>
             <input
-              type="text"
+              type="date"
               className="form-input"
               placeholder="MM/DD/YYYY"
               name="paymentDate"
@@ -59,11 +81,11 @@ const FeesReceipt = () => {
               value={formData.paymentType}
               onChange={handleInputChange}
             >
-              <option value="">Cash, Cheque, DD, Online</option>
-              <option value="cash">Cash</option>
+              <option value="upi">UPI</option>
               <option value="cheque">Cheque</option>
-              <option value="dd">DD</option>
-              <option value="online">Online</option>
+              <option value="neft">NEFT</option>
+              <option value="rtgs">RTGs</option>
+              <option value="others">Others</option>
             </select>
           </div>
 
@@ -76,9 +98,10 @@ const FeesReceipt = () => {
               onChange={handleInputChange}
             >
               <option value="">Select Type of Fee</option>
-              <option value="tuition">Tuition Fee</option>
-              <option value="library">Library Fee</option>
-              <option value="hostel">Hostel Fee</option>
+              <option value="tution_fees">Tuition Fee</option>
+              <option value="exam_fees">Exam Fee</option>
+              <option value="card_fees">Card Fee</option>
+              <option value="others">Others</option>
             </select>
           </div>
 

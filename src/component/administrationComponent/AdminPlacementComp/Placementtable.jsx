@@ -1,8 +1,47 @@
 import "./Placement.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import PlacementForm from "./PlacementForm";
+import Cookies from "js-cookie";
+import axios from "axios";
 
 const StudentTable = () => {
+  const cook = Cookies.get("Token");
+  const [offes,setOffers]=useState([]);
+
+  // const response1 = await axios.post(
+  //   `https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/placements`,
+  //   JSON.stringify({
+  //     student_id,
+  //     company_name:formData.companyName,
+  //     package:formData.offerPackage,
+  //     letter_uid:formData.offerLetter,
+  //     role:""
+  //   }),
+  //   {
+  //     headers: {
+  //       Authorization: `Bearer ${cook}`,
+  //       "Content-Type": "application/json",
+  //     },
+  //   }
+  // );
+
+  useEffect(() => {
+    const data = async () => {
+      const resopse1 = await axios.get(
+        `https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/placements`,
+        {
+          headers: {
+            Authorization: `Bearer ${cook}`,
+          },
+        }
+      );
+      setOffers(resopse1.data);
+      console.log(resopse1);
+      
+    };
+    data();
+  },[]);
+
   const [showPopup, setShowPopup] = useState(false);
   const data = [
     {

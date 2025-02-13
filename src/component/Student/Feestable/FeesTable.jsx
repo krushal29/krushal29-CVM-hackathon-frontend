@@ -1,8 +1,16 @@
-
 import { jsPDF } from "jspdf";
 import "./FeesTable.css";
+import { useEffect } from "react";
+import Cookies from "js-cookie";
+import axios from "axios";
 
 const FeesTable = () => {
+  const cook = Cookies.get("Token");
+  const student_id=sessionStorage.getItem("user_id");
+  console.log(student_id);
+  
+  console.log(cook);
+
   const feesData = [
     { date: "May 7, 2022", type: "Tuition Fee", amount: "65000" },
     { date: "Apr 1, 2022", type: "Exam Fee", amount: "1500" },
@@ -28,40 +36,55 @@ const FeesTable = () => {
     doc.save(`Receipt_${fee.date.replace(/ /g, "_")}.pdf`);
   };
 
+  useEffect(() => {
+    const data = async () => {
+      const response1 = await axios.get(
+        `https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/fees/student/${student_id}`,
+        {
+          headers: {
+            Authorization: `Bearer ${cook}`,
+          },
+        }
+      );
+      console.log(response1);
+      
+    };
+    data();
+  });
   return (
     <div className="FeesTable">
-    <div className="fees-container">
-      <h2 className="fees-title">Fees Paid</h2>
+      <div className="fees-container">
+        <h2 className="fees-title">Fees Paid</h2>
 
-      <table className="fees-table">
-        <thead>
-          <tr>
-            <th>Date</th>
-            <th>Fee Type</th>
-            <th>Amount</th>
-            <th>Receipt</th>
-          </tr>
-        </thead>
-        <tbody>
-          {feesData.map((fee, index) => (
-            <tr key={index}>
-              <td>{fee.date}</td>
-              <td>{fee.type}</td>
-              <td>{fee.amount}</td>
-              <td>
-                <button
-                  className="download-btn"
-                  onClick={() => generatePDF(fee)}
-                  >
-                  Download
-                </button>
-              </td>
+        <table className="fees-table">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Fee Type</th>
+              <th>Amount</th>
+              <th>Receipt</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {feesData.map((fee, index) => (
+              <tr key={index}>
+                <td>{fee.date}</td>
+                <td>{fee.type}</td>
+                <td>{fee.amount}</td>
+                <td>
+                  <button
+                    className="download-btn"
+                    onClick={() => generatePDF(fee)}
+                  >
+                    Download
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
-          </div>
   );
 };
 
