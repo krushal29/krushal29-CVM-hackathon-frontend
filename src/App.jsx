@@ -38,6 +38,7 @@ import ParentHomePage from "./pages/parentPage/ParentLandingPage/ParentHomePage"
 import PPlacement from "./pages/parentPage/ParentPlacement/PPlacement";
 import AAttendenecepage from "./pages/parentPage/ParentAttendencs/AAttendenecepage";
 import PCompititve from "./pages/parentPage/PCompitivePage/PCompititve";
+import RegistrationForm from "./component/Student/registrationComponent/RegistrationAccount";
 // import DoYouWant from "./component/administrationComponent/CreateYear/DoYouWant";
 
 const App = () => {
@@ -108,6 +109,7 @@ const App = () => {
         {/* <Route path="/CreateNewYear" element={<DoYouWant />} /> */}
         <Route path="/ShowSubject" element={<Subjecttable />} />
         <Route path="/AdminPlacement" element={<AdminPlacementPage />} />
+        <Route path='/RegistrationAccount' element={<RegistrationForm/>}/>
 
       </Routes>
     </Router>

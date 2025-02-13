@@ -1,7 +1,10 @@
 import { useRef, useState } from "react";
 import "./registration.css";
+import { useNavigate } from "react-router-dom";
+
 
 const RegistrationComp = () => {
+  const navigate=useNavigate();
   const [files, setFiles] = useState([]);
   const fileInputRef = useRef(null);
   const previousMarksheetRef = useRef(null);
@@ -58,6 +61,7 @@ const RegistrationComp = () => {
 
   const handleDone = (event) => {
     event.stopPropagation(); // Prevent click from bubbling to upload area
+    navigate('/RegistrationAccount');
     // Add your done logic here
   };
 
@@ -127,7 +131,7 @@ const RegistrationComp = () => {
             <button className="cancel-btn" onClick={handleCancel}>
               Cancel
             </button>
-            <button className="done-btn" onClick={handleDone}>
+            <button className="done-btn" onClick={handleDone} >
               Done
             </button>
           </div>
