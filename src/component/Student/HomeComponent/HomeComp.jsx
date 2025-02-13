@@ -6,7 +6,6 @@ import Performance from "./Performance";
 import Deadline from "./Deadline";
 import CounsellorDetail from "./CounsellorDetail";
 import { useState } from "react";
-import PlacementCom from "../PlaceMentCompoent/PlacementCom";
 import { useNavigate } from "react-router-dom";
 
 const HomeComp = () => {

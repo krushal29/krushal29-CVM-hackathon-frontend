@@ -45,7 +45,8 @@ const Navbar = () => {
               </span>
               </li>
               <li
-                className={location.pathname === "/Studentsubject" ? "active" : ""}
+                // eslint-disable-next-line no-constant-binary-expression
+                className={location.pathname === "/Studentsubject" ? "active" : ""||location.pathname === "/StudentsubjectMaterial" ? "active" : ""}
                 onClick={() => handleNavigation("/Studentsubject")}
               >
                 Subject Material
@@ -63,7 +64,8 @@ const Navbar = () => {
                <span> Attendance</span>
               </li>
               <li
-                className={location.pathname === "/StudentLeave" ? "active" : ""}
+                // eslint-disable-next-line no-constant-binary-expression
+                className={location.pathname === "/StudentLeave" ? "active" : "" ||location.pathname === "/viewLeaveApplication" ? "active" : ""}
                 onClick={() => handleNavigation("/StudentLeave")}
               >
                 Leave Application

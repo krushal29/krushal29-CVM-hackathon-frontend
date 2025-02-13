@@ -19,7 +19,6 @@ import TeacherNoticePage from "./pages/Teacher side/TeacherNoticePage/TeacherNot
 import CreateNotice from "./pages/Teacher side/TeacherNoticePage/CreateNotice";
 import TeacherLandingPage from "./pages/Teacher side/TeacherLandingPage/TeacherLandingPage";
 import TeacherLeave from "./pages/Teacher side/TeacherLeave/TeacherLeave";
-import ParentHomePage from "./pages/parentPage/ParentLandingPage/ParentHomePage";
 import Subjectpage from "./pages/Student side/SubjectDetail/Subjectpage";
 import ViewLeave from "./pages/Student side/leavepage/ViewLeave";
 import Placement from "./pages/Student side/PlacementPage/Placement";
@@ -31,11 +30,9 @@ import AdminCreateUser from "./pages/AdminPage/AdminCreateUserPage/AdminCreateUs
 import AdminFeesPage from "./pages/AdminPage/AdminFees/AdminFeesPage";
 import CreateNewYear from "./pages/AdminPage/CreateNewYearPage/CreateNewYear";
 import FeesPage from "./pages/Student side/Fees/FeesPage";
-import AddSubject from "./pages/AddSubjectPage/AddSubject";
 import Subjecttable from "./pages/AddSubjectPage/Subjecttable";
 import AdminPlacementPage from "./pages/AdminPlacement/AdminPlacementPage";
-import AdminPlacementTable from "./pages/AdminPlacement/AdminPlacementTable";
-
+import CompetitiveExamStatus from "./pages/Student side/CompetitiveExampage/CompetitiveExamStatus";
 
 const App = () => {
   return (
@@ -64,7 +61,8 @@ const App = () => {
         <Route path="/StudentRegistration" element={<Registration />} />
         <Route path="/StudentPlacement" element={<Placement />} />
         <Route path="/StudentPlacementOffer" element={<PlacementOfferPage />} />
-        <Route path='/StudentFees' element={<FeesPage/>}/>
+        <Route path="/StudentFees" element={<FeesPage />} />
+        <Route path='/CompetitiveExam' element={<CompetitiveExamStatus/>}/>
 
         {/* Teacher */}
         <Route path="/TeacherDashboard" element={<TeacherLandingPage />} />
@@ -88,21 +86,20 @@ const App = () => {
 
         {/* Parent */}
 
-        <Route path="/ParentDashboard" element={<Home/>} />
+        <Route path="/ParentDashboard" element={<Home />} />
         {/* <Route path='' element={</>}/> */}
 
         {/* administration */}
         <Route path="/adminDashboard" element={<AdminHome />} />
-        <Route path="/AddResult" element={<AddResultPage/>}/>
-        <Route path="/newsemcreation" element={<Adminnewsemcreation/>}/>
-        <Route path="/CreateUser" element={<AdminCreateUser/>}/>
-        <Route path='/RegistationStudent' element={<Registration/>}/>
-        <Route path='/AdminFees' element={<AdminFeesPage/>}/>
-        <Route path='/CreateNewYear' element={<CreateNewYear/>}/>
-        <Route path='/CreateSubject' element={<AddSubject/>}/>
-        <Route path='/ShowSubject' element={<Subjecttable/>}/>
-        <Route path='/AdminPlacement' element={<AdminPlacementPage/>}/> 
-         <Route path ='/AdminPlacementForm' element={<AdminPlacementTable/>}/>  
+        <Route path="/AddResult" element={<AddResultPage />} />
+        <Route path="/newsemcreation" element={<Adminnewsemcreation />} />
+        <Route path="/CreateUser" element={<AdminCreateUser />} />
+        <Route path="/RegistationStudent" element={<Registration />} />
+        <Route path="/AdminFees" element={<AdminFeesPage />} />
+        <Route path="/CreateNewYear" element={<CreateNewYear />} />
+        <Route path="/ShowSubject" element={<Subjecttable />} />
+        <Route path="/AdminPlacement" element={<AdminPlacementPage />} />
+
       </Routes>
     </Router>
   );

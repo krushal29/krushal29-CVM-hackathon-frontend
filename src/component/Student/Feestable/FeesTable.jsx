@@ -30,7 +30,6 @@ const FeesTable = () => {
 
   return (
     <div className="FeesTable">
-
     <div className="fees-container">
       <h2 className="fees-title">Fees Paid</h2>
 

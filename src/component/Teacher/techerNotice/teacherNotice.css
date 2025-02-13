@@ -25,9 +25,10 @@
     border-radius: 10px;
     background-color: #272757;
     cursor: pointer;
-    color: white;
 }
-
+.Teachernotice .Teachernotice1 .NoticeNavbar  button{
+    width: 14%;
+}
 .Teachernotice .Teachernotice1 .NoticeSearch{
     background-color: #f5f5f5;
     display: flex;

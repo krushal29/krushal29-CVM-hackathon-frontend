@@ -67,7 +67,7 @@
 .StudentProfileDetail .profileEdit {
   display: flex;
   /* background-color: aqua; */
-  width: 60%;
+  width: 40%;
   justify-content: space-between;
 }
 .StudentProfileDetail .profileEdit button {

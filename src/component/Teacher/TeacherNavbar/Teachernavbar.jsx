@@ -6,10 +6,15 @@ import profile from "../../../assets/image 1.png";
 import { MdQuiz } from "react-icons/md";
 import { AiOutlineLogout } from "react-icons/ai";
 import { TbLayoutDashboardFilled } from "react-icons/tb";
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
   const navigate=useNavigate();
+  const location = useLocation();
+  
+  const handleNavigation = (path) => {
+    navigate(path);
+  };
   return (
     <div className="studentnavbar">
       <div className="studentnavbar1">
@@ -20,19 +25,19 @@ const Navbar = () => {
           </div>
           <div className="studentNavbar">
             <ul>
-              <li onClick={()=>navigate('/TeacherDashboard')}>
+              <li className={location.pathname === "/TeacherDashboard" ? "active" : ""}  onClick={()=>handleNavigation('/TeacherDashboard')}>
                 <TbLayoutDashboardFilled />
                <span>Dashboard</span>
               </li>
-              <li onClick={()=>navigate('/teacherEvent')}>Event/Calander</li>
-              <li onClick={()=>navigate('/TeacherAttendence')}>Mark Attendance</li>
-              <li>
+              <li className={location.pathname === "/teacherEvent" ? "active" : ""} onClick={()=>handleNavigation('/teacherEvent')}>Event/Calander</li>
+              <li className={location.pathname === "/TeacherAttendence" ? "active" : ""} onClick={()=>handleNavigation('/TeacherAttendence')}>Mark Attendance</li>
+              <li className={location.pathname === "/TeacherDashboard" ? "active" : ""}>
                 <MdQuiz />
                 <span>Quiz</span>
               </li>
-              <li onClick={()=>navigate('/UploadMaterial')}>Upload Material</li>
-              <li onClick={()=>navigate('/TecherLeaveStatus')}>Leave Status</li>
-              <li onClick={()=>navigate('/TeacherNotice')}>
+              <li className={location.pathname === "/UploadMaterial" ? "active" : ""} onClick={()=>handleNavigation('/UploadMaterial')}>Upload Material</li>
+              <li className={location.pathname === "/TecherLeaveStatus" ? "active" : ""} onClick={()=>handleNavigation('/TecherLeaveStatus')}>Leave Status</li>
+              <li className={location.pathname === "/TeacherNotice" ? "active" : ""} onClick={()=>handleNavigation('/TeacherNotice')}>
                 <span>Notice Board</span>
               </li>
             </ul>
