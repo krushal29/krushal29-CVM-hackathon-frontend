@@ -1,25 +1,40 @@
-import { useState } from 'react';
-import './AddSubject.css';
+import { useState } from "react";
+import "./AddSubject.css";
+import axios from "axios";
+import Cookies from "js-cookie";
 
 const SubjectForm = ({ isOpen, onClose }) => {
   const [formData, setFormData] = useState({
-    subjectName: '',
-    courseCode: '',
-    credits: ''
+    subjectName: "",
+    courseCode: "",
+    credits: "",
   });
+  const cook = Cookies.get("Token");
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prevState => ({
+    setFormData((prevState) => ({
       ...prevState,
-      [name]: value
+      [name]: value,
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
+    console.log("Form submitted:", formData);
     // Add your form submission logic here
+
+    const response = await axios.post(
+      "https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/subjects/",
+      JSON.stringify({
+        code:formData.courseCode,
+        name:formData.subjectName,
+        credits:formData.credits
+      }),
+      { headers: {Authorization:cook } }
+    );
+    console.log(response);
+    
     onClose();
   };
 
@@ -30,52 +45,53 @@ const SubjectForm = ({ isOpen, onClose }) => {
       <div className="popup-content">
         <div className="form-container">
           <div className="CreateSubjecth1">
-          <h1 className="form-title" style={{marginBottom:"30px"}}>Create Subject</h1>
+            <h1 className="form-title" style={{ marginBottom: "30px" }}>
+              Create Subject
+            </h1>
           </div>
           <div className="SubjectForm">
-
-          <form onSubmit={handleSubmit}>
-            <div className="form-group">
-              <label htmlFor="subjectName">Subject Name</label>
-              <input
-                type="text"
-                id="subjectName"
-                name="subjectName"
-                placeholder="e.g. Introduction to Computer Science"
-                value={formData.subjectName}
-                onChange={handleChange}
+            <form onSubmit={handleSubmit}>
+              <div className="form-group">
+                <label htmlFor="subjectName">Subject Name</label>
+                <input
+                  type="text"
+                  id="subjectName"
+                  name="subjectName"
+                  placeholder="e.g. Introduction to Computer Science"
+                  value={formData.subjectName}
+                  onChange={handleChange}
                 />
-            </div>
+              </div>
 
-            <div className="form-group">
-              <label htmlFor="courseCode">Course Code</label>
-              <input
-                type="text"
-                id="courseCode"
-                name="courseCode"
-                placeholder="e.g. CS61A"
-                value={formData.courseCode}
-                onChange={handleChange}
+              <div className="form-group">
+                <label htmlFor="courseCode">Course Code</label>
+                <input
+                  type="text"
+                  id="courseCode"
+                  name="courseCode"
+                  placeholder="e.g. CS61A"
+                  value={formData.courseCode}
+                  onChange={handleChange}
                 />
-            </div>
+              </div>
 
-            <div className="form-group">
-              <label htmlFor="credits">Credits of Subject</label>
-              <input
-                type="number"
-                id="credits"
-                name="credits"
-                placeholder="e.g. 4"
-                value={formData.credits}
-                onChange={handleChange}
+              <div className="form-group">
+                <label htmlFor="credits">Credits of Subject</label>
+                <input
+                  type="number"
+                  id="credits"
+                  name="credits"
+                  placeholder="e.g. 4"
+                  value={formData.credits}
+                  onChange={handleChange}
                 />
-            </div>
+              </div>
 
-            <button type="submit" className="submit-button">
-              Submit
-            </button>
-          </form>
-                </div>
+              <button type="submit" className="submit-button">
+                Submit
+              </button>
+            </form>
+          </div>
         </div>
       </div>
     </div>

@@ -1,36 +1,63 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { IoIosSearch } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 import "./teacherNotice.css";
 import image from "../../../assets/Depth 6, Frame 0.png";
+import Cookies from "js-cookie";
+import axios from "axios";
+
+
+
+
 
 const Teachernotice = () => {
   const navigate = useNavigate();
+  const cook = Cookies.get("Token");
 
-  // Sample Notices Data
-  const notices = [
-    { id: 1, title: "Homework due tomorrow", details: "Sent to students in your class", time: "Yesterday" },
-    { id: 2, title: "Exam Schedule Released", details: "Check the new exam dates", time: "2 days ago" },
-    { id: 3, title: "Library Books Due", details: "Return overdue books", time: "Last week" },
-    { id: 4, title: "Parent-Teacher Meeting", details: "Meeting on Friday", time: "3 days ago" },
-    { id: 5, title: "Sports Day Announcement", details: "Event on next Monday", time: "1 week ago" }
-  ];
+  const [notices,setNotics]=useState([]);
+
 
   // State for search input
   const [search, setSearch] = useState("");
+  useEffect(() => {
+    const data = async () => {
+      const response = await axios.get(
+        "https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/notices",
+        { headers: { Authorization: cook } }
+      );
+      console.log(response);
+      setNotics(response.data.notices);
+    };
+    data();
+  }, []);
 
   // Filtered Notices
-  const filteredNotices = notices.filter(notice =>
-    notice.title.toLowerCase().includes(search.toLowerCase()) ||
-    notice.details.toLowerCase().includes(search.toLowerCase())
+  const filteredNotices = notices.filter(
+    (notice) =>
+      notice.title.toLowerCase().includes(search.toLowerCase()) ||
+      notice.details.toLowerCase().includes(search.toLowerCase())
   );
 
+  console.log(filteredNotices);
+  
   return (
     <div className="Teachernotice">
       <div className="Teachernotice1">
         <div className="NoticeNavbar">
           <h1 style={{ color: "#272757", fontSize: "25px" }}>Notices</h1>
-          <button onClick={() => navigate("/TeacherNotice/TeacherNoticeCreate")} style={{backgroundColor:"#272757",color:"white",padding:"8px 15px",borderRadius:"10px",border:"none",cursor:"pointer"}}>Create Notice</button>
+          <button
+            onClick={() => navigate("/TeacherNotice/TeacherNoticeCreate")}
+            style={{
+              backgroundColor: "#272757",
+              color: "white",
+              padding: "8px 15px",
+              borderRadius: "10px",
+              border: "none",
+              cursor: "pointer",
+            }}
+          >
+            Create Notice
+          </button>
         </div>
 
         {/* Search Bar */}
@@ -57,7 +84,7 @@ const Teachernotice = () => {
                   </div>
                   <div className="NoticeInformation">
                     <h3>{notice.title}</h3>
-                    <p>{notice.details}</p>
+                    <p>{notice.description}</p>
                   </div>
                 </div>
                 <div className="NoticeTime">

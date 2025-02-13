@@ -3,67 +3,43 @@ import "./Achievements.css";
 import awards from "../../../assets/Depth 7, Frame.png";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-
-const obj = [
-  {
-    img: awards,
-    Heading: "First place, Science Fair",
-    Year: "2023",
-    type: "Awards",
-  },
-  {
-    img: awards,
-    Heading: "First place, Science Fair",
-    Year: "2023",
-    type: "Certificates",
-  },
-  {
-    img: awards,
-    Heading: "First place, Science Fair",
-    Year: "2023",
-    type: "Certificates",
-  },
-  {
-    img: awards,
-    Heading: "First place, Science Fair",
-    Year: "2023",
-    type: "Certificates",
-  },
-  {
-    img: awards,
-    Heading: "First place, Science Fair",
-    Year: "2023",
-    type: "Certificates",
-  },
-  {
-    img: awards,
-    Heading: "First place, Science Fair",
-    Year: "2023",
-    type: "Certificates",
-  },
-  {
-    img: awards,
-    Heading: "First place, Science Fair",
-    Year: "2023",
-    type: "Awards",
-  },
-];
+import axios from "axios";
+import Cookies from "js-cookie";
 
 const Achievements = () => {
+  const cook = Cookies.get("Token");
   const navigate = useNavigate();
+  const studentId = sessionStorage.getItem("user_id");
 
   const [type, setType] = useState("All");
-  const [card, setcard] = useState(obj);
-  console.log(type);
-  
+  const [card, setCard] = useState([]); // Store original data
+  const [filteredCard, setFilteredCard] = useState([]); // Store filtered data
 
   useEffect(() => {
-    if (type == "Certificates") {
-      setcard(obj.filter((data) => data.type === "Certificates"));
-    } else if (type == "Awards") {
-      setcard(obj.filter((data) => data.type === "Awards"));
-    } else setcard(obj);
-  }, [type]);
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          `https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/achievements/student/${studentId}`,
+          { headers: { Authorization: `Bearer ${cook}` } }
+        );
+        setCard(response.data.achievements);
+        setFilteredCard(response.data.achievements); // Set both states
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+    fetchData();
+  }, []);
+
+  useEffect(() => {
+    if (type === "Certificates") {
+      setFilteredCard(card.filter((data) => data.type === "Certificates"));
+    } else if (type === "Awards") {
+      setFilteredCard(card.filter((data) => data.type === "Awards"));
+    } else {
+      setFilteredCard(card); // Reset to original data when clicking "All"
+    }
+  }, [type, card]); // Depend on both type and card
 
   return (
     <div className="Achievements">
@@ -94,13 +70,13 @@ const Achievements = () => {
         </div>
 
         <div className="cardDetail">
-          {card.map((data, index) => (
+          {filteredCard.map((data, index) => (
             <div key={index} className="CardDetailAwards">
               <div className="Eventphoto">
-                <img src={data.img} alt="" />
+                <img src={awards} alt="" />
               </div>
               <div className="EventHeading">
-                <h5>{data.Heading}</h5>
+                <h5>{data.name}</h5>
               </div>
               <div className="EventYear">
                 <p>{data.Year}</p>

@@ -76,7 +76,7 @@ const PlacementOffers = () => {
                   </td>
                   <td>
                     {offer.status === "offered" ? (
-                      <select
+                      <select style={{width:"30%"}}
                         className="status-dropdown"
                         value={statuses[offers.id] || ""}
                         onChange={(e) =>

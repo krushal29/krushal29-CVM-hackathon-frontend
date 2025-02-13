@@ -1,25 +1,32 @@
 // import { useNavigate } from "react-router-dom";
 import "./AddSubject.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import AddSubjectComponent from './AddSubjectComponent'
+import axios from "axios";
+import Cookies from "js-cookie";
 
 const SubjectTableCom = () => {
   const [showPopup, setShowPopup] = useState(false);
-  const subjects = [
-    {
-      subjectName: "Introduction to Computer Science",
-      courseCode: "CS 101",
-      credits: 4,
-    },
-    { subjectName: "Calculus I", courseCode: "MATH 101", credits: 3 },
-    { subjectName: "English Composition", courseCode: "ENG 101", credits: 3 },
-    { subjectName: "American History", courseCode: "HIST 101", credits: 3 },
-    { subjectName: "Biology", courseCode: "BIOL 101", credits: 4 },
-    { subjectName: "Art Appreciation", courseCode: "ART 101", credits: 3 },
-    { subjectName: "Spanish I", courseCode: "SPAN 101", credits: 3 },
-    { subjectName: "Music Theory", courseCode: "MUS 101", credits: 3 },
-    { subjectName: "Theater", courseCode: "THR 101", credits: 3 },
-  ];
+  const [subjects,setSubject]=useState([]);
+    const cook = Cookies.get("Token");
+  
+
+
+
+  useEffect(()=>{
+    const data=async()=>{
+      const res=await axios.get('https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/subjects',{
+        headers:{
+          Authorization:cook
+        }
+      });
+
+      console.log("res",res);
+      setSubject(res.data.subjects);
+
+    }
+    data();
+  },[showPopup])
 
   return (
     <div className="SubjectTable">
@@ -54,8 +61,8 @@ const SubjectTableCom = () => {
               <tbody>
                 {subjects.map((subject, index) => (
                   <tr key={index}>
-                    <td>{subject.subjectName}</td>
-                    <td className="course-code">{subject.courseCode}</td>
+                    <td>{subject.name}</td>
+                    <td className="course-code">{subject.code}</td>
                     <td className="credits">{subject.credits}</td>
                   </tr>
                 ))}

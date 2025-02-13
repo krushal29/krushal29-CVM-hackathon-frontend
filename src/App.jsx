@@ -109,7 +109,7 @@ const App = () => {
         {/* <Route path="/CreateNewYear" element={<DoYouWant />} /> */}
         <Route path="/ShowSubject" element={<Subjecttable />} />
         <Route path="/AdminPlacement" element={<AdminPlacementPage />} />
-        <Route path='/RegistrationAccount' element={<RegistrationForm/>}/>
+        <Route path='/RegistrationAccount/:aadhar/:marksheet' element={<RegistrationForm/>}/>
 
       </Routes>
     </Router>

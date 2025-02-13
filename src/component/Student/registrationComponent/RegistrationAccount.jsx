@@ -1,47 +1,142 @@
-import React, { useState } from 'react';
-import './RegistrationAccount.css';
+import { useEffect, useState } from "react";
+import "./RegistrationAccount.css";
+import { useParams } from "react-router-dom";
+import axios from "axios";
+import Cookies from "js-cookie";
 
 const RegistrationForm = () => {
-  const [formData, setFormData] = useState({
-    firstName: 'John',
-    lastName: 'Doe',
-    dateOfBirth: '',
-    currentAddress: '',
-    permanentAddress: '',
-    mobileNumber: '(123) 456-7890',
-    fatherName: 'John Doe',
-    motherName: 'Jane Doe',
-    fatherPhone: '(123) 456-7890',
-    motherPhone: '(123) 456-7890',
-    nextBatch: '',
-    branch: ''
+  const { aadhar, marksheet } = useParams();
+  console.log("id", aadhar, marksheet);
+  const cook = Cookies.get("Token");
+
+  
+  const [marksheet1, setmarksheet] = useState({
+    program_name: "",
+    score: "",
+    student_name: "",
+    year_of_apperance: "",
   });
+  
+  const [formData, setFormData] = useState({
+    firstName: "John",
+    lastName: "Doe",
+    dateOfBirth: "",
+    currentAddress: "",
+    permanentAddress: "",
+    mobileNumber: "(123) 456-7890",
+    fatherName: "John Doe",
+    motherName: "Jane Doe",
+    fatherPhone: "(123) 456-7890",
+    motherPhone: "(123) 456-7890",
+    nextBatch: "",
+    branch: "",
+  });
+  const [branch, setBranch] = useState([]);
 
-  const branches = [
-    'Computer Engineering',
-    'Computer Science and Design',
-    'Information Technology',
-    'Mechanical Engineering'
-  ];
-
+  console.log(FormData.nextBatch);
+  
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prevState => ({
+    setFormData((prevState) => ({
       ...prevState,
-      [name]: value
+      [name]: value,
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit =async (e) => {
     e.preventDefault();
     // Handle form submission
+    console.log("all data",formData);
+    
+    const result = await axios.post(
+      `https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/students`,JSON.stringify({
+          first_name:formData.firstName,
+          last_name:formData.lastName,
+          gender:'m',
+          contact_no:formData.mobileNumber,
+          email_id:formData.nextBatch,
+          batch_id:formData.branch
+      }),
+      
+      {
+        headers: {
+          Authorization: `Bearer ${cook}`,
+          "Content-Type": "application/json",
+        },
+      }
+    );
+    console.log(formData);
+    console.log("result",result);
+    
+
   };
+
+  const formatDate = (dob) => {
+    const [day, month, year] = dob.split("/");
+    return `${year}-${month}-${day}`; // Converts to "YYYY-MM-DD"
+  };
+  useEffect(() => {
+    const data = async () => {
+      const subject = await axios.get(
+        `https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/batch/24`,
+        {
+          headers: {
+            Authorization: `Bearer ${cook}`,
+            
+          },
+        }
+      );
+      console.log("subject", subject.data.batches);
+      setBranch(subject.data.batches);
+      const resopose = await axios.get(
+        `https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/students/extract_aadhaar/${aadhar}`,
+        {
+          headers: {
+            Authorization: `Bearer ${cook}`,
+          },
+        }
+      );
+      console.log(resopose);
+
+      setFormData((prevState) => ({
+        ...prevState,
+        firstName: resopose.data.first_name,
+        lastName: resopose.data.last_name,
+        dateOfBirth: formatDate(resopose.data.dob),
+        permanentAddress: resopose.data.address,
+        mobileNumber: resopose.data.aadhaar_no,
+        fatherName: resopose.data.father_name,
+      }));
+
+      const resopose1 = await axios.get(
+        `https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/students/extract_result/${marksheet}`,
+        {
+          headers: {
+            Authorization: `Bearer ${cook}`,
+          },
+        }
+      );
+      console.log(resopose1);
+
+      setmarksheet((prevState) => ({
+        ...prevState,
+        program_name: resopose1.data.program_name,
+        score: resopose1.data.score,
+        student_name: resopose1.data.student_name,
+        year_of_apperance: resopose1.data.year_of_apperance,
+      }));
+    };
+
+    data();
+  }, []);
+
+  console.log(marksheet1);
 
   return (
     <div className="form-container">
       <form className="registration-form" onSubmit={handleSubmit}>
         <h2>Register for an account</h2>
-        
+
         <div className="form-row">
           <div className="input-group">
             <label>First Name</label>
@@ -53,7 +148,7 @@ const RegistrationForm = () => {
               placeholder="John"
             />
           </div>
-          
+
           <div className="input-group">
             <label>Last Name</label>
             <input
@@ -117,7 +212,7 @@ const RegistrationForm = () => {
               onChange={handleChange}
             />
           </div>
-          
+
           <div className="input-group">
             <label>Mother's Name</label>
             <input
@@ -139,7 +234,7 @@ const RegistrationForm = () => {
               onChange={handleChange}
             />
           </div>
-          
+
           <div className="input-group">
             <label>Mother's Phone Number</label>
             <input
@@ -152,9 +247,9 @@ const RegistrationForm = () => {
         </div>
 
         <div className="input-group">
-          <label>Next Batch</label>
+          <label>Email</label>
           <input
-            type="text"
+            type="email"
             name="nextBatch"
             value={formData.nextBatch}
             onChange={handleChange}
@@ -163,19 +258,20 @@ const RegistrationForm = () => {
 
         <div className="input-group">
           <label>Branch</label>
-          <select
-            name="branch"
-            value={formData.branch}
-            onChange={handleChange}
-          >
+          <select name="branch" value={formData.branch} onChange={handleChange}>
             <option value="">Select Branch</option>
-            {branches.map((branch, index) => (
-              <option key={index} value={branch}>{branch}</option>
+            {branch.map((item, index) => (
+              
+              <option key={index} value={item.id}>
+                {item.branch} {/* Ensure this is the correct field name */}
+              </option>
             ))}
           </select>
         </div>
 
-        <button type="submit" className="next-button">Next</button>
+        <button type="submit" className="next-button" >
+          Next
+        </button>
       </form>
     </div>
   );

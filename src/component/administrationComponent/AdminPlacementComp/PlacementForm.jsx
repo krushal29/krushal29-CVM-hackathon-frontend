@@ -57,14 +57,14 @@ const PlacementForm = ({ onClose }) => {
 
     try {
       const response1 = await axios.post(
-        `https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/placements`,
-        {
-          student_id: file.enrollmentNumber,
+        `https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/placements/enrollment`,
+        JSON.stringify({
+          enroll_id: file.enrollmentNumber,
           company_name: file.companyName,
           package: file.offerPackage,
           letter_uid: file.offerLetter,
           role: "",
-        },
+        }),
         {
           headers: {
             Authorization: `Bearer ${cook}`,
