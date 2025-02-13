@@ -1,4 +1,6 @@
 import "./attendence.css";
+import React, { useState } from "react";
+import DetailedAttendanceTable from "./DetailedAttendanceTable";
 
 const data = [
   {
@@ -10,16 +12,7 @@ const data = [
     PresentDays: 70,
   },
   {
-    SubjectName: "DBMS",
-    CourseCode: "#2123123",
-    From: "21/07/24",
-    To: "21/07/24",
-    TotalDays: 100,
-    PresentDays: 70,
-  },
-
-  {
-    SubjectName: "DBMS",
+    SubjectName: "DSA",
     CourseCode: "#2123123",
     From: "21/07/24",
     To: "21/07/24",
@@ -27,7 +20,16 @@ const data = [
     PresentDays: 70,
   },
   {
-    SubjectName: "DBMS",
+    SubjectName: "DF",
+    CourseCode: "#2123123",
+    From: "21/07/24",
+    To: "21/07/24",
+    TotalDays: 100,
+    PresentDays: 70,
+  },
+  
+  {
+    SubjectName: "OS",
     CourseCode: "#2123123",
     From: "21/07/24",
     To: "21/07/24",
@@ -35,7 +37,7 @@ const data = [
     PresentDays: 70,
   },
   {
-    SubjectName: "DBMS",
+    SubjectName: "JAVA",
     CourseCode: "#2123123",
     From: "21/07/24",
     To: "21/07/24",
@@ -45,6 +47,9 @@ const data = [
 ];
 
 const Attendance = () => {
+  const [showModal, setShowModal] = useState(false);
+  const [selectedSubject, setSelectedSubject] = useState("");
+
   return (
     <div className="StudentAttendance">
       <div className="AttendenceDetail">
@@ -60,6 +65,7 @@ const Attendance = () => {
               <th>Attended</th>
               <th>Total</th>
               <th>Percentage</th>
+              <th>Action</th>
             </tr>
           </thead>
           <tbody>
@@ -72,17 +78,32 @@ const Attendance = () => {
                 <td>{item.PresentDays}</td>
                 <td>{item.TotalDays}</td>
                 <td>
-                  {(
-                    (parseFloat(item.PresentDays) /
-                      parseFloat(item.TotalDays)) *
-                    100
-                  ).toFixed(2)}
-                  %
+                  {((parseFloat(item.PresentDays) / parseFloat(item.TotalDays)) * 100).toFixed(2)}%
+                </td>
+                <td>
+                  <a
+                    href="#"
+                    className="view-link"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setSelectedSubject(item.SubjectName);
+                      setShowModal(true);
+                    }}
+                  >
+                    View
+                  </a>
                 </td>
               </tr>
             ))}
           </tbody>
         </table>
+
+        {showModal && (
+          <DetailedAttendanceTable
+            subjectName={selectedSubject}
+            onClose={() => setShowModal(false)}
+          />
+        )}
       </div>
     </div>
   );
