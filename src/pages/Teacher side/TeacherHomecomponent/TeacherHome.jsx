@@ -1,6 +1,6 @@
 import "./Teacher.css"; // Ensure this CSS file is created
 
-import profile from "../../../assets/image 1.png";
+import profile from "../../../assets/profilePhoto2jpg.jpeg";
 import notice from '../../../assets/Vector.png'
 const TeacherHome = () => {
   return (

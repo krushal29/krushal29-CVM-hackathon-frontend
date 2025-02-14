@@ -105,16 +105,11 @@
 
 // export default AdminNavbar;
 import "../../Student/navbar/navbar.css";
-import profile from "../../../assets/image 1.png";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faClipboardUser } from '@fortawesome/free-solid-svg-icons';
+import profile from "../../../assets/profilePhoto2jpg.jpeg";
 
 // Icons
-import { MdQuiz } from "react-icons/md";
-import { GrAchievement } from "react-icons/gr";
+
 import { AiOutlineLogout } from "react-icons/ai";
-import { MdEvent } from "react-icons/md";
-import { TbLayoutDashboardFilled } from "react-icons/tb";
 import { useNavigate, useLocation } from "react-router-dom";
 
 const AdminNavbar = () => {
@@ -157,8 +152,8 @@ const AdminNavbar = () => {
               </li>
 
               <li
-                className={location.pathname === "/AdminFees" ? "active" : ""}
-                onClick={() => handleNavigation("/AdminFees")}
+                className={location.pathname === "/AdminFeetable" ? "active" : ""}
+                onClick={() => handleNavigation("/AdminFeetable")}
               >
                 <span>Fees</span>
               </li>

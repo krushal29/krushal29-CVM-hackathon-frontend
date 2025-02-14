@@ -1,10 +1,8 @@
 import './navbar.css'
-import profile from "../../../assets/image 1.png";
+import profile from "../../../assets/profilePhoto1.jpg";
 
 //icons
-import { MdQuiz } from "react-icons/md";
-import { AiOutlineLogout } from "react-icons/ai";
-import { TbLayoutDashboardFilled } from "react-icons/tb";
+
 import { useLocation, useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
@@ -21,7 +19,7 @@ const Navbar = () => {
         <div className="studentProfileNavbar">
           <div className="studentPrpfile">
             <img src={profile} alt="" />
-            <span>Admin</span>
+            <span>Teacher</span>
           </div>
           <div className="studentNavbar">
             <ul style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>

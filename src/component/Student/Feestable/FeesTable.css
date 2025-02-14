@@ -66,3 +66,12 @@
   background-color: #d1d1ff;
   color: #272757;
 }
+
+.OpenFeeForm button{
+  background-color: #272757;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  margin-left: 50px;
+  cursor: pointer;
+}

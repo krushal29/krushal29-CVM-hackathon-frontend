@@ -28,7 +28,6 @@ import AddResultPage from "./pages/AdminPage/AdminAddResultPage/AddResultPage";
 import Adminnewsemcreation from "./pages/AdminPage/Adminnewsemcreation/Adminnewsemcreation";
 import AdminCreateUser from "./pages/AdminPage/AdminCreateUserPage/AdminCreateUser";
 import AdminFeesPage from "./pages/AdminPage/AdminFees/AdminFeesPage";
-// import CreateNewYear from "./pages/AdminPage/CreateNewYearPage/CreateNewYear";
 import FeesPage from "./pages/Student side/Fees/FeesPage";
 import Subjecttable from "./pages/AddSubjectPage/Subjecttable";
 import AdminPlacementPage from "./pages/AdminPlacement/AdminPlacementPage";
@@ -39,8 +38,8 @@ import PPlacement from "./pages/parentPage/ParentPlacement/PPlacement";
 import AAttendenecepage from "./pages/parentPage/ParentAttendencs/AAttendenecepage";
 import PCompititve from "./pages/parentPage/PCompitivePage/PCompititve";
 import RegistrationForm from "./component/Student/registrationComponent/RegistrationAccount";
-// import DoYouWant from "./component/administrationComponent/CreateYear/DoYouWant";
-
+import FeesFormPage from "./pages/Student side/Fees/FeesFormPage";
+import AdminFeetable from "./pages/AdminPage/AdminFees/AdminFeetable";
 const App = () => {
   return (
     <Router>
@@ -69,6 +68,7 @@ const App = () => {
         <Route path="/StudentPlacement" element={<Placement />} />
         <Route path="/StudentPlacementOffer" element={<PlacementOfferPage />} />
         <Route path="/StudentFees" element={<FeesPage />} />
+        <Route path="/StudentFeeUpload" element={<FeesFormPage/>}/>
         <Route path='/CompetitiveExam' element={<CompetitiveExamStatus/>}/>
         <Route path='/CompetitiveExamForm' element={<CompetitiveExamForm/>}/>
 
@@ -105,7 +105,10 @@ const App = () => {
         <Route path="/newsemcreation" element={<Adminnewsemcreation />} />
         <Route path="/CreateUser" element={<AdminCreateUser />} />
         <Route path="/RegistationStudent" element={<Registration />} />
-        <Route path="/AdminFees" element={<AdminFeesPage />} />
+        {/* <Route path="/AdminFees" element={<AdminFeesPage />} /> */}
+        <Route path='AdminFeetable' element={<AdminFeetable/>}/>
+
+
         {/* <Route path="/CreateNewYear" element={<DoYouWant />} /> */}
         <Route path="/ShowSubject" element={<Subjecttable />} />
         <Route path="/AdminPlacement" element={<AdminPlacementPage />} />

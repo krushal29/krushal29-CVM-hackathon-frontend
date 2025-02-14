@@ -1,23 +1,19 @@
 import { jsPDF } from "jspdf";
 import "./FeesTable.css";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Cookies from "js-cookie";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const FeesTable = () => {
+  const navigate = useNavigate();
   const cook = Cookies.get("Token");
-  const student_id=sessionStorage.getItem("user_id");
+  const student_id = sessionStorage.getItem("user_id");
+  const [feeData,setFeeData]=useState([]);
   console.log(student_id);
-  
+
   console.log(cook);
 
-  const feesData = [
-    { date: "May 7, 2022", type: "Tuition Fee", amount: "65000" },
-    { date: "Apr 1, 2022", type: "Exam Fee", amount: "1500" },
-    { date: "Mar 1, 2022", type: "Books", amount: "$75" },
-    { date: "Feb 1, 2022", type: "Lunch", amount: "$50" },
-    { date: "Jan 1, 2022", type: "Books", amount: "$100" },
-  ];
 
   // Function to generate and download PDF
   const generatePDF = (fee) => {
@@ -46,11 +42,11 @@ const FeesTable = () => {
           },
         }
       );
-      console.log(response1);
-      
+      console.log("re",response1.data.fees);
+      setFeeData(response1.data.fees);
     };
     data();
-  });
+  },[]);
   return (
     <div className="FeesTable">
       <div className="fees-container">
@@ -61,28 +57,39 @@ const FeesTable = () => {
             <tr>
               <th>Date</th>
               <th>Fee Type</th>
+              <th>Payment Type</th>
               <th>Amount</th>
               <th>Receipt</th>
             </tr>
           </thead>
           <tbody>
-            {feesData.map((fee, index) => (
+            {feeData.map((fee, index) => (
               <tr key={index}>
                 <td>{fee.date}</td>
                 <td>{fee.type}</td>
+                <td>{fee.payment_type}</td>
                 <td>{fee.amount}</td>
                 <td>
-                  <button
-                    className="download-btn"
-                    onClick={() => generatePDF(fee)}
-                  >
-                    Download
-                  </button>
+                  {fee.status === "ACCEPTED" ? (
+                    <button
+                      className="download-btn"
+                      onClick={() => generatePDF(fee)}
+                    >
+                      Download
+                    </button>
+                  ) : (
+                    <span>{fee.status}</span>
+                  )}
                 </td>
               </tr>
             ))}
           </tbody>
         </table>
+      </div>
+      <div className="OpenFeeForm">
+        <button onClick={() => navigate("/StudentFeeUpload")}>
+          Add Fees Detail
+        </button>
       </div>
     </div>
   );

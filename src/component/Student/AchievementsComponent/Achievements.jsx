@@ -11,8 +11,6 @@ const Achievements = () => {
   const navigate = useNavigate();
   const studentId = sessionStorage.getItem("user_id");
 
-  const [type, setType] = useState("All");
-  const [card, setCard] = useState([]); // Store original data
   const [filteredCard, setFilteredCard] = useState([]); // Store filtered data
 
   useEffect(() => {
@@ -22,7 +20,7 @@ const Achievements = () => {
           `https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/achievements/student/${studentId}`,
           { headers: { Authorization: `Bearer ${cook}` } }
         );
-        setCard(response.data.achievements);
+        // setCard(response.data.achievements);
         setFilteredCard(response.data.achievements); // Set both states
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -31,15 +29,9 @@ const Achievements = () => {
     fetchData();
   }, []);
 
-  useEffect(() => {
-    if (type === "Certificates") {
-      setFilteredCard(card.filter((data) => data.type === "Certificates"));
-    } else if (type === "Awards") {
-      setFilteredCard(card.filter((data) => data.type === "Awards"));
-    } else {
-      setFilteredCard(card); // Reset to original data when clicking "All"
-    }
-  }, [type, card]); // Depend on both type and card
+  console.log(filteredCard);
+  
+
 
   return (
     <div className="Achievements">
@@ -57,16 +49,16 @@ const Achievements = () => {
 
         <div className="Achievementsbtn">
           <div className="AllBtn">
-            <button onClick={() => setType("All")}>All</button>
+            <button>All</button>
           </div>
-          <div className="CertificatesBtn">
+          {/* <div className="CertificatesBtn">
             <button onClick={() => setType("Certificates")}>
               Certificates
             </button>
           </div>
           <div className="AwardsBtn">
             <button onClick={() => setType("Awards")}>Awards</button>
-          </div>
+          </div> */}
         </div>
 
         <div className="cardDetail">

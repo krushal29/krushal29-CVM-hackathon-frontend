@@ -1,7 +1,13 @@
 import { useState } from 'react';
 import './AchievementForm.css';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import Cookies from "js-cookie";
 
 const AchievementsForm = () => {
+      const cook = Cookies.get("Token");
+      const student_id=sessionStorage.getItem("user_id");
+    const navigate=useNavigate();
     const [formData, setFormData] = useState({
         eventName: "",
         position: "",
@@ -16,21 +22,69 @@ const AchievementsForm = () => {
         setFormData({ ...formData, [name]: value });
     };
 
-    const handleFileChange = (e) => {
-        setFormData({ ...formData, file: e.target.files[0] });
-    };
+    // const handleFileChange = (e) => {
+    //     setFormData({ ...formData, file: e.target.files[0] });
+    // };
 
-    const handleSubmit = (e) => {
+    const handleFileChange = async (e) => {
+        const selectedFile = e.target.files[0];
+        if (!selectedFile) return;
+    
+        const formData = new FormData();
+        formData.append("file_upload", selectedFile);
+    
+        try {
+          const response = await axios.post(
+            "https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/files/",
+            formData,
+            {
+              headers: {
+                headers: { "Content-Type": "multipart/form-data" },
+              },
+            }
+          );
+    
+          console.log(response.data);
+          setFormData((prev) => ({
+            ...prev,
+            file: response.data.id,
+          }));
+        } catch (error) {
+          console.error("Upload failed", error);
+        }
+      };
+
+      const SubmitHandle = async (e) => {
         e.preventDefault();
-        console.log(formData);
-    };
-
+        console.log("Form Data Submitted:", formData);
+    
+        try {
+          const response1 = await axios.post(
+            `https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/achievements`,
+            JSON.stringify({
+              student_id:student_id,
+              name:formData.eventName,
+              type:formData.type,
+              pos:formData.position,
+              docs_id:formData.file
+            }),
+            {
+              headers: {
+                Authorization: `Bearer ${cook}`,
+              },
+            }
+          );
+          console.log("Response:", response1);
+        } catch (error) {
+          console.error("Submission failed", error);
+        }
+      };
     return (
         <div className="AchievementsForm">
             <div className="AchievementsForm1">
                 <div className="form-container">
                     <h2>Add an Achievement</h2>
-                    <form onSubmit={handleSubmit}>
+                    <form onSubmit={SubmitHandle}>
                         <label>Event Name</label>
                         <input
                             type="text"
@@ -42,11 +96,11 @@ const AchievementsForm = () => {
 
                         <label>Position</label>
                         <select name="position" value={formData.position} onChange={handleChange}>
-                            <option value="PARTICIPATION">Participation</option>
-                            <option value="FIRST">First</option>
-                            <option value="SECOND">Second</option>
-                            <option value="THIRD">Third</option>
-                            <option value="OTHERS">Others</option>
+                            <option value="participation">Participation</option>
+                            <option value="first">First</option>
+                            <option value="second">Second</option>
+                            <option value="third">Third</option>
+                            <option value="other">Others</option>
                         </select>
 
                         <label>Description</label>
@@ -66,16 +120,16 @@ const AchievementsForm = () => {
 
                         <label>Type</label>
                         <select name="type" value={formData.type} onChange={handleChange}>
-                            <option value="ACADEMIC">Academic</option>
-                            <option value="SPORTS">Sports</option>
-                            <option value="CULTURAL">Cultural</option>
-                            <option value="OTHER">Others</option>
+                            <option value="academic">Academic</option>
+                            <option value="sports">Sports</option>
+                            <option value="cultural">Cultural</option>
+                            <option value="other">Others</option>
                         </select>
 
                         <label>Upload a File</label>
                         <input type="file" accept=".pdf,.png,.jpg,.docx" onChange={handleFileChange} />
 
-                        <button type="submit">Submit</button>
+                        <button type="submit" onClick={()=>navigate('/Achievements')}>Submit</button>
                     </form>
                 </div>
             </div>

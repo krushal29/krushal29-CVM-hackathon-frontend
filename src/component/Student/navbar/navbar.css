@@ -24,7 +24,8 @@
     /* background-color: aliceblue; */
 }
 .studentnavbar .studentnavbar1 .studentProfileNavbar .studentPrpfile img{
-    width: 25%;
+
+    border-radius: 100px;
 }
 .studentnavbar .studentnavbar1 .studentProfileNavbar .studentPrpfile span{
     padding-left: 10px;

@@ -1,50 +1,77 @@
 import { useState } from "react";
 import { Upload } from "lucide-react";
-import "./FeesReceipt.css";
+import "../Feestable/FeeUploadForm.css";
 import Cookies from "js-cookie";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const FeesReceipt = () => {
+  const navigate = useNavigate();
+  const student_id = sessionStorage.getItem("user_id");
   const [formData, setFormData] = useState({
     paymentDate: "",
     paymentType: "",
     feeType: "",
     amount: "",
-    receiptPhoto: null
+    transactionId:"",
+    receiptPhoto: null,
   });
 
   const handleInputChange = (e) => {
+    console.log(e.target);
+    
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleFileChange = (e) => {
+  const handleFileChange = async (e) => {
+    // setFormData({ ...formData, offerLetter: e.target.files[0] });
+    console.log(e.target.files[0]);
     const file = e.target.files[0];
-    setFormData((prev) => ({ ...prev, receiptPhoto: file }));
+    if (!file) return;
+    const formData = new FormData();
+    formData.append("file_upload", file);
+
+    try {
+      const response = await axios.post(
+        "https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/files/",
+        formData,
+        { headers: { "Content-Type": "multipart/form-data" } }
+      );
+
+      console.log(response.data);
+      setFormData((prev) => ({
+        ...prev,
+        receiptPhoto: response.data.id,
+      }));
+    } catch (error) {
+      console.error("Upload failed", error);
+    }
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const formDataToSend = new FormData();
-    
-    formDataToSend.append('date', formData.paymentDate);
-    formDataToSend.append('payment_type', formData.paymentType);
-    formDataToSend.append('type', formData.feeType);
-    formDataToSend.append('amount', formData.amount);
-    formDataToSend.append('receipt_photo', formData.receiptPhoto);
-    
+
     try {
       const response = await axios.post(
         "https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/fees",
-        formDataToSend,
-        { 
-          headers: { 
+        JSON.stringify({
+          student_id: student_id,
+          date: formData.paymentDate,
+          type: formData.feeType,
+          payment_type: formData.paymentType,
+          amount: formData.amount,
+          docs_uuid: formData.receiptPhoto,
+          transaction_id: formData.transactionId,
+        }),
+        {
+          headers: {
             Authorization: `Bearer ${Cookies.get("Token")}`,
-            "Content-Type": "multipart/form-data"
-          } 
+          },
         }
       );
       console.log(response);
+      if (response.data) navigate("/StudentFees");
     } catch (error) {
       console.error("Error submitting form:", error);
     }
@@ -83,6 +110,16 @@ const FeesReceipt = () => {
           </select>
         </div>
 
+        <div className="form-group">
+          <label className="form-label">transaction id</label>
+          <input
+            type="text"
+            className="form-input"
+            name="transactionId"
+            value={formData.transactionId}
+            onChange={handleInputChange}
+          />
+        </div>
         <div className="form-group">
           <label className="form-label">Type of Fee</label>
           <select
@@ -127,9 +164,7 @@ const FeesReceipt = () => {
             </label>
           </div>
           {formData.receiptPhoto && (
-            <p className="file-name">
-              Selected: {formData.receiptPhoto.name}
-            </p>
+            <p className="file-name">Selected: {formData.receiptPhoto.name}</p>
           )}
         </div>
 

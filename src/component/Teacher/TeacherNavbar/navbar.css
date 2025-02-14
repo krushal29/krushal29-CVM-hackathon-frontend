@@ -24,7 +24,11 @@
     /* background-color: aliceblue; */
 }
 .studentnavbar .studentnavbar1 .studentProfileNavbar .studentPrpfile img{
-    width: 25%;
+    width: 50px;  /* Adjust size as needed */
+    height: 50px; /* Ensure width and height are the same */
+    border-radius: 50%;
+    object-fit: cover; /* Ensures image fills the circle without distortion */
+    border: 2px solid white; /
 }
 .studentnavbar .studentnavbar1 .studentProfileNavbar .studentPrpfile span{
     padding-left: 10px;
