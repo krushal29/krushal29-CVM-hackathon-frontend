@@ -57,14 +57,9 @@ const Teachernotice = () => {
   const filteredNotices = notices.filter(
     (notice) =>
       notice.title.toLowerCase().includes(search.toLowerCase()) ||
-<<<<<<< Updated upstream
-      notice.description.toLowerCase().includes(search.toLowerCase())
-=======
       notice.title.toLowerCase().includes(search.toLowerCase()) ||
-(notice.description && notice.description.toLowerCase().includes(search.toLowerCase()))
-
-
->>>>>>> Stashed changes
+      (notice.description && notice.description.toLowerCase().includes(search.toLowerCase()))
+      
   );
 
   return (
