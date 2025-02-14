@@ -1,92 +1,89 @@
 .Achievements {
-  width: 85vw;
-  /* background-color: #ccccdb; */
-  height: 100%;
-}
-
-.Achievements .Achievements1 {
-  /* background-color: aliceblue; */
-  width: 70%;
-  padding-top: 30px;
-  padding-left: 60px;
-}
-.Achievements .AchievementsHeading {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.Achievements .AchievementsHeading .Achievementsh3 h2{
+    width: 85vw;
+    /* background-color: #ccccdb; */
+    height: 100%;
+  }
+  
+  .Achievements .Achievements1 {
+    /* background-color: aliceblue; */
+    width: 70%;
+    padding-top: 30px;
+    padding-left: 60px;
+  }
+  
+  .Achievements .AchievementsHeading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .Achievements .AchievementsHeading .Achievementsh3 h2 {
     color: #272757;
     font-size: 25px;
     font-weight: 800;
-}
-
-.Achievements .AchievementsHeading .AchievementsAddbtn button{
-    padding: 5px 20px;
+  }
+  
+  /* Buttons with previous border-radius */
+  .Achievements .AchievementsHeading .AchievementsAddbtn button {
+    padding: 7px 22px;
     background-color: #272757;
     color: white;
-    border-radius: 10px;
+    border-radius: 10px; /* Reverted to previous value */
     border: none;
     cursor: pointer;
-
-}
-
-.Achievements .Achievements1 .Achievementsbtn{
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .Achievements .AchievementsHeading .AchievementsAddbtn button:hover {
+    background-color: #1e1e48;
+    transform: scale(1.05);
+  }
+  
+  .Achievements .Achievements1 .Achievementsbtn {
     /* background-color: white; */
     width: 30%;
     display: flex;
     justify-content: space-between;
     margin-top: 30px;
     margin-bottom: 20px;
-}
-
-.Achievements .Achievements1 .Achievementsbtn .AllBtn button{
-    padding: 5px 20px;
+  }
+  
+  /* Unified Button Styling with previous border-radius */
+  .Achievements .Achievements1 .Achievementsbtn button {
+    padding: 6px 22px;
     background-color: #272757;
     color: white;
     border: none;
-    border-radius: 10px;
+    border-radius: 10px; /* Reverted to previous value */
     cursor: pointer;
-}
-
-.Achievements .Achievements1 .Achievementsbtn .CertificatesBtn button{
-    padding: 5px 20px;
-    background-color: #272757;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-}
-
-.Achievements .Achievements1 .Achievementsbtn .AwardsBtn button{
-    padding: 5px 20px;
-    background-color: #272757;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-}
-
-.Achievements .Achievements1 .cardDetail{
-    display: flex;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .Achievements .Achievements1 .Achievementsbtn button:hover {
+    background-color: #1e1e48;
+    transform: scale(1.05);
+  }
+  
+  /* Card Styling with previous border-radius */
+  .Achievements .Achievements1 .cardDetail {
     display: grid;
-    grid-template-columns: repeat(5,1fr);
+    grid-template-columns: repeat(5, 1fr);
     gap: 20px;
-}
-
-.Achievements .Achievements1 .cardDetail .CardDetailAwards .Eventphoto img{
+  }
+  
+  .Achievements .Achievements1 .cardDetail .CardDetailAwards .Eventphoto img {
     width: 100%;
-    border-radius: 15px;
-    /* background-color: #272757; */
-}
-
-.Achievements .Achievements1 .cardDetail .CardDetailAwards .EventHeading h5{
+    border-radius: 15px; /* Reverted to previous value */
+    transition: transform 0.3s ease;
+  }
+  
+  .Achievements .Achievements1 .cardDetail .CardDetailAwards .Eventphoto img:hover {
+    transform: scale(1.03);
+  }
+  
+  .Achievements .Achievements1 .cardDetail .CardDetailAwards .EventHeading h5,
+  .Achievements .Achievements1 .cardDetail .CardDetailAwards .EventYear p {
     padding-top: 5px;
     color: #272757;
-}
-
-.Achievements .Achievements1 .cardDetail .CardDetailAwards .EventYear p{
-    padding-top: 5px;
-    color: #272757;
-}
+  }
+  

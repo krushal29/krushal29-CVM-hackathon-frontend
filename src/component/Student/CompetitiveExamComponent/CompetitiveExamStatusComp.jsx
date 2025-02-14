@@ -42,7 +42,7 @@ const CompetitiveExamStatusComp = () => {
         {location.pathname != "/PCompetitiveExam" && (
           <div className="Form">
             <button onClick={() => navigator("/CompetitiveExamForm")}>
-              Form
+            Exam Details
             </button>
           </div>
         )}

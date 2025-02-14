@@ -39,18 +39,19 @@
     justify-content: space-between;
 }
 
-.EventComponent .EventComponent1 .EventCart .EventCart1 .EventDetail .EventFirstSide .EventMoreInfo12 button{
+.EventComponent .EventComponent1 .EventCart .EventCart1 .EventDetail .EventFirstSide .EventMoreInfo12 button {
     border: none;
     background-color: #272757 !important;
     color: white;
-    border-radius: 12px;
-    padding: 5px 15px;
+    border-radius: 5px; /* Matching reference button */
+    padding: 10px 15px; /* Adjusted padding */
     font-weight: 600;
     cursor: pointer;
-    width: 40%;
+    margin-top: 10px;
+    width: 40%; /* Consistent width */
+    transition: background-color 0.3s ease;
 }
 
-.EventComponent .EventComponent1 .EventCart .EventCart1 .EventDetail .EventPhoto img{
-    width: 100%;
-    border-radius: 15px;
+.EventComponent .EventComponent1 .EventCart .EventCart1 .EventDetail .EventFirstSide .EventMoreInfo12 button:hover {
+    background-color: #1e1e48 !important;
 }

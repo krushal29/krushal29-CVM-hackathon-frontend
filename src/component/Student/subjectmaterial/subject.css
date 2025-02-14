@@ -11,6 +11,7 @@
   height: 100%;
   display: flex;
   justify-content: center;
+  color: #272757;
 }
 
 .StudentSubject .StudentSubject1 {
@@ -71,18 +72,24 @@
   display: block;
 }
 
-.StudentSubject .StudentSubject1 .filterSubject .filterbtn button{
-  background-color: #272757;
-  color: white;
-  margin-left: 17px;
-  padding: 8px 20px;
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  /* font-weight: bold; */
-  border-radius: 5px;
-  border: none;
+.StudentSubject .StudentSubject1 .filterSubject .filterbtn button {
+    background-color: #272757;
+    color: white;
+    margin-left: 17px;
+    padding: 10px 15px; /* Adjusted to match reference */
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    font-weight: 600; /* Ensuring bold text */
+    transition: background-color 0.3s ease;
 }
+
+.StudentSubject .StudentSubject1 .filterSubject .filterbtn button:hover {
+    background-color: #1e1e48;
+}
+
 
 .StudentSubject .StudentSubject1 .filterSubject .filterbtn button span{
   padding-right: 5px;
@@ -127,25 +134,47 @@
   font-weight: 400;
 }
 
-.StudentSubject
-  .StudentSubject1
-  .SubjectCard
-  .SubjectCard1
-  .ViewMaterial
+.StudentSubject 
+  .StudentSubject1 
+  .SubjectCard 
+  .SubjectCard1 
+  .ViewMaterial 
   button {
   background-color: #272757;
   color: white;
   padding: 10px 15px;
-  border-radius: 10px;
-  /* font-weight: 700; */
+  border-radius: 8px;
   margin-top: 10px;
   display: flex;
   align-items: center;
+  justify-content: center;
   cursor: pointer;
-  font-size: 10px;
+  font-size: 12px;
+  font-weight: 600;
   border: none;
-  width: 50%;
+  width: 100%;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
+
+.StudentSubject 
+  .StudentSubject1 
+  .SubjectCard 
+  .SubjectCard1 
+  .ViewMaterial 
+  button:hover {
+  background-color: #1e1e48;
+  transform: scale(1.05);
+}
+
+.StudentSubject 
+  .StudentSubject1 
+  .SubjectCard 
+  .SubjectCard1 
+  .ViewMaterial 
+  button span {
+  padding-right: 8px;
+}
+
 
 .StudentSubject
   .StudentSubject1
