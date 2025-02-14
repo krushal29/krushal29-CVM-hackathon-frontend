@@ -1,8 +1,5 @@
-import './navbar.css'
+import './navbar.css';
 import profile from "../../../assets/profilePhoto1.jpg";
-
-//icons
-
 import { useLocation, useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
@@ -31,41 +28,42 @@ const Navbar = () => {
                 <span>Dashboard</span>
               </li>
               <li 
-                className={location.pathname === "/teacherEvent" ? "active" : ""} 
+                className={location.pathname === "/StudentProfile" ? "active" : ""}
+                onClick={() => handleNavigation('/StudentProfile')}
+                style={{ padding: '0.5rem 1rem' }}
+              >
+                <span>Student Profile</span>
+              </li>
+              <li 
+                className={location.pathname === "/teacherEvent" ? "active" : ""}
                 onClick={() => handleNavigation('/teacherEvent')}
                 style={{ padding: '0.5rem 1rem' }}
               >
                 <span>Event/Calander</span>
               </li>
               <li 
-                className={location.pathname === "/TeacherAttendence" ? "active" : ""} 
+                className={location.pathname === "/TeacherAttendence" ? "active" : ""}
                 onClick={() => handleNavigation('/TeacherAttendence')}
                 style={{ padding: '0.5rem 1rem' }}
               >
                 <span>Mark Attendance</span>
               </li>
-              {/* <li 
-                className={location.pathname === "" ? "active" : ""}
-                style={{ padding: '0.5rem 1rem' }}
-              >
-                <span>Quiz</span>
-              </li> */}
               <li 
-                className={location.pathname === "/UploadMaterial" ? "active" : ""} 
+                className={location.pathname === "/UploadMaterial" ? "active" : ""}
                 onClick={() => handleNavigation('/UploadMaterial')}
                 style={{ padding: '0.5rem 1rem' }}
               >
                 <span>Upload Material</span>
               </li>
               <li 
-                className={location.pathname === "/TecherLeaveStatus" ? "active" : ""} 
+                className={location.pathname === "/TecherLeaveStatus" ? "active" : ""}
                 onClick={() => handleNavigation('/TecherLeaveStatus')}
                 style={{ padding: '0.5rem 1rem' }}
               >
                 <span>Leave Status</span>
               </li>
               <li 
-                className={location.pathname === "/TeacherNotice" ? "active" : ""} 
+                className={location.pathname === "/TeacherNotice" ? "active" : ""}
                 onClick={() => handleNavigation('/TeacherNotice')}
                 style={{ padding: '0.5rem 1rem' }}
               >
