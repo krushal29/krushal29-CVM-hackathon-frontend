@@ -43,7 +43,7 @@
   width: 105%;
 }
 
-.AchievementsForm .button {
+.AchievementsForm .button  {
   width: 105%;
   padding: 10px;
   margin-top: 15px;
@@ -52,8 +52,10 @@
   border: none;
   border-radius: 4px;
   cursor: pointer;
+
 }
 
 .AchievementsForm button:hover {
   background-color: #1f1a33;
 }
+

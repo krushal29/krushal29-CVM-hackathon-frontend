@@ -2,8 +2,6 @@ import "./navbar.css";
 import profile from "../../../assets/image 1.png";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faClipboardUser } from '@fortawesome/free-solid-svg-icons';
-
-// Icons
 import { MdQuiz } from "react-icons/md";
 import { GrAchievement } from "react-icons/gr";
 import { AiOutlineLogout } from "react-icons/ai";
@@ -28,79 +26,81 @@ const Navbar = () => {
             <span>Admin</span>
           </div>
           <div className="studentNavbar">
-            <ul>
+            <ul style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
               <li
                 className={location.pathname === "/StudentDashboard" ? "active" : ""}
                 onClick={() => handleNavigation("/StudentDashboard")}
+                style={{ padding: '0.75rem 1rem' }}
               >
-                <TbLayoutDashboardFilled />
                 <span>Dashboard</span>
               </li>
               <li
                 className={location.pathname === "/StudentEvent" ? "active" : ""}
                 onClick={() => handleNavigation("/StudentEvent")}
-              ><MdEvent/>
-              <span>
-                Event/Calendar
-              </span>
+                style={{ padding: '0.75rem 1rem' }}
+              >
+                <span>Event/Calendar</span>
               </li>
               <li
-                // eslint-disable-next-line no-constant-binary-expression
-                className={location.pathname === "/Studentsubject" ? "active" : ""||location.pathname === "/StudentsubjectMaterial" ? "active" : ""}
+                className={location.pathname === "/Studentsubject" ? "active" : "" || location.pathname === "/StudentsubjectMaterial" ? "active" : ""}
                 onClick={() => handleNavigation("/Studentsubject")}
+                style={{ padding: '0.75rem 1rem' }}
               >
-                Subject Material
+                <span>Subject Material</span>
               </li>
-              <li
+              {/* <li
                 className={location.pathname === "/StudentQuiz" ? "active" : ""}
+                style={{ padding: '0.75rem 1rem' }}
               >
-                <MdQuiz />
                 <span>Quiz</span>
-              </li>
+              </li> */}
               <li
                 className={location.pathname === "/StudentAttence" ? "active" : ""}
                 onClick={() => handleNavigation("/StudentAttence")}
-              ><FontAwesomeIcon icon={faClipboardUser} />
-               <span> Attendance</span>
+                style={{ padding: '0.75rem 1rem' }}
+              >
+                <span>Attendance</span>
               </li>
               <li
-                // eslint-disable-next-line no-constant-binary-expression
-                className={location.pathname === "/StudentLeave" ? "active" : "" ||location.pathname === "/viewLeaveApplication" ? "active" : ""}
+                className={location.pathname === "/StudentLeave" ? "active" : "" || location.pathname === "/viewLeaveApplication" ? "active" : ""}
                 onClick={() => handleNavigation("/StudentLeave")}
+                style={{ padding: '0.75rem 1rem' }}
               >
-                Leave Application
+                <span>Leave Application</span>
               </li>
               <li
                 className={location.pathname === "/Achievements" ? "active" : ""}
                 onClick={() => handleNavigation("/Achievements")}
+                style={{ padding: '0.75rem 1rem' }}
               >
-                <GrAchievement />
                 <span>Achievement</span>
               </li>
               <li
                 className={location.pathname === "/StudentNotice" ? "active" : ""}
                 onClick={() => handleNavigation("/StudentNotice")}
+                style={{ padding: '0.75rem 1rem' }}
               >
-                Notice
+                <span>Notice</span>
               </li>
               <li
                 className={location.pathname === "/StudentPlacementOffer" ? "active" : ""}
                 onClick={() => handleNavigation("/StudentPlacementOffer")}
+                style={{ padding: '0.75rem 1rem' }}
               >
-                Placement
+                <span>Placement</span>
               </li>
               <li
                 className={location.pathname === "/StudentFees" ? "active" : ""}
                 onClick={() => handleNavigation("/StudentFees")}
+                style={{ padding: '0.75rem 1rem' }}
               >
-                Fees
+                <span>Fees</span>
               </li>
             </ul>
           </div>
         </div>
         <div className="studentLogout">
-          <p onClick={()=>handleNavigation('/')}>
-            <AiOutlineLogout />
+          <p onClick={() => handleNavigation('/')} style={{ padding: '0.75rem 1rem' }}>
             <span>Logout</span>
           </p>
         </div>

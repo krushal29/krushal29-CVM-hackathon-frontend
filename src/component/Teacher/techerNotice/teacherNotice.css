@@ -1,44 +1,42 @@
-.Teachernotice{
+.Teachernotice {
     background-color: white;
     width: 85vw;
     height: 100%;
 }
 
-.Teachernotice .Teachernotice1{
-    /* background-color: aquamarine; */
+.Teachernotice .Teachernotice1 {
     width: 90%;
-    /* height: 100%; */
     margin: 0 auto;
     padding: 30px 0;
 }
 
-.Teachernotice .Teachernotice1 .NoticeNavbar{
+.Teachernotice .Teachernotice1 .NoticeNavbar {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.Teachernotice .Teachernotice1 .NoticeNavbar .NoticeCreate button{
-    padding: 8px 15px;
-    border: none;
-    border-radius: 10px;
+.Teachernotice .Teachernotice1 .NoticeNavbar button {
     background-color: #272757;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 10px;
+    border: none;
     cursor: pointer;
-}
-.Teachernotice .Teachernotice1 .NoticeNavbar  button{
     width: 14%;
 }
-.Teachernotice .Teachernotice1 .NoticeSearch{
+
+.Teachernotice .Teachernotice1 .NoticeSearch {
     background-color: #f5f5f5;
     display: flex;
-    align-items: center;    
+    align-items: center;
     padding: 10px 5px;
     border-radius: 10px;
     margin-top: 20px;
 }
 
-.Teachernotice .Teachernotice1 .NoticeSearch input{
+.Teachernotice .Teachernotice1 .NoticeSearch input {
     border: none;
     background-color: transparent;
     outline: none;
@@ -46,39 +44,103 @@
     width: 100%;
 }
 
-.Teachernotice .Teachernotice1 .NoticeDetails .NoticeDetail1{
+.Teachernotice .Teachernotice1 .NoticeDetails .NoticeDetail1 {
     display: flex;
-    /* background-color: #0D141C; */
     justify-content: space-between;
     align-items: center;
     margin-top: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-
-.Teachernotice .Teachernotice1 .NoticeDetails .NoticeDetail1 .NoticeDetail2{
+.Teachernotice .Teachernotice1 .NoticeDetails .NoticeDetail1 .NoticeDetail2 {
     display: flex;
     align-items: center;
-    /* background-color: #272757; */
-    width: 30%;
-
-}
-
-.Teachernotice .Teachernotice1 .NoticeDetails .NoticeDetail1 .NoticeDetail2 .NoticeImage{
-    /* background-color: #0D141C; */
     width: 30%;
 }
 
+.Teachernotice .Teachernotice1 .NoticeDetails .NoticeDetail1 .NoticeDetail2 .NoticeImage {
+    width: 30%;
+}
 
-.Teachernotice .Teachernotice1 .NoticeDetails .NoticeDetail1 .NoticeDetail2 .NoticeImage img{
+.Teachernotice .Teachernotice1 .NoticeDetails .NoticeDetail1 .NoticeDetail2 .NoticeImage img {
     width: 100%;
 }
 
-.Teachernotice .Teachernotice1 .NoticeDetails .NoticeDetail1 .NoticeDetail2 .NoticeInformation{
+.Teachernotice .Teachernotice1 .NoticeDetails .NoticeDetail1 .NoticeDetail2 .NoticeInformation {
     padding-left: 10px;
-    /* background-color: aliceblue; */
 }
 
+.Teachernotice .Teachernotice1 .NoticeDetails .NoticeDetail1 .delete-btn {
+    background-color: #FF4444;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+}
 
-.Teachernotice .Teachernotice1 .NoticeDetails .NoticeDetail1 .NoticeDetail2 .NoticeInformation .Noticep p{
-    padding-top: 10px;
+.Teachernotice .Teachernotice1 .NoticeDetails .NoticeDetail1 .delete-btn:hover {
+    background-color: #FF6666;
+}
+
+/* Modal overlay */
+.confirmation-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Modal content */
+.confirmation-content {
+    background-color: white;
+    padding: 24px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.confirmation-content h3 {
+    margin: 0 0 16px 0;
+    color: #272757;
+}
+
+.confirmation-content p {
+    margin: 0 0 24px 0;
+    color: #666;
+}
+
+/* Confirmation buttons */
+.confirmation-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+}
+
+.confirmation-buttons button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.confirmation-buttons .cancel-btn {
+    background-color: #F0F2F5;
+    color: #666;
+}
+
+.confirmation-buttons .confirm-btn {
+    background-color: #FF4444;
+    color: white;
 }
