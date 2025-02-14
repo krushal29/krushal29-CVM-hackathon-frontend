@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { CiSearch } from "react-icons/ci";
 import "./TeacherMaterial.css";
 import { useNavigate } from "react-router-dom";
+import Cookies from "js-cookie";
+import axios from "axios";
 
 const lectures = [
   { title: "Introduction to Web Design", date: "Jan 15, 2023" },
@@ -17,24 +19,35 @@ const lectures = [
 ];
 
 const TeacherMaterial = () => {
+  const student_id = sessionStorage.getItem("user_id");
+  const cook = Cookies.get("Token");
   const [searchTerm, setSearchTerm] = useState("");
-  const navigate=useNavigate();
+  const navigate = useNavigate();
 
   const filteredLectures = lectures.filter((lecture) =>
     lecture.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-
+  useEffect(() => {
+    const data=async()=>{
+      
+    }
+  }, []);
 
   return (
     <div className="TeacherMaterial">
       <div className="TeacherMaterial1">
         <div className="TeacherMaterial2">
           <div className="TeacherMaterialh2">
-            <h2 style={{color:"#272757",fontSize:"25px"}}>Materials</h2>
+            <h2 style={{ color: "#272757", fontSize: "25px" }}>Materials</h2>
           </div>
           <div className="TeacherMaterialAdd">
-            <button onClick={()=>navigate('/UploadMaterial/addMaterial')} style={{backgroundColor:"#272757"}}>Add Material</button>
+            <button
+              onClick={() => navigate("/UploadMaterial/addMaterial")}
+              style={{ backgroundColor: "#272757" }}
+            >
+              Add Material
+            </button>
           </div>
         </div>
         <div className="MaterialsInput">
