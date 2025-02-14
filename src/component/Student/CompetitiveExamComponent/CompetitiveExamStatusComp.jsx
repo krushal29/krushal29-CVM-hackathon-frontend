@@ -1,40 +1,34 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import "./CompetitiveExam.css";
-
+import { useState } from "react";
+import { useEffect } from "react";
+import Cookies from "js-cookie";
+import axios from "axios";
 const CompetitiveExamStatusComp = () => {
   const navigator = useNavigate();
+
+  const student_id = sessionStorage.getItem("user_id");
+  const cook = Cookies.get("Token");
   const location = useLocation();
-  const data = [
-    {
-      serial: 1,
-      seat: "A1",
-      exam: "Mathematics",
-      rank: "",
-      preview: "Preview",
-    },
-    {
-      serial: 2,
-      seat: "A2",
-      exam: "Science",
-      rank: "Air 23",
-      preview: "Preview",
-    },
-    {
-      serial: 3,
-      seat: "A3",
-      exam: "English",
-      rank: "Right",
-      preview: "Preview",
-    },
-    {
-      serial: 4,
-      seat: "A4",
-      exam: "French",
-      rank: "Centre",
-      preview: "Preview",
-    },
-    { serial: 5, seat: "A5", exam: "Art", rank: "Left", preview: "Preview" },
-  ];
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    const data = async () => {
+      console.log(cook);
+
+      const response1 = await axios.get(
+        `https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/external_exams/student/${student_id}`,
+        {
+          headers: {
+            Authorization: `Bearer ${cook}`,
+          },
+        }
+      );
+      console.log(response1.data.external_exams);
+      setData(response1.data.external_exams);
+    };
+    data();
+  }, []);
 
   return (
     <div className="competitiveExam">
@@ -42,7 +36,7 @@ const CompetitiveExamStatusComp = () => {
         {location.pathname != "/PCompetitiveExam" && (
           <div className="Form">
             <button onClick={() => navigator("/CompetitiveExamForm")}>
-            Exam Details
+              Exam Details
             </button>
           </div>
         )}
@@ -50,21 +44,31 @@ const CompetitiveExamStatusComp = () => {
           <table className="custom-table">
             <thead>
               <tr>
-                <th>Serial No.</th>
-                <th>Seat No.</th>
                 <th>Exam Name</th>
+                <th>Seat No.</th>
+                <th>Year of Apperance</th>
+                <th>Score</th>
                 <th>Rank</th>
-                <th></th>
+                <th>View marksheet</th>
               </tr>
             </thead>
             <tbody>
               {data.map((row) => (
-                <tr key={row.serial}>
-                  <td>{row.serial}</td>
-                  <td>{row.seat}</td>
-                  <td>{row.exam}</td>
+                <tr key={row.id}>
+                  <td>{row.name}</td>
+                  <td>{row.seat_no}</td>
+                  <td>{row.yoa}</td>
+                  <td>{row.score}</td>
                   <td>{row.rank}</td>
-                  <td className="preview">{row.preview}</td>
+                  {/* <td className="preview">{row.marksheet_uuid}</td> */}
+                  <td>
+                    {" "}
+                    <a
+                      href={`https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/files/${row.marksheet_uuid}`}
+                    >
+                      view
+                    </a>
+                  </td>
                 </tr>
               ))}
             </tbody>
