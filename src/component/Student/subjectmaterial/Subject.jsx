@@ -1,69 +1,31 @@
 import "./subject.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import Cookies from "js-cookie";
 
 // React icons
 import { IoSearchOutline } from "react-icons/io5";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
-import { MdPlayLesson } from "react-icons/md";
 import { CgProfile } from "react-icons/cg";
-import { IoIosTrophy } from "react-icons/io";
 import { FaChevronRight } from "react-icons/fa";
-
 
 // Image
 import subjectImg from "../../../assets/unsplash_7uSKXpksCKg.png";
 import { useNavigate } from "react-router-dom";
 
-const obj = [
-  {
-    ID: 1,
-    SubjectImage: subjectImg,
-    SubjectTitle: "Data Structures and Algorithm (102001202)",
-    SubjectLesson: 8,
-    SubjectCourseCredit: 4,
-    Subjectlevel: "Beginner",
-  },
-  {
-    ID: 2,
-    SubjectImage: subjectImg,
-    SubjectTitle: "Operating Systems (105032301)",
-    SubjectLesson: 7,
-    SubjectCourseCredit: 3,
-    Subjectlevel: "Intermediate",
-  },
-  {
-    ID: 3,
-    SubjectImage: subjectImg,
-    SubjectTitle: "Database Management Systems (102004502)",
-    SubjectLesson: 10,
-    SubjectCourseCredit: 4,
-    Subjectlevel: "Advanced",
-  },
-  {
-    ID: 4,
-    SubjectImage: subjectImg,
-    SubjectTitle: "Computer Networks (102003701)",
-    SubjectLesson: 6,
-    SubjectCourseCredit: 3,
-    Subjectlevel: "Beginner",
-  },
-  {
-    ID: 5,
-    SubjectImage: subjectImg,
-    SubjectTitle: "Machine Learning (105048401)",
-    SubjectLesson: 12,
-    SubjectCourseCredit: 5,
-    Subjectlevel: "Advanced",
-  },
-];
+
 
 const Subject = () => {
-  const navigate=useNavigate();
+  const student_id = sessionStorage.getItem("user_id");
+  const cook = Cookies.get("Token");
+  const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState("");
+
+  const [obj,setObj]=useState([]);
+
+
   const [filters, setFilters] = useState({
     name: false,
-    credit: false,
-    lesson: false,
   });
 
   // Handle filter checkbox change
@@ -74,22 +36,40 @@ const Subject = () => {
   // Filtered subjects based on user input and selected filters
   const filteredSubjects = obj.filter((subject) => {
     let matchesSearch = searchQuery
-      ? subject.SubjectTitle.toLowerCase().includes(searchQuery.toLowerCase())
+      ? subject.name.toLowerCase().includes(searchQuery.toLowerCase())
       : true;
 
     let matchesFilters = true;
     if (filters.name) {
-      matchesFilters = matchesFilters && subject.SubjectTitle.toLowerCase().includes(searchQuery.toLowerCase());
+      matchesFilters =
+        matchesFilters &&
+        subject.name.toLowerCase().includes(searchQuery.toLowerCase());
     }
-    if (filters.credit) {
-      matchesFilters = matchesFilters && subject.SubjectCourseCredit >= 4; // Example: Only show subjects with >= 4 credits
+    if (filters.code) {
+      matchesFilters =
+        matchesFilters &&
+        subject.code.toLowerCase().includes(searchQuery.toLowerCase());
     }
-    if (filters.lesson) {
-      matchesFilters = matchesFilters && subject.SubjectLesson >= 8; // Example: Only show subjects with >= 8 lessons
-    }
-
     return matchesSearch && matchesFilters;
   });
+
+
+  useEffect(()=>{
+    const data=async()=>{
+      const response = await axios.get(
+        "https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/subjects",
+        {
+          headers: {
+            Authorization: `Bearer ${cook}`,
+          },
+        }
+      );
+      console.log(response.data.subjects);
+      setObj(response.data.subjects);
+      
+    }
+    data();
+  },[])
 
   return (
     <div className="StudentSubject">
@@ -117,7 +97,7 @@ const Subject = () => {
                   onChange={() => handleFilterChange("name")}
                   checked={filters.name}
                 />
-                <label style={{fontSize:"15px"}}>Name</label>
+                <label style={{ fontSize: "15px" }}>Name</label>
               </div>
               <div className="filterCredit">
                 <input
@@ -125,7 +105,7 @@ const Subject = () => {
                   onChange={() => handleFilterChange("credit")}
                   checked={filters.credit}
                 />
-                <label style={{fontSize:"15px"}}>Credit (4+)</label>
+                <label style={{ fontSize: "15px" }}>Credit (4+)</label>
               </div>
               <div className="filterlesson">
                 <input
@@ -133,7 +113,7 @@ const Subject = () => {
                   onChange={() => handleFilterChange("lesson")}
                   checked={filters.lesson}
                 />
-                <label style={{fontSize:"15px"}}>Lesson (8+)</label>
+                <label style={{ fontSize: "15px" }}>Lesson (8+)</label>
               </div>
             </div>
           </div>
@@ -145,32 +125,27 @@ const Subject = () => {
             filteredSubjects.map((value, index) => (
               <div key={index} className="SubjectCard1">
                 <div className="SubjectImg">
-                  <img src={value.SubjectImage} alt="" />
+                  <img src={subjectImg} alt="" />
                 </div>
                 <div className="SubjectTitle">
-                  <h4>{value.SubjectTitle}</h4>
+                  <h4>{value.name}-{value.code}</h4>
                 </div>
                 <div className="SubjectDetail">
-                  <div className="subjectlesson">
-                    <p>
-                      <MdPlayLesson /> <span>Lesson : {value.SubjectLesson}</span>
-                    </p>
-                  </div>
                   <div className="subjectCourseCredit">
                     <p>
-                      <CgProfile />
-                      <span>Course Credit : {value.SubjectCourseCredit}</span>
+                      <CgProfile  style={{paddingRight:"10px"}}/>
+                      <span>Course Credit : {value.credits}</span>
                     </p>
                   </div>
-                  <div className="subejctlevel">
+                  {/* <div className="subejctlevel">
                     <p>
                       <IoIosTrophy />
                       <span>{value.Subjectlevel}</span>
                     </p>
-                  </div>
+                  </div> */}
                 </div>
                 <div className="ViewMaterial">
-                  <button onClick={()=>navigate('/StudentsubjectMaterial')}>
+                  <button onClick={() => navigate("/StudentsubjectMaterial")}>
                     <span>View Material</span>
                     <FaChevronRight />
                   </button>
@@ -178,7 +153,9 @@ const Subject = () => {
               </div>
             ))
           ) : (
-            <p style={{ textAlign: "center", color: "gray" }}>No matching subjects found.</p>
+            <p style={{ textAlign: "center", color: "gray" }}>
+              No matching subjects found.
+            </p>
           )}
         </div>
       </div>

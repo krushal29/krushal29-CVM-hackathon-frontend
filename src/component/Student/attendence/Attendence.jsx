@@ -1,54 +1,42 @@
 import "./attendence.css";
-import React, { useState } from "react";
+import { useEffect, useState } from "react";
 import DetailedAttendanceTable from "./DetailedAttendanceTable";
-
-const data = [
-  {
-    SubjectName: "DBMS",
-    CourseCode: "#2123123",
-    From: "21/07/24",
-    To: "21/07/24",
-    TotalDays: 100,
-    PresentDays: 70,
-  },
-  {
-    SubjectName: "DSA",
-    CourseCode: "#2123123",
-    From: "21/07/24",
-    To: "21/07/24",
-    TotalDays: 100,
-    PresentDays: 70,
-  },
-  {
-    SubjectName: "DF",
-    CourseCode: "#2123123",
-    From: "21/07/24",
-    To: "21/07/24",
-    TotalDays: 100,
-    PresentDays: 70,
-  },
-  
-  {
-    SubjectName: "OS",
-    CourseCode: "#2123123",
-    From: "21/07/24",
-    To: "21/07/24",
-    TotalDays: 100,
-    PresentDays: 70,
-  },
-  {
-    SubjectName: "JAVA",
-    CourseCode: "#2123123",
-    From: "21/07/24",
-    To: "21/07/24",
-    TotalDays: 9,
-    PresentDays: 7,
-  },
-];
+import Cookies from "js-cookie";
+import axios from "axios";
 
 const Attendance = () => {
+  const cook = Cookies.get("Token");
+  const student_id = sessionStorage.getItem("user_id");
+  console.log(student_id);
+
+  console.log(cook);
   const [showModal, setShowModal] = useState(false);
   const [selectedSubject, setSelectedSubject] = useState("");
+  const [data, setData] = useState([]);
+const [subject,setSubject]=useState();
+
+console.log(subject);
+
+  useEffect(() => {
+    const data = async () => {
+      const res = await axios.get(
+        `https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/attendence/student/${student_id}`,
+        {
+          headers: {
+            Authorization: `Bearer ${cook}`,
+          },
+        }
+      );
+      console.log(res.data.attendence_records);
+      setData(res.data.attendence_records);
+    };
+    data();
+  }, [student_id, cook]);
+
+  const handleAttendence = async (e) => {
+    e.preventDefault();
+    setShowModal(true);
+  };
 
   return (
     <div className="StudentAttendance">
@@ -60,8 +48,9 @@ const Attendance = () => {
             <tr>
               <th>Course code</th>
               <th>Subject</th>
-              <th>From</th>
-              <th>To</th>
+              {/* <th>From</th> */}
+              {/* <th>To</th> */}
+              <th>dont care</th>
               <th>Attended</th>
               <th>Total</th>
               <th>Percentage</th>
@@ -71,14 +60,19 @@ const Attendance = () => {
           <tbody>
             {data.map((item, index) => (
               <tr key={index}>
-                <td>{item.CourseCode}</td>
-                <td>{item.SubjectName}</td>
-                <td>{item.From}</td>
-                <td>{item.To}</td>
-                <td>{item.PresentDays}</td>
-                <td>{item.TotalDays}</td>
+                <td>{item.course_code}</td>
+                <td>{item.course_name}</td>
+                {/* <td>{item.From}</td> */}
+                {/* <td>{item.To}</td> */}
+                <td>{item.dont_care_no}</td>
+                <td>{item.present_no}</td>
+                <td>{item.total_no}</td>
                 <td>
-                  {((parseFloat(item.PresentDays) / parseFloat(item.TotalDays)) * 100).toFixed(2)}%
+                  {(
+                    (parseFloat(item.present_no) / parseFloat(item.total_no)) *
+                    100
+                  ).toFixed(2)}
+                  %
                 </td>
                 <td>
                   <a
@@ -86,8 +80,9 @@ const Attendance = () => {
                     className="view-link"
                     onClick={(e) => {
                       e.preventDefault();
-                      setSelectedSubject(item.SubjectName);
-                      setShowModal(true);
+                      setSelectedSubject(item.course_id);
+                      handleAttendence(e);
+                      setSubject(item.course_name);
                     }}
                   >
                     View
@@ -100,6 +95,7 @@ const Attendance = () => {
 
         {showModal && (
           <DetailedAttendanceTable
+          subjectnameCode={subject}
             subjectName={selectedSubject}
             onClose={() => setShowModal(false)}
           />

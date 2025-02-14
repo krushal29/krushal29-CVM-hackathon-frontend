@@ -35,7 +35,7 @@ const Teachernotice = () => {
   const filteredNotices = notices.filter(
     (notice) =>
       notice.title.toLowerCase().includes(search.toLowerCase()) ||
-      notice.details.toLowerCase().includes(search.toLowerCase())
+      notice.description.toLowerCase().includes(search.toLowerCase())
   );
 
   console.log(filteredNotices);

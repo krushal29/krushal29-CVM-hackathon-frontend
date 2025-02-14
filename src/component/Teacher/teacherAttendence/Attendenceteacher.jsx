@@ -1,5 +1,7 @@
 import { useState } from "react";
 import "./Attendenceteacher.css";
+import Cookies from "js-cookie";
+import axios from "axios";
 
 const subjects = ["Advance Java", "DBMS", "Python"];
 const sections = ["A", "B", "C", "D"];
@@ -11,6 +13,10 @@ const studentDetails = [
 ];
 
 const Attendenceteacher = () => {
+    const cook = Cookies.get("Token");
+    const student_id=sessionStorage.getItem("user_id");
+    console.log(student_id);
+    console.log(cook);
   const [checkedStudents, setCheckedStudents] = useState([]);
   const [subject, setSubject] = useState("");
   const [section, setSection] = useState("");
@@ -33,6 +39,18 @@ const Attendenceteacher = () => {
       setCheckedStudents([]);
     }
   };
+
+
+  const submitAttendence=async (e)=>{
+    const response = await axios.post(
+      "https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/attendence/mark",
+      // formData,
+      { headers: {Authorization: `Bearer ${cook}`, "Content-Type": "multipart/form-data" } }
+    );
+    console.log(response.data);
+    
+  }
+  
 
   return (
     <div className="Attendenceteacher">
@@ -105,7 +123,7 @@ const Attendenceteacher = () => {
         </div>
 
         <div className="submitBtn">
-          <button>Submit</button>
+          <button onClick={submitAttendence}>Submit</button>
         </div>
       </div>
     </div>

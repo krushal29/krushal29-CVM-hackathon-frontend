@@ -1,20 +1,69 @@
 import { useState } from "react";
 import "./StudentLeave.css";
+import axios from "axios";
+import Cookies from "js-cookie";
 
 //icons
 
-import { useNavigate } from "react-router-dom";
-
-
-
 const StudentLeave = () => {
-  const [StartDate, setStartDate] = useState("");
-  const [endDate, setEndDate] = useState("");
-  const [Reason, setReason] = useState("");
+  const student_id = sessionStorage.getItem("user_id");
+  const cook = Cookies.get("Token");
+  const [formData, setFormData] = useState({
+    StartDate: "",
+    endDate: "",
+    Reason: "",
+    file: null,
+  });
 
-  console.log(StartDate, endDate, Reason);
+  console.log(formData);
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleFileChange = async (e) => {
+    // setFormData({ ...formData, offerLetter: e.target.files[0] });
+    console.log(e.target.files[0]);
+    const file = e.target.files[0];
+    if (!file) return;
+    const formData = new FormData();
+    formData.append("file_upload", file);
+
+    try {
+      const response = await axios.post(
+        "https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/files/",
+        formData,
+        {
+          headers: {
+            Authorization: `Bearer ${cook}`,
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
+
+      console.log(response.data);
+      setFormData((prev) => ({
+        ...prev,
+        offerLetter: response.data.id,
+      }));
+    } catch (error) {
+      console.error("Upload failed", error);
+    }
+  };
 
 
+
+  const handleSubmit = async (e) => {
+    const response = await axios.post(
+      "https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/leave/",
+      formData,
+      { headers: { "Content-Type": "multipart/form-data" } }
+    );
+
+
+    console.log(response);
+    
+  };
 
   return (
     <div className="StudentLeave">
@@ -25,33 +74,49 @@ const StudentLeave = () => {
           </div>
           <div className="ApplyStartDate">
             <p>Start date</p>
-            <input type="date" onChange={(e) => setStartDate(e.target.value)} />
+            <input
+              name="StartDate"
+              value={formData.StartDate}
+              type="date"
+              onChange={handleChange}
+            />
           </div>
           <div className="ApplyEndDate">
             <p>End Date</p>
-            <input type="date" onChange={(e) => setEndDate(e.target.value)} />
+            <input
+              name="endDate"
+              value={formData.endDate}
+              type="date"
+              onChange={handleChange}
+            />
           </div>
           <div className="ApplyReasonLeave">
             <p>Reason for Leave</p>
             <textarea
-              name=""
               id=""
+              name="Reason"
+              value={formData.Reason}
               placeholder="Enter reason for leave."
-              onChange={(e) => setReason(e.target.value)}
+              onChange={handleChange}
             ></textarea>
           </div>
           <div className="ApplyApplication">
             <p>Application :</p>
-            <input type="file" />
+            <div className="form-group">
+              <label>Upload Offer Letter</label>
+              <input
+                type="file"
+                name="file_upload"
+                accept=".pdf,.doc,.docx"
+                onChange={handleFileChange}
+                required
+              />
+            </div>
           </div>
           <div className="submitbtn">
-            <button>Submit</button>
+            <button onClick={handleSubmit}>Submit</button>
           </div>
         </div>
-
-     
-
-       
       </div>
     </div>
   );

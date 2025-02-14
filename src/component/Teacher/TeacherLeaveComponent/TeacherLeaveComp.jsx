@@ -1,72 +1,85 @@
-import React from 'react';
-import './TeacherLeave.css';
+import { useEffect, useState } from "react";
+import "./TeacherLeave.css";
+import axios from "axios";
+import Cookies from "js-cookie";
+import { useNavigate } from "react-router-dom";
 
 const TeacherLeaveComp = () => {
+  const student_id = sessionStorage.getItem("user_id");
+  const cook = Cookies.get("Token");
+  const navigate = useNavigate();
+  console.log(student_id);
+  const [statuses, setStatuses] = useState({});
+
   const columnNames = {
-    applicationNumber: 'Application Number',
-    name: 'Name',
-    branch: 'Branch',
-    dateOfApplication: 'Date of Application',
-    numberOfDays: 'Number of Days',
-    reasonForLeave: 'Reason for Leave',
-    actions: 'Actions'
+    // applicationNumber: 'Application Number',
+    name: "Name",
+    // branch: 'Branch',
+    // dateOfApplication: 'Date of Application',
+    FormData: "Form date",
+    ToDate: "To date",
+    // numberOfDays: 'Number of Days',
+    reasonForLeave: "Reason for Leave",
+    ViewDocument: "View Document",
+    actions: "Actions",
   };
 
-  const applications = [
-    {
-      applicationNumber: '2023001',
-      name: 'Lily Smith',
-      branch: 'Computer Science',
-      dateOfApplication: '01/01/2023',
-      numberOfDays: 5,
-      reasonForLeave: 'Family emergency',
-      status: 'Pending'
-    },
-    {
-      applicationNumber: '2023002',
-      name: 'Tom Johnson',
-      branch: 'Business',
-      dateOfApplication: '01/02/2023',
-      numberOfDays: 2,
-      reasonForLeave: 'Personal reasons',
-      status: 'Pending'
-    },
-    {
-      applicationNumber: '2023003',
-      name: 'Sara Davis',
-      branch: 'Mathematics',
-      dateOfApplication: '01/03/2023',
-      numberOfDays: 4,
-      reasonForLeave: 'Medical',
-      status: 'Pending'
-    },
-    {
-      applicationNumber: '2023004',
-      name: 'Mike Brown',
-      branch: 'Art',
-      dateOfApplication: '01/04/2023',
-      numberOfDays: 1,
-      reasonForLeave: 'Vacation',
-      status: 'Pending'
-    },
-    {
-      applicationNumber: '2023005',
-      name: 'Emma Wilson',
-      branch: 'Biology',
-      dateOfApplication: '01/05/2023',
-      numberOfDays: 5,
-      reasonForLeave: 'Family holiday',
-      status: 'Pending'
-    }
-  ];
+  const [applications, setApplication] = useState([]);
 
-  // const handleAction = (applicationNumber, action) => {
-  //   console.log(Application ${applicationNumber} ${action});
-  // };
+  const handleAction = async(applicationNumber, action) => {
+    console.log(`Application ${applicationNumber} ${action}`);
+    setStatuses((prev) => ({ ...prev, [applicationNumber]: status }));
+    console.log(applicationNumber);
+    console.log(cook);
+
+    const response1 = await axios.patch(
+      `https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/leave/${applicationNumber}/status`,
+      JSON.stringify({
+        accepted:(action=="accept"?true:false),
+      }),
+      {
+        headers: {
+          Authorization: `Bearer ${cook}`,
+        },
+      }
+    );
+    console.log("reso1", response1);
+
+
+
+      const resopse= await axios.get(
+        `https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/leave/pending`,
+        {
+          headers: {
+            Authorization: `Bearer ${cook}`,
+          },
+        }
+      );
+    setApplication(resopse.data.leaves);
+    console.log("reso", resopse);
+  };
+
+  useEffect(() => {
+    const data = async () => {
+      const response = await axios.get(
+        "https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/leave/pending",
+        {
+          headers: {
+            Authorization: `Bearer ${cook}`,
+          },
+        }
+      );
+      console.log("res", response.data.leaves);
+      setApplication(response.data.leaves);
+    };
+    data();
+  }, []);
 
   return (
     <div className="leave-applications-container">
-      <h2 className="table-title" style={{fontSize:"25px"}}>Leave Applications</h2>
+      <h2 className="table-title" style={{ fontSize: "25px" }}>
+        Leave Applications
+      </h2>
       <div className="table-wrapper">
         <table className="leave-table">
           <thead>
@@ -78,20 +91,30 @@ const TeacherLeaveComp = () => {
           </thead>
           <tbody>
             {applications.map((app) => (
-              <tr key={app.applicationNumber}>
-                <td>{app.applicationNumber}</td>
-                <td>{app.name}</td>
-                <td>{app.branch}</td>
-                <td>{app.dateOfApplication}</td>
-                <td>{app.numberOfDays}</td>
-                <td>{app.reasonForLeave}</td>
+              <tr key={app.id}>
+                {/* <td>{app.applicationNumber}</td> */}
+                <td>{app.student_name}</td>
+                <td>{app.from_date}</td>
+                <td>{app.to_date}</td>
+                <td>{app.reason}</td>
+                <td>
+                  <a
+                    href={`https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/files/${app.document_id}`}
+                  >
+                    <button>View Document</button>
+                  </a>
+                </td>
                 <td>
                   <select
                     className="action-select"
-                    onChange={(e) => handleAction(app.applicationNumber, e.target.value)}
-                    defaultValue=""
+                    onChange={(e) =>
+                      handleAction(app.id, e.target.value)
+                    }
+                    value={statuses[app.id] || ""}
                   >
-                    <option value="" disabled>Select Action</option>
+                    <option value="" disabled>
+                      Select Action
+                    </option>
                     <option value="accept">Accept</option>
                     <option value="reject">Reject</option>
                   </select>

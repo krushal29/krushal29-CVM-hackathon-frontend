@@ -2,8 +2,10 @@ import { useState } from "react";
 import "./placement.css";
 import Cookies from "js-cookie";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const PlacementCom = () => {
+  const navigate=useNavigate();
   const [formData, setFormData] = useState({
     enrollmentNumber: "",
     companyName: "",
@@ -63,6 +65,7 @@ const PlacementCom = () => {
       }
     );
     console.log("res",response1);
+    if(response1) navigate('/StudentPlacementOffer');
     
   };
 

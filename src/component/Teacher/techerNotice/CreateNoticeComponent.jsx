@@ -61,9 +61,9 @@ const NoticeForm = () => {
       }
     );
     console.log(res);
-    if(res.data){
+    // if(res.data){
       navigate('/TeacherNotice');
-    }
+    // }
   };
 
   return (

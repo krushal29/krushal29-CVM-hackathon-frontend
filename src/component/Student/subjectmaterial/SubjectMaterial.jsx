@@ -1,6 +1,8 @@
 import "./SubjectMaterial.css";
 import { useState } from "react";
 import pdfLogo from "../../../assets/Vector - 0.png";
+import axios from "axios";
+import Cookies from "js-cookie";
 
 const objAssignment = [
   { Chapter: "Assignment 1: Kinematics", Date: "Due: Jan 15" },
@@ -25,6 +27,9 @@ const lecturesObj = [
 
 
 const SubjectMaterial = () => {
+  const student_id = sessionStorage.getItem("user_id");
+  const cook = Cookies.get("Token");
+  const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState("Overview");
 
   // Reusable function to display documents
@@ -79,6 +84,18 @@ const SubjectMaterial = () => {
     return null;
   };
 
+  // const response1 = await axios.post(
+  //   `https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/placements/status/${id}`,
+  //   JSON.stringify({
+  //     status: status,
+  //   }),
+  //   {
+  //     headers: {
+  //       Authorization: `Bearer ${cook}`,
+  //     },
+  //   }
+  // );
+  
   return (
     <div className="SubjectMaterial">
       <div className="SubjectMaterial1">
