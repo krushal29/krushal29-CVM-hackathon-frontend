@@ -1,17 +1,18 @@
 import './TeacherAllEvent.css';
-import event from '../../../assets/Depth 6, Frame 1.png';
+import eventImage from '../../../assets/Depth 6, Frame 1.png';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 
-const events = [
-  { id: 1, day: 'Today', time: '11:00 AM', name: 'Tech Conference', description: 'Join us for a day of learning and networking' },
-  { id: 2, day: 'Tomorrow', time: '11:00 AM', name: 'Tech Meetup', description: 'A casual networking event for developers' },
-  { id: 3, day: 'This week', time: '02:00 PM', name: 'AI Workshop', description: 'Learn about the latest AI trends' },
-  { id: 4, day: 'Next week', time: '10:00 AM', name: 'Startup Pitch', description: 'Pitch your startup ideas to investors' }
-];
-
 const EventComponent = () => {
   const navigate = useNavigate();
+
+  const [events, setEvents] = useState([
+    { id: 1, day: 'Today', time: '11:00 AM', name: 'Tech Conference', description: 'Join us for a day of learning and networking' },
+    { id: 2, day: 'Tomorrow', time: '11:00 AM', name: 'Tech Meetup', description: 'A casual networking event for developers' },
+    { id: 3, day: 'This week', time: '02:00 PM', name: 'AI Workshop', description: 'Learn about the latest AI trends' },
+    { id: 4, day: 'Next week', time: '10:00 AM', name: 'Startup Pitch', description: 'Pitch your startup ideas to investors' }
+  ]);
+
   const [showConfirmation, setShowConfirmation] = useState(false);
   const [selectedEventId, setSelectedEventId] = useState(null);
 
@@ -21,7 +22,7 @@ const EventComponent = () => {
   };
 
   const confirmDelete = () => {
-    console.log('Deleting event:', selectedEventId);
+    setEvents(prevEvents => prevEvents.filter(event => event.id !== selectedEventId));
     setShowConfirmation(false);
     setSelectedEventId(null);
   };
@@ -66,7 +67,7 @@ const EventComponent = () => {
                   </div>
                 </div>
                 <div className="EventPhoto">
-                  <img src={event} alt="Event" />
+                  <img src={eventImage} alt="Event" />
                 </div>
               </div>
             </div>

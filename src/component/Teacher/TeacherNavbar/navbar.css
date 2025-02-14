@@ -1,0 +1,76 @@
+.studentnavbar{
+    width: 100%;
+    /* background-color: aqua; */
+    height: 100vh;
+    display: flex;
+    left: 0;
+}
+
+.studentnavbar .studentnavbar1{
+    width: 12%;
+    height: 92vh;
+    background-color: #272757;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 30px 25px;
+    position: fixed;
+}
+
+.studentnavbar .studentnavbar1 .studentProfileNavbar .studentPrpfile{
+    /* background-color: antiquewhite; */
+    display: flex;
+    align-items: center;
+    /* background-color: aliceblue; */
+}
+.studentnavbar .studentnavbar1 .studentProfileNavbar .studentPrpfile img{
+    width: 25%;
+}
+.studentnavbar .studentnavbar1 .studentProfileNavbar .studentPrpfile span{
+    padding-left: 10px;
+    color: white;
+    font-weight: 600;
+}
+
+.studentnavbar .studentnavbar1 .studentProfileNavbar .studentNavbar ul{
+    padding-top: 0px;
+}
+.studentnavbar .studentnavbar1 .studentProfileNavbar .studentNavbar ul li{
+    list-style: none;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+}
+.studentNavbar ul li.active {
+    background-color: #667A8A; 
+    color: white;
+    border-radius: 5px;
+  }
+.studentnavbar .studentnavbar1 .studentProfileNavbar .studentNavbar ul li:hover{
+    background-color: #667A8A;
+}
+.studentnavbar .studentnavbar1 .studentProfileNavbar .studentNavbar ul li span{
+    padding-left: 10px;
+}
+
+.studentnavbar .studentnavbar1 .studentLogout p{
+    display: flex;
+    align-items: center;
+    color: white;
+    padding: 10px 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.studentnavbar .studentnavbar1 .studentLogout p:hover{
+    background-color: #667A8A;
+
+}
+.studentnavbar .studentnavbar1 .studentLogout p span{
+    padding-left: 10px;
+}
