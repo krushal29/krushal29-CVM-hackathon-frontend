@@ -57,11 +57,7 @@ const Teachernotice = () => {
   const filteredNotices = notices.filter(
     (notice) =>
       notice.title.toLowerCase().includes(search.toLowerCase()) ||
-<<<<<<< HEAD
       notice.description.toLowerCase().includes(search.toLowerCase())
-=======
-      (notice.description && notice.description.toLowerCase().includes(search.toLowerCase()))
->>>>>>> f6922ae5b9f84c01c34986bf73b4928aebc597f7
   );
 
   return (

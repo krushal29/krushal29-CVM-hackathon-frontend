@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import "./RegistrationAccount.css";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import Cookies from "js-cookie";
 
 const RegistrationForm = () => {
   const { aadhar, marksheet } = useParams();
+  const navigate=useNavigate();
   console.log("id", aadhar, marksheet);
   const cook = Cookies.get("Token");
 
@@ -67,6 +68,11 @@ const RegistrationForm = () => {
     );
     console.log(formData);
     console.log("result",result);
+
+    if(result.data){
+      alert("Student Created With EnrollnmentId This:"+result.data.enrollment_id);
+      navigate('/adminDashboard');
+    }
     
 
   };
@@ -78,7 +84,7 @@ const RegistrationForm = () => {
   useEffect(() => {
     const data = async () => {
       const subject = await axios.get(
-        `https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/batch/24`,
+        `https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/batch/25`,
         {
           headers: {
             Authorization: `Bearer ${cook}`,

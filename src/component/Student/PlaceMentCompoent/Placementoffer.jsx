@@ -47,7 +47,7 @@ const PlacementOffers = () => {
   };
   useEffect(() => {
     data();
-  }, [statuses, offers]);
+  }, [statuses]);
 
   return (
     <div className="offerDetail">
@@ -68,7 +68,7 @@ const PlacementOffers = () => {
                   <td>{offer.company_name}</td>
                   <td>
                     <a
-                      href={`https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/files/${offers.letter_uid}`}
+                      href={`https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/files/${offer.letter_uid}`}
                       className="view-offer"
                     >
                       View offer

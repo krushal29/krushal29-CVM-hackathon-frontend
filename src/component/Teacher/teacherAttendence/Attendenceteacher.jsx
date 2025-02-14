@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./Attendenceteacher.css";
 import Cookies from "js-cookie";
 import axios from "axios";
@@ -13,16 +13,19 @@ const studentDetails = [
 ];
 
 const Attendenceteacher = () => {
-    const cook = Cookies.get("Token");
-    const student_id=sessionStorage.getItem("user_id");
-    console.log(student_id);
-    console.log(cook);
+  const cook = Cookies.get("Token");
+  const student_id = sessionStorage.getItem("user_id");
+  console.log(student_id);
+  console.log(cook);
   const [checkedStudents, setCheckedStudents] = useState([]);
   const [subject, setSubject] = useState("");
   const [section, setSection] = useState("");
   const [date, setDate] = useState("");
 
   console.log(subject, section, date);
+  // useEffect(()=>{
+  //   const 
+  // })
 
   const handleCheckboxChange = (studentId) => {
     setCheckedStudents((prev) =>
@@ -39,18 +42,22 @@ const Attendenceteacher = () => {
       setCheckedStudents([]);
     }
   };
+  console.log(checkedStudents);
+  
 
-
-  const submitAttendence=async (e)=>{
+  const submitAttendence = async (e) => {
     const response = await axios.post(
       "https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/attendence/mark",
       // formData,
-      { headers: {Authorization: `Bearer ${cook}`, "Content-Type": "multipart/form-data" } }
+      {
+        headers: {
+          Authorization: `Bearer ${cook}`,
+          "Content-Type": "multipart/form-data",
+        },
+      }
     );
     console.log(response.data);
-    
-  }
-  
+  };
 
   return (
     <div className="Attendenceteacher">
@@ -71,20 +78,12 @@ const Attendenceteacher = () => {
               ))}
             </select>
           </div>
-          <div className="SectionAttendence">
-            <label>Section</label>
-            <select onChange={(e) => setSection(e.target.value)}>
-              <option value="">Select Section</option>
-              {sections.map((section, index) => (
-                <option key={index} value={section}>
-                  {section}
-                </option>
-              ))}
-            </select>
-          </div>
           <div className="DateAttendence">
             <label>Date</label>
-            <input type="date" onChange={(e) => setDate(e.target.value)} />
+            <input
+              type="datetime-local"
+              onChange={(e) => setDate(e.target.value)}
+            />
           </div>
           <div className="GenerateSheet">
             <button>Generate Sheet</button>
@@ -92,7 +91,9 @@ const Attendenceteacher = () => {
         </div>
 
         <div className="AttendenceSheet">
-          <h3 style={{paddingBottom:"20px",color:"#272757"}}>Attendance Sheet</h3>
+          <h3 style={{ paddingBottom: "20px", color: "#272757" }}>
+            Attendance Sheet
+          </h3>
           <div className="AttendenceSheetHeading">
             <div className="AttendenceSheetHeading1">
               <input type="checkbox" onChange={handleSelectAll} />
@@ -106,7 +107,9 @@ const Attendenceteacher = () => {
               <div
                 key={student.StudentId}
                 className={`AttendenceStudentDetail1 ${
-                  checkedStudents.includes(student.StudentId) ? "checked-row" : ""
+                  checkedStudents.includes(student.StudentId)
+                    ? "checked-row"
+                    : ""
                 }`}
               >
                 <input

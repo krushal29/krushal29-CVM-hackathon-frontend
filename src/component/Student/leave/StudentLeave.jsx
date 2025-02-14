@@ -2,10 +2,12 @@ import { useState } from "react";
 import "./StudentLeave.css";
 import axios from "axios";
 import Cookies from "js-cookie";
+import { useNavigate } from "react-router-dom";
 
 //icons
 
 const StudentLeave = () => {
+  const navigate=useNavigate();
   const student_id = sessionStorage.getItem("user_id");
   const cook = Cookies.get("Token");
   const [formData, setFormData] = useState({
@@ -56,12 +58,22 @@ const StudentLeave = () => {
   const handleSubmit = async (e) => {
     const response = await axios.post(
       "https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/leave/",
-      formData,
-      { headers: { "Content-Type": "multipart/form-data" } }
+      JSON.stringify({
+        student_id:student_id,
+        from_date:formData.StartDate,
+        to_date:formData.endDate,
+        reason:formData.Reason,
+        document_id:formData.offerLetter
+      }),
+      { headers: { Authorization:cook } }
     );
 
 
-    console.log(response);
+    console.log("response",response);
+
+    if(response.data){
+      navigate('/StudentLeave');
+    }
     
   };
 
