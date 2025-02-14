@@ -13,6 +13,7 @@ const studentDetails = [
 ];
 
 const Attendenceteacher = () => {
+  const [subjectBranch, setSubjectBranch] = useState([]);
   const cook = Cookies.get("Token");
   const student_id = sessionStorage.getItem("user_id");
   console.log(student_id);
@@ -21,11 +22,25 @@ const Attendenceteacher = () => {
   const [subject, setSubject] = useState("");
   const [section, setSection] = useState("");
   const [date, setDate] = useState("");
+  const [allStudent, setAllStudent] = useState([]);
+  const [GenerateSheet, setGenerateSheet] = useState([]);
 
   console.log(subject, section, date);
-  // useEffect(()=>{
-  //   const 
-  // })
+  useEffect(() => {
+    const data = async () => {
+      const response = await axios.get(
+        `https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/courses/teacher/${student_id}`,
+        {
+          headers: {
+            Authorization: `Bearer ${cook}`,
+          },
+        }
+      );
+      console.log(response);
+      setSubjectBranch(response.data.courses);
+    };
+    data();
+  }, []);
 
   const handleCheckboxChange = (studentId) => {
     setCheckedStudents((prev) =>
@@ -37,28 +52,52 @@ const Attendenceteacher = () => {
 
   const handleSelectAll = (event) => {
     if (event.target.checked) {
-      setCheckedStudents(studentDetails.map((student) => student.StudentId));
+      setCheckedStudents(GenerateSheet.map((student) => student.id));
     } else {
       setCheckedStudents([]);
     }
   };
   console.log(checkedStudents);
-  
 
   const submitAttendence = async (e) => {
+    const AbsentIDs = allStudent.filter(
+      (studentId) => !checkedStudents.includes(studentId)
+    );
+    console.log("Present Students:", checkedStudents);
+    console.log("Absent Students:", AbsentIDs);
+
     const response = await axios.post(
       "https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/attendence/mark",
-      // formData,
+      JSON.stringify({
+          course_id:subject,
+          class_time:date,
+          present_student_ids:checkedStudents,
+          absent_student_ids:AbsentIDs
+      }),
       {
         headers: {
           Authorization: `Bearer ${cook}`,
-          "Content-Type": "multipart/form-data",
         },
       }
     );
     console.log(response.data);
   };
-
+  
+  const handleSheet = async () => {
+    const response = await axios.get(
+      `https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/students/course/${subject}`,
+      {
+        headers: {
+          Authorization: `Bearer ${cook}`,
+        },
+      }
+    );
+    console.log(response.data);
+    setGenerateSheet(response.data.students);
+    const studentIds = response.data.students.map((student) => student.id);
+    setAllStudent(studentIds);
+    console.log("allStudent", allStudent);
+  };
   return (
     <div className="Attendenceteacher">
       <div className="Attendenceteacher1">
@@ -71,9 +110,9 @@ const Attendenceteacher = () => {
             <label>Subject</label>
             <select onChange={(e) => setSubject(e.target.value)}>
               <option value="">Select Subject</option>
-              {subjects.map((subject, index) => (
-                <option key={index} value={subject}>
-                  {subject}
+              {subjectBranch.map((subject, index) => (
+                <option key={subject.id} value={subject.id}>
+                  {subject.branch}-{subject.year}/{subject.name}
                 </option>
               ))}
             </select>
@@ -86,7 +125,7 @@ const Attendenceteacher = () => {
             />
           </div>
           <div className="GenerateSheet">
-            <button>Generate Sheet</button>
+            <button onClick={handleSheet}>Generate Sheet</button>
           </div>
         </div>
 
@@ -97,29 +136,27 @@ const Attendenceteacher = () => {
           <div className="AttendenceSheetHeading">
             <div className="AttendenceSheetHeading1">
               <input type="checkbox" onChange={handleSelectAll} />
-              <p>enrollment </p>
+              <p>serial Number </p>
               <p>Student Name</p>
               <p>Student ID</p>
             </div>
           </div>
           <div className="AttendenceStudentDetail">
-            {studentDetails.map((student, index) => (
+            {GenerateSheet.map((student, index) => (
               <div
-                key={student.StudentId}
+                key={student.id}
                 className={`AttendenceStudentDetail1 ${
-                  checkedStudents.includes(student.StudentId)
-                    ? "checked-row"
-                    : ""
+                  checkedStudents.includes(student.id) ? "checked-row" : ""
                 }`}
               >
                 <input
                   type="checkbox"
-                  checked={checkedStudents.includes(student.StudentId)}
-                  onChange={() => handleCheckboxChange(student.StudentId)}
+                  checked={checkedStudents.includes(student.id)}
+                  onChange={() => handleCheckboxChange(student.id)}
                 />
                 <p>{index + 1}</p>
-                <p>{student.Name}</p>
-                <p>{student.StudentId}</p>
+                <p>{student.name}</p>
+                <p>{student.enrollment_id}</p>
               </div>
             ))}
           </div>

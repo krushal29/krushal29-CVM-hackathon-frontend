@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { CiSearch } from "react-icons/ci";
 import "./TeacherMaterial.css";
 import { useNavigate } from "react-router-dom";
@@ -23,6 +23,8 @@ const TeacherMaterial = () => {
   const filteredLectures = lectures.filter((lecture) =>
     lecture.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
+
+
 
   return (
     <div className="TeacherMaterial">
