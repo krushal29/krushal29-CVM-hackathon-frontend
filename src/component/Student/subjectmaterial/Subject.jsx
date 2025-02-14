@@ -145,7 +145,7 @@ const Subject = () => {
                   </div> */}
                 </div>
                 <div className="ViewMaterial">
-                  <button onClick={() => navigate("/StudentsubjectMaterial")}>
+                  <button onClick={() => navigate(`/StudentsubjectMaterial/${value.id}`)}>
                     <span>View Material</span>
                     <FaChevronRight />
                   </button>

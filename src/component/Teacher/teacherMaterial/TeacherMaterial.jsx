@@ -22,16 +22,27 @@ const TeacherMaterial = () => {
   const student_id = sessionStorage.getItem("user_id");
   const cook = Cookies.get("Token");
   const [searchTerm, setSearchTerm] = useState("");
+  const [materialsDetails,setMaterialDetail]=useState([]);
   const navigate = useNavigate();
 
-  const filteredLectures = lectures.filter((lecture) =>
+  const filteredLectures = materialsDetails.filter((lecture) =>
     lecture.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   useEffect(() => {
     const data=async()=>{
-      
+      const response = await axios.get(
+        `https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/resources/staff/${student_id}`,
+        {
+          headers: {
+            Authorization: `Bearer ${cook}`,
+          },
+        }
+      );
+      console.log(response);
+      setMaterialDetail(response.data.resources)
     }
+    data();
   }, []);
 
   return (
@@ -77,10 +88,10 @@ const TeacherMaterial = () => {
                 filteredLectures.map((lecture, index) => (
                   <tr key={index}>
                     <td>{lecture.title}</td>
-                    <td>Web Development</td>
-                    <td>{lecture.date}</td>
+                    <td>{lecture.subject_name}</td>
+                    <td>{lecture.shared_at}</td>
                     <td>
-                      <a href="#" className="view-link">
+                      <a href={`https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/files/${lecture.docs_id}`} className="view-link">
                         View
                       </a>
                     </td>
