@@ -2,17 +2,12 @@ import { useEffect, useState } from "react";
 import "./Attendenceteacher.css";
 import Cookies from "js-cookie";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
-const subjects = ["Advance Java", "DBMS", "Python"];
-const sections = ["A", "B", "C", "D"];
 
-const studentDetails = [
-  { Name: "Krushal", StudentId: "12302040501027", Status: "Absent" },
-  { Name: "John Doe", StudentId: "12302040501028", Status: "Absent" },
-  { Name: "Jane Smith", StudentId: "12302040501029", Status: "Absent" },
-];
 
 const Attendenceteacher = () => {
+  const navigate=useNavigate();
   const [subjectBranch, setSubjectBranch] = useState([]);
   const cook = Cookies.get("Token");
   const student_id = sessionStorage.getItem("user_id");
@@ -81,6 +76,8 @@ const Attendenceteacher = () => {
       }
     );
     console.log(response.data);
+    navigate('/TeacherDashboard');
+    
   };
   
   const handleSheet = async () => {

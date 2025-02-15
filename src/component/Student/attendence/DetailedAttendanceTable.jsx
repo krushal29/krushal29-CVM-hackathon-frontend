@@ -85,9 +85,9 @@ const DetailedAttendanceTable = ({ onClose, subjectName ,subjectnameCode}) => {
                   <td>{formatTime(record.class_time)}</td>
                   <td>
                     <span
-                      className={`status-pill ${record.present?"present":"dont_care".toLowerCase()}`}
+                      className={`status-pill ${record.present==true?"present":record.dont_care==true?"dont care".toLowerCase():"absent"}`}
                     >
-                      {record.present?"present":"dont_care"}
+                      {record.present==true?"present":record.dont_care==true?"dont care".toLowerCase():"absent"}
                     </span>
                   </td>
                 </tr>

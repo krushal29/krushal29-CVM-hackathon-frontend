@@ -40,6 +40,7 @@ import PCompititve from "./pages/parentPage/PCompitivePage/PCompititve";
 import RegistrationForm from "./component/Student/registrationComponent/RegistrationAccount";
 import FeesFormPage from "./pages/Student side/Fees/FeesFormPage";
 import AdminFeetable from "./pages/AdminPage/AdminFees/AdminFeetable";
+import ViewStudentProfile from "./pages/Teacher side/viewStudentProfile/ViewStudentProfile";
 const App = () => {
   return (
     <Router>
@@ -91,6 +92,7 @@ const App = () => {
           element={<CreateNotice />}
         />
         <Route path="/TecherLeaveStatus" element={<TeacherLeave />} />
+        <Route path='/TeacherViewStudentProfile' element={<ViewStudentProfile/>}/>
 
         {/* Parent */}
 
@@ -99,6 +101,7 @@ const App = () => {
         <Route path='/PAttendence' element={<AAttendenecepage/>}/>
         <Route path='/PCompetitiveExam' element={<PCompititve/>}/>
 
+        
         {/* administration */}
         <Route path="/adminDashboard" element={<AdminHome />} />
         <Route path="/AddResult" element={<AddResultPage />} />

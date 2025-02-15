@@ -32,7 +32,7 @@ const SubjectMaterial = () => {
   const student_id = sessionStorage.getItem("user_id");
   const cook = Cookies.get("Token");
   const navigate = useNavigate();
-  const [activeTab, setActiveTab] = useState("Overview");
+  const [activeTab, setActiveTab] = useState("Lectures Notes");
   const [data,setData] =useState([]);
 
   // Reusable function to display documents

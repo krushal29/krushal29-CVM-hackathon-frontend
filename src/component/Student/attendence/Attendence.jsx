@@ -69,7 +69,7 @@ console.log(subject);
                 <td>{item.total_no}</td>
                 <td>
                   {(
-                    (parseFloat(item.present_no) / parseFloat(item.total_no)) *
+                    (parseFloat(item.present_no+item.dont_care_no) / parseFloat(item.total_no)) *
                     100
                   ).toFixed(2)}
                   %

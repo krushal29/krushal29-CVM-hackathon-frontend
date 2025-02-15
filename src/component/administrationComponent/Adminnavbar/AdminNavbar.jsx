@@ -106,6 +106,7 @@
 // export default AdminNavbar;
 import "../../Student/navbar/navbar.css";
 import profile from "../../../assets/profilePhoto2jpg.jpeg";
+import Cookies from "js-cookie";
 
 // Icons
 
@@ -196,7 +197,10 @@ const AdminNavbar = () => {
           </div>
         </div>
         <div className="studentLogout">
-          <p onClick={() => handleNavigation('/')}>
+          <p onClick={() => {
+                          sessionStorage.clear();
+                          Cookies.remove("Token");
+            handleNavigation('/')}}>
             <AiOutlineLogout />
             <span>Logout</span>
           </p>

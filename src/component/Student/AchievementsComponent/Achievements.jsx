@@ -65,7 +65,7 @@ const Achievements = () => {
           {filteredCard.map((data, index) => (
             <div key={index} className="CardDetailAwards">
               <div className="Eventphoto">
-                <img src={awards} alt="" />
+               <a href={`https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/files/${data.docs_id}`}> <img src={awards} alt="" /></a>
               </div>
               <div className="EventHeading">
                 <h5>{data.name}</h5>

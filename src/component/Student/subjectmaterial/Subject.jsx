@@ -18,6 +18,7 @@ import { useNavigate } from "react-router-dom";
 const Subject = () => {
   const student_id = sessionStorage.getItem("user_id");
   const cook = Cookies.get("Token");
+  
   const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState("");
 

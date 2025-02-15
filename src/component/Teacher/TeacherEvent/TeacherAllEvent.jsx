@@ -1,17 +1,32 @@
-import './TeacherAllEvent.css';
-import eventImage from '../../../assets/Depth 6, Frame 1.png';
-import { useNavigate } from 'react-router-dom';
-import { useState } from 'react';
+import "./TeacherAllEvent.css";
+import eventImage from "../../../assets/Depth 6, Frame 1.png";
+import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import Cookies from "js-cookie";
+import axios from "axios";
 
 const EventComponent = () => {
+  const student_id = sessionStorage.getItem("user_id");
+  const cook = Cookies.get("Token");
   const navigate = useNavigate();
+  
+  const [events, setEvents] = useState([]);
+  useEffect(() => {
+    const data = async () => {
+      try {
+        const response = await axios.get(
+          "https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/events",
+          { headers: { Authorization: `Bearer ${cook}` } }
+        );
+        console.log(response.data.events);
+        setEvents(response.data.events);
+      } catch (error) {
+        console.error("Upload failed", error);
+      }
+    };
+    data();
+  }, []);
 
-  const [events, setEvents] = useState([
-    { id: 1, day: 'Today', time: '11:00 AM', name: 'Tech Conference', description: 'Join us for a day of learning and networking' },
-    { id: 2, day: 'Tomorrow', time: '11:00 AM', name: 'Tech Meetup', description: 'A casual networking event for developers' },
-    { id: 3, day: 'This week', time: '02:00 PM', name: 'AI Workshop', description: 'Learn about the latest AI trends' },
-    { id: 4, day: 'Next week', time: '10:00 AM', name: 'Startup Pitch', description: 'Pitch your startup ideas to investors' }
-  ]);
 
   const [showConfirmation, setShowConfirmation] = useState(false);
   const [selectedEventId, setSelectedEventId] = useState(null);
@@ -22,7 +37,9 @@ const EventComponent = () => {
   };
 
   const confirmDelete = () => {
-    setEvents(prevEvents => prevEvents.filter(event => event.id !== selectedEventId));
+    setEvents((prevEvents) =>
+      prevEvents.filter((event) => event.id !== selectedEventId)
+    );
     setShowConfirmation(false);
     setSelectedEventId(null);
   };
@@ -40,30 +57,43 @@ const EventComponent = () => {
             <h1>Events</h1>
           </div>
           <div className="EventCreate">
-            <button onClick={() => navigate('/teacherEvent/teacherEventCreate')}>Create event</button>
+            <button
+              onClick={() => navigate("/teacherEvent/teacherEventCreate")}
+            >
+              Create event
+            </button>
           </div>
         </div>
 
         <div className="EventCart">
           {events.map((eventItem) => (
             <div key={eventItem.id} className="EventCart1">
-              <div className="Eventdays">
+              {/* <div className="Eventdays">
                 <h4>{eventItem.day}</h4>
-              </div>
+              </div> */}
               <div className="EventDetail">
                 <div className="EventFirstSide">
                   <div className="EventTime">
-                    <p>{eventItem.time}</p>
+                    <p>{eventItem.start_time}</p>
                   </div>
                   <div className="EventName">
-                    <h4>{eventItem.name}</h4>
+                    <h4>{eventItem.tile}</h4>
                   </div>
                   <div className="Eventinfo">
                     <p>{eventItem.description}</p>
                   </div>
                   <div className="EventButtons">
-                    <button className="view-btn">View Attachment</button>
-                    <button className="delete-btn" onClick={() => handleDelete(eventItem.id)}>Delete</button>
+                    <a
+                      href={`https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/files/${eventItem.docs_id}`}
+                    >
+                      <button className="view-btn">View Attachment</button>
+                    </a>
+                    <button
+                      className="delete-btn"
+                      onClick={() => handleDelete(eventItem.id)}
+                    >
+                      Delete
+                    </button>
                   </div>
                 </div>
                 <div className="EventPhoto">
@@ -82,8 +112,12 @@ const EventComponent = () => {
             <h3>Delete Event</h3>
             <p>Are you sure you want to delete this event?</p>
             <div className="confirmation-buttons">
-              <button className="cancel-btn" onClick={cancelDelete}>Cancel</button>
-              <button className="confirm-btn" onClick={confirmDelete}>Delete</button>
+              <button className="cancel-btn" onClick={cancelDelete}>
+                Cancel
+              </button>
+              <button className="confirm-btn" onClick={confirmDelete}>
+                Delete
+              </button>
             </div>
           </div>
         </div>

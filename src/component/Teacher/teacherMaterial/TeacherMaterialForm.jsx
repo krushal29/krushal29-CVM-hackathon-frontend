@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import "./TeacherMaterialForm.css";
-import { FiFile, FiVideo } from "react-icons/fi";
+import { FiFile } from "react-icons/fi";
 import axios from "axios";
 import Cookies from "js-cookie";
+import { useNavigate } from "react-router-dom";
 
 const TeacherMaterialForm = () => {
+  const navigate=useNavigate();
   const student_id = sessionStorage.getItem("user_id");
   const cook = Cookies.get("Token");
   const [formData, setFormData] = useState({
@@ -78,6 +80,7 @@ const TeacherMaterialForm = () => {
       { headers: { Authorization: `Bearer ${cook}` } }
     );
     console.log(response);
+    navigate('/UploadMaterial');
   };
 
   return (

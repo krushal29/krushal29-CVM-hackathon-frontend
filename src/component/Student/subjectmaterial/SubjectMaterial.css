@@ -44,11 +44,10 @@
   padding-bottom: 5px;
   padding-top: 20px;
 }
+
 .SubjectMaterial .SubjectMaterial1 .SubjectMaterialNavbar ul {
-  /* background-color: aqua; */
-  width: 50%;
+  width: 100%;
   display: flex;
-  justify-content: space-between;
 }
 
 .SubjectMaterial .SubjectMaterial1 .SubjectMaterialNavbar ul li {
@@ -56,9 +55,8 @@
   cursor: pointer;
   color: #272757;
   font-weight: 700;
+  padding: 0 15px; /* Adds padding to create space between items */
 }
-
-
 
 .SubjectMaterial
   .SubjectMaterial1

@@ -1,6 +1,6 @@
 import "../../Student/navbar/navbar.css";
 import profile from "../../../assets/image 1.png";
-
+import Cookies from "js-cookie";
 
 // Icons
 
@@ -11,7 +11,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 const PNavbar = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  
+
   const handleNavigation = (path) => {
     navigate(path);
   };
@@ -27,18 +27,25 @@ const PNavbar = () => {
           <div className="studentNavbar">
             <ul>
               <li
-                className={location.pathname === "/ParentDashBoard" ? "active" : ""}
+                className={
+                  location.pathname === "/ParentDashBoard" ? "active" : ""
+                }
                 onClick={() => handleNavigation("/ParentDashBoard")}
               >
                 <TbLayoutDashboardFilled />
                 <span>Dashboard</span>
               </li>
-              
             </ul>
           </div>
         </div>
         <div className="studentLogout">
-          <p onClick={()=>handleNavigation('/')}>
+          <p
+            onClick={() => {
+              sessionStorage.clear();
+              Cookies.remove("Token");
+              handleNavigation("/");
+            }}
+          >
             <AiOutlineLogout />
             <span>Logout</span>
           </p>

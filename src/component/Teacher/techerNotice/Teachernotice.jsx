@@ -37,10 +37,15 @@ const Teachernotice = () => {
   const confirmDelete = async () => {
     if (!selectedNoticeId) return;
     try {
-      await axios.delete(`https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/notices/${selectedNoticeId}`, {
-        headers: { Authorization: cook },
-      });
-      setNotices((prevNotices) => prevNotices.filter((notice) => notice.id !== selectedNoticeId));
+      await axios.delete(
+        `https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/notices/${selectedNoticeId}`,
+        {
+          headers: { Authorization: cook },
+        }
+      );
+      setNotices((prevNotices) =>
+        prevNotices.filter((notice) => notice.id !== selectedNoticeId)
+      );
     } catch (error) {
       console.error("Error deleting notice:", error);
     } finally {
@@ -58,8 +63,8 @@ const Teachernotice = () => {
     (notice) =>
       notice.title.toLowerCase().includes(search.toLowerCase()) ||
       notice.title.toLowerCase().includes(search.toLowerCase()) ||
-      (notice.description && notice.description.toLowerCase().includes(search.toLowerCase()))
-      
+      (notice.description &&
+        notice.description.toLowerCase().includes(search.toLowerCase()))
   );
 
   return (
@@ -67,11 +72,17 @@ const Teachernotice = () => {
       <div className="Teachernotice1">
         <div className="NoticeNavbar">
           <h1 style={{ color: "#272757", fontSize: "25px" }}>Notices</h1>
-          <button onClick={() => navigate("/TeacherNotice/TeacherNoticeCreate")}>Create Notice</button>
+          <button
+            onClick={() => navigate("/TeacherNotice/TeacherNoticeCreate")}
+          >
+            Create Notice
+          </button>
         </div>
 
         <div className="NoticeSearch">
-          <span><IoIosSearch /></span>
+          <span>
+            <IoIosSearch />
+          </span>
           <input
             type="text"
             placeholder="Search for notices..."
@@ -96,7 +107,10 @@ const Teachernotice = () => {
                 <div className="NoticeTime">
                   <p>{notice.time}</p>
                 </div>
-                <button className="delete-btn" onClick={() => handleDelete(notice.id)}>Delete</button>
+                <a href={`https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/files/${notice.docs_id}`}>
+                  
+                  <button className="delete-btn">View</button>
+                </a>
               </div>
             ))
           ) : (
@@ -111,8 +125,12 @@ const Teachernotice = () => {
             <h3>Delete Notice</h3>
             <p>Are you sure you want to delete this notice?</p>
             <div className="confirmation-buttons">
-              <button className="cancel-btn" onClick={cancelDelete}>Cancel</button>
-              <button className="confirm-btn" onClick={confirmDelete}>Delete</button>
+              <button className="cancel-btn" onClick={cancelDelete}>
+                Cancel
+              </button>
+              <button className="confirm-btn" onClick={confirmDelete}>
+                Delete
+              </button>
             </div>
           </div>
         </div>
