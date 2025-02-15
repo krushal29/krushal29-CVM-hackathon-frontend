@@ -23,7 +23,7 @@ const Notice = () => {
     const data = async () => {
       const response = await axios.get(
         "https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/notices",
-        { headers: { Authorization: cook } }
+        { headers: { Authorization: `Bearer ${cook}` } }
       );
       console.log(response);
       setNotics(response.data.notices);

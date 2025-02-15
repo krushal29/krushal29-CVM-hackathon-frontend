@@ -19,7 +19,7 @@ const Teachernotice = () => {
       try {
         const response = await axios.get(
           "https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/notices",
-          { headers: { Authorization: cook } }
+          { headers: { Authorization: `Bearer ${cook}` } }
         );
         setNotices(response.data.notices);
       } catch (error) {
@@ -40,7 +40,7 @@ const Teachernotice = () => {
       await axios.delete(
         `https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/notices/${selectedNoticeId}`,
         {
-          headers: { Authorization: cook },
+          headers: { Authorization: `Bearer ${cook}` },
         }
       );
       setNotices((prevNotices) =>

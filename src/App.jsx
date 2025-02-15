@@ -62,7 +62,7 @@ const App = () => {
           element={<AchievementsFormPage />}
         />
         <Route path="/viewLeaveApplication" element={<LeavePage />} />
-        <Route path="/StudentLeave" element={<  ViewLeave/>} />
+        <Route path="/StudentLeave" element={<ViewLeave/>} />
         <Route path="/StudentEvent" element={<Eventpage />} />
         <Route path="/StudentNotice" element={<NoticePage />} />
         <Route path="/StudentRegistration" element={<Registration />} />

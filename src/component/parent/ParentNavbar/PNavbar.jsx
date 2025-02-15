@@ -1,5 +1,6 @@
 import "../../Student/navbar/navbar.css";
 import profile from "../../../assets/image 1.png";
+import parentPhoto from '../../../assets/parentPhoto.jpeg'
 import Cookies from "js-cookie";
 
 // Icons
@@ -21,8 +22,8 @@ const PNavbar = () => {
       <div className="studentnavbar1">
         <div className="studentProfileNavbar">
           <div className="studentPrpfile">
-            <img src={profile} alt="" />
-            <span>Admin</span>
+            <img src={parentPhoto} alt="" />
+            <span>Parent</span>
           </div>
           <div className="studentNavbar">
             <ul>

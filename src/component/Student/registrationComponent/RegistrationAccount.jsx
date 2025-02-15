@@ -110,7 +110,7 @@ const RegistrationForm = () => {
         lastName: resopose.data.last_name,
         dateOfBirth: formatDate(resopose.data.dob),
         permanentAddress: resopose.data.address,
-        mobileNumber: resopose.data.aadhaar_no,
+        mobileNumber: resopose.data.mobile_no,
         fatherName: resopose.data.father_name,
       }));
 
