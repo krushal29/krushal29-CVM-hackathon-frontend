@@ -23,7 +23,7 @@ const Login = () => {
 
       try {
         const response = await axios.post(
-          "https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/auth/login",
+          "https://cvmu3-0-iems.onrender.com/v1/auth/login",
          JSON.stringify({ username: userId, password: password })
         );
         console.log("Success:", response.data);

@@ -58,7 +58,7 @@ const Subject = () => {
   useEffect(()=>{
     const data=async()=>{
       const response = await axios.get(
-        "https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/subjects",
+        "https://cvmu3-0-iems.onrender.com/v1/subjects",
         {
           headers: {
             Authorization: `Bearer ${cook}`,

@@ -17,7 +17,7 @@ const Achievements = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/achievements/student/${studentId}`,
+          `https://cvmu3-0-iems.onrender.com/v1/achievements/student/${studentId}`,
           { headers: { Authorization: `Bearer ${cook}` } }
         );
         // setCard(response.data.achievements);
@@ -65,7 +65,7 @@ const Achievements = () => {
           {filteredCard.map((data, index) => (
             <div key={index} className="CardDetailAwards">
               <div className="Eventphoto">
-               <a href={`https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/files/${data.docs_id}`}> <img src={awards} alt="" /></a>
+               <a href={`https://cvmu3-0-iems.onrender.com/v1/files/${data.docs_id}`}> <img src={awards} alt="" /></a>
               </div>
               <div className="EventHeading">
                 <h5>{data.name}</h5>

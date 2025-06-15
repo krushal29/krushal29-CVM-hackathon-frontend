@@ -32,7 +32,7 @@ const PlacementForm = ({ onClose }) => {
 
     try {
       const response = await axios.post(
-        "https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/files/",
+        "https://cvmu3-0-iems.onrender.com/v1/files/",
         formData,
         {
           headers: {
@@ -57,7 +57,7 @@ const PlacementForm = ({ onClose }) => {
 
     try {
       const response1 = await axios.post(
-        `https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/placements/enrollment`,
+        `https://cvmu3-0-iems.onrender.com/v1/placements/enrollment`,
         JSON.stringify({
           enroll_id: file.enrollmentNumber,
           company_name: file.companyName,

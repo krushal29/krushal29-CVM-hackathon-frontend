@@ -20,7 +20,7 @@ console.log(subject);
   useEffect(() => {
     const data = async () => {
       const res = await axios.get(
-        `https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/attendence/student/${student_id}`,
+        `https://cvmu3-0-iems.onrender.com/v1/attendence/student/${student_id}`,
         {
           headers: {
             Authorization: `Bearer ${cook}`,

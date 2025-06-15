@@ -33,7 +33,7 @@ const StudentLeave = () => {
 
     try {
       const response = await axios.post(
-        "https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/files/",
+        "https://cvmu3-0-iems.onrender.com/v1/files/",
         formData,
         {
           headers: {
@@ -57,7 +57,7 @@ const StudentLeave = () => {
 
   const handleSubmit = async (e) => {
     const response = await axios.post(
-      "https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/leave/",
+      "https://cvmu3-0-iems.onrender.com/v1/leave/",
       JSON.stringify({
         student_id:student_id,
         from_date:formData.StartDate,

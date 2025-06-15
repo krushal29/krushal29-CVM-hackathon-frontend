@@ -22,7 +22,7 @@ const TeacherMaterialForm = () => {
   useEffect(() => {
     const data = async () => {
       const response = await axios.get(
-        "https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/subjects",
+        "https://cvmu3-0-iems.onrender.com/v1/subjects",
         { headers: { Authorization: `Bearer ${cook}` } }
       );
       console.log("res", response.data.subjects);
@@ -40,7 +40,7 @@ const TeacherMaterialForm = () => {
 
     try {
       const response = await axios.post(
-        "https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/files/",
+        "https://cvmu3-0-iems.onrender.com/v1/files/",
         fileData,
         { headers: { "Content-Type": "multipart/form-data" } }
       );
@@ -69,7 +69,7 @@ const TeacherMaterialForm = () => {
 
 
     const response = await axios.post(
-      "https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/resources/",
+      "https://cvmu3-0-iems.onrender.com/v1/resources/",
       JSON.stringify({
         subject_id:formData.subject,
         title:formData.title,

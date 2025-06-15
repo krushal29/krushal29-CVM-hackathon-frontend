@@ -21,7 +21,7 @@ const Feetable = () => {
     console.log(action, enrollmentNo);
     try {
       const response = await axios.patch(
-        `https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/fees/${enrollmentNo}/status`,
+        `https://cvmu3-0-iems.onrender.com/v1/fees/${enrollmentNo}/status`,
         JSON.stringify({
           accepted: action == "accept" ? true : false,
         }),
@@ -34,7 +34,7 @@ const Feetable = () => {
 
       try {
         const response = await axios.get(
-          `https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/fees/pending`,
+          `https://cvmu3-0-iems.onrender.com/v1/fees/pending`,
           {
             headers: {
               Authorization: `Bearer ${cook}`,
@@ -58,7 +58,7 @@ const Feetable = () => {
     const data = async () => {
       try {
         const response = await axios.get(
-          `https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/fees/pending`,
+          `https://cvmu3-0-iems.onrender.com/v1/fees/pending`,
           {
             headers: {
               Authorization: `Bearer ${cook}`,
@@ -101,7 +101,7 @@ const Feetable = () => {
                 <td>{payment.amount}</td>
                 <td>
                   <a
-                    href={`https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/files/${payment.docs_uuid}`}
+                    href={`https://cvmu3-0-iems.onrender.com/v1/files/${payment.docs_uuid}`}
                   >
                     <button className="view-button">View Receipt</button>
                   </a>

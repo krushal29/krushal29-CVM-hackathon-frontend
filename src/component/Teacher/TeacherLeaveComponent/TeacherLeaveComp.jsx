@@ -33,7 +33,7 @@ const TeacherLeaveComp = () => {
     console.log(cook);
 
     const response1 = await axios.patch(
-      `https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/leave/${applicationNumber}/status`,
+      `https://cvmu3-0-iems.onrender.com/v1/leave/${applicationNumber}/status`,
       JSON.stringify({
         accepted:(action=="accept"?true:false),
       }),
@@ -48,7 +48,7 @@ const TeacherLeaveComp = () => {
 
 
       const resopse= await axios.get(
-        `https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/leave/pending`,
+        `https://cvmu3-0-iems.onrender.com/v1/leave/pending`,
         {
           headers: {
             Authorization: `Bearer ${cook}`,
@@ -62,7 +62,7 @@ const TeacherLeaveComp = () => {
   useEffect(() => {
     const data = async () => {
       const response = await axios.get(
-        "https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/leave/pending",
+        "https://cvmu3-0-iems.onrender.com/v1/leave/pending",
         {
           headers: {
             Authorization: `Bearer ${cook}`,
@@ -99,7 +99,7 @@ const TeacherLeaveComp = () => {
                 <td>{app.reason}</td>
                 <td>
                   <a
-                    href={`https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/files/${app.document_id}`}
+                    href={`https://cvmu3-0-iems.onrender.com/v1/files/${app.document_id}`}
                   >
                     <button>View Document</button>
                   </a>

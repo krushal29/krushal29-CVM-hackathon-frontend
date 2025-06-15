@@ -16,7 +16,7 @@ const EventComponent = () => {
     const data = async () => {
       try {
         const response = await axios.get(
-          "https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/events",
+          "https://cvmu3-0-iems.onrender.com/v1/events",
           { headers: { Authorization: `Bearer ${cook}` } }
         );
         console.log(response.data.events);
@@ -58,7 +58,7 @@ const EventComponent = () => {
                             </div>
                             <div className="EventButtons">
                               <a
-                                href={`https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/files/${eventItem.docs_id}`}
+                                href={`https://cvmu3-0-iems.onrender.com/v1/files/${eventItem.docs_id}`}
                               >
                                 <button className="view-btn">View Attachment</button>
                               </a>

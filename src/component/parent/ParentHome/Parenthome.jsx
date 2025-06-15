@@ -20,7 +20,7 @@ const Parenthome = () => {
     const data = async () => {
       try {
         const response = await axios.get(
-          `https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/parents/${userId}`,
+          `https://cvmu3-0-iems.onrender.com/v1/parents/${userId}`,
           { headers: { Authorization: `Bearer ${cook}` } }
         );
         console.log(response.data);

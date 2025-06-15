@@ -50,7 +50,7 @@ const RegistrationForm = () => {
     console.log("all data",formData);
     
     const result = await axios.post(
-      `https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/students`,JSON.stringify({
+      `https://cvmu3-0-iems.onrender.com/v1/students`,JSON.stringify({
           first_name:formData.firstName,
           last_name:formData.lastName,
           gender:'m',
@@ -84,7 +84,7 @@ const RegistrationForm = () => {
   useEffect(() => {
     const data = async () => {
       const subject = await axios.get(
-        `https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/batch/25`,
+        `https://cvmu3-0-iems.onrender.com/v1/batch/25`,
         {
           headers: {
             Authorization: `Bearer ${cook}`,
@@ -95,7 +95,7 @@ const RegistrationForm = () => {
       console.log("subject", subject.data.batches);
       setBranch(subject.data.batches);
       const resopose = await axios.get(
-        `https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/students/extract_aadhaar/${aadhar}`,
+        `https://cvmu3-0-iems.onrender.com/v1/students/extract_aadhaar/${aadhar}`,
         {
           headers: {
             Authorization: `Bearer ${cook}`,
@@ -115,7 +115,7 @@ const RegistrationForm = () => {
       }));
 
       const resopose1 = await axios.get(
-        `https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/students/extract_result/${marksheet}`,
+        `https://cvmu3-0-iems.onrender.com/v1/students/extract_result/${marksheet}`,
         {
           headers: {
             Authorization: `Bearer ${cook}`,

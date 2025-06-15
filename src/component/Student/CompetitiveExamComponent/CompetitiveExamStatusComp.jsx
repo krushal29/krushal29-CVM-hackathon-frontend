@@ -17,7 +17,7 @@ const CompetitiveExamStatusComp = () => {
       console.log(cook);
 
       const response1 = await axios.get(
-        `https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/external_exams/student/${student_id}`,
+        `https://cvmu3-0-iems.onrender.com/v1/external_exams/student/${student_id}`,
         {
           headers: {
             Authorization: `Bearer ${cook}`,
@@ -64,7 +64,7 @@ const CompetitiveExamStatusComp = () => {
                   <td>
                     {" "}
                     <a
-                      href={`https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/files/${row.marksheet_uuid}`}
+                      href={`https://cvmu3-0-iems.onrender.com/v1/files/${row.marksheet_uuid}`}
                     >
                       view
                     </a>

@@ -31,7 +31,7 @@ const PlacementCom = () => {
 
     try {
       const response = await axios.post(
-        "https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/files/",
+        "https://cvmu3-0-iems.onrender.com/v1/files/",
         formData,
         { headers: { "Content-Type": "multipart/form-data" } }
       );
@@ -50,7 +50,7 @@ const PlacementCom = () => {
     e.preventDefault();
     console.log("Form Data Submitted:", formData);
     const response1 = await axios.post(
-      `https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/placements`,
+      `https://cvmu3-0-iems.onrender.com/v1/placements`,
       JSON.stringify({
         student_id,
         company_name:formData.companyName,

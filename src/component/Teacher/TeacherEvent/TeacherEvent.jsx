@@ -35,7 +35,7 @@ const TeacherEvent = () => {
 
     try {
       const response = await axios.post(
-        "https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/files/",
+        "https://cvmu3-0-iems.onrender.com/v1/files/",
         formData,
         { headers: { "Content-Type": "multipart/form-data" } }
       );
@@ -56,7 +56,7 @@ const TeacherEvent = () => {
 
     try {
       const response = await axios.post(
-        "https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/events/",
+        "https://cvmu3-0-iems.onrender.com/v1/events/",
         JSON.stringify({
           tile:eventData.title,
           description:eventData.description,
