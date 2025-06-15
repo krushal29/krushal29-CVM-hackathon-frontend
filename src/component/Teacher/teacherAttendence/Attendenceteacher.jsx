@@ -24,7 +24,7 @@ const Attendenceteacher = () => {
   useEffect(() => {
     const data = async () => {
       const response = await axios.get(
-        `https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/courses/teacher/${student_id}`,
+        `https://cvmu3-0-iems.onrender.com/v1/courses/teacher/${student_id}`,
         {
           headers: {
             Authorization: `Bearer ${cook}`,
@@ -62,7 +62,7 @@ const Attendenceteacher = () => {
     console.log("Absent Students:", AbsentIDs);
 
     const response = await axios.post(
-      "https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/attendence/mark",
+      "https://cvmu3-0-iems.onrender.com/v1/attendence/mark",
       JSON.stringify({
           course_id:subject,
           class_time:date,
@@ -82,7 +82,7 @@ const Attendenceteacher = () => {
   
   const handleSheet = async () => {
     const response = await axios.get(
-      `https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/students/course/${subject}`,
+      `https://cvmu3-0-iems.onrender.com/v1/students/course/${subject}`,
       {
         headers: {
           Authorization: `Bearer ${cook}`,

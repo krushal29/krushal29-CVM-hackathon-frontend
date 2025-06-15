@@ -30,7 +30,7 @@ const NoticeForm = () => {
 
     try {
       const response = await axios.post(
-        "https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/files/",
+        "https://cvmu3-0-iems.onrender.com/v1/files/",
         formData,
         { headers: { "Content-Type": "multipart/form-data" } }
       );
@@ -50,7 +50,7 @@ const NoticeForm = () => {
     console.log("Form submitted", formData);
 
     const res = await axios.post(
-      "https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/notices",
+      "https://cvmu3-0-iems.onrender.com/v1/notices",
       JSON.stringify({
         title: formData.subject,
         description: formData.message,

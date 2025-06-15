@@ -32,7 +32,7 @@ const TeacherMaterial = () => {
   useEffect(() => {
     const data=async()=>{
       const response = await axios.get(
-        `https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/resources/staff/${student_id}`,
+        `https://cvmu3-0-iems.onrender.com/v1/resources/staff/${student_id}`,
         {
           headers: {
             Authorization: `Bearer ${cook}`,
@@ -91,7 +91,7 @@ const TeacherMaterial = () => {
                     <td>{lecture.subject_name}</td>
                     <td>{lecture.shared_at}</td>
                     <td>
-                      <a href={`https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/files/${lecture.docs_id}`} className="view-link">
+                      <a href={`https://cvmu3-0-iems.onrender.com/v1/files/${lecture.docs_id}`} className="view-link">
                         View
                       </a>
                     </td>

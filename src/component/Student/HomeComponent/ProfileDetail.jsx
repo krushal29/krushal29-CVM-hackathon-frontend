@@ -14,7 +14,7 @@ const ProfileDetail = () => {
       const cook = Cookies.get("Token");
       console.log(cook);
       const resopse = await axios.get(
-        `https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/students/${userId}`,
+        `https://cvmu3-0-iems.onrender.com/v1/students/${userId}`,
         {
         headers: {
           Authorization: `Bearer ${cook}`,
@@ -25,7 +25,7 @@ const ProfileDetail = () => {
     
 
     const resopse1 = await axios.get(
-      `https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/batch/${resopse.data.batch_id}`,
+      `https://cvmu3-0-iems.onrender.com/v1/batch/${resopse.data.batch_id}`,
       {
       headers: {
         Authorization: `Bearer ${cook}`,

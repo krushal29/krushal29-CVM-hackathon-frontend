@@ -25,7 +25,7 @@ const SubjectForm = ({ isOpen, onClose }) => {
     // Add your form submission logic here
 
     const response = await axios.post(
-      "https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/subjects/",
+      "https://cvmu3-0-iems.onrender.com/v1/subjects/",
       JSON.stringify({
         code:formData.courseCode,
         name:formData.subjectName,

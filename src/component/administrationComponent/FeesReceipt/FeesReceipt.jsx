@@ -26,7 +26,7 @@ const FeesReceipt = () => {
     // Handle form submission
     console.log(formData);
     const response = await axios.post(
-      "https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/fees",
+      "https://cvmu3-0-iems.onrender.com/v1/fees",
       JSON.stringify({
         enrollment_id:formData.enrollmentNo,
         date:formData.paymentDate,

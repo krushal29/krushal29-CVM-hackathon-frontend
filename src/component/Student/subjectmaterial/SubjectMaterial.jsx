@@ -40,7 +40,7 @@ const SubjectMaterial = () => {
   useEffect(() => {
     const data = async () => {
       const response = await axios.get(
-        `https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/resources/subject/${id}`,
+        `https://cvmu3-0-iems.onrender.com/v1/resources/subject/${id}`,
         {
           headers: {
             Authorization: `Bearer ${cook}`,
@@ -76,7 +76,7 @@ const SubjectMaterial = () => {
               </div>
             </div>
             <div className="DocumentDownload">
-             <a href={`https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/files/${data.docs_id}`}> <button>Download File</button></a>
+             <a href={`https://cvmu3-0-iems.onrender.com/v1/files/${data.docs_id}`}> <button>Download File</button></a>
             </div>
           </div>
         ))}
@@ -119,7 +119,7 @@ const SubjectMaterial = () => {
   };
 
   // const response1 = await axios.post(
-  //   `https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/placements/status/${id}`,
+  //   `https://cvmu3-0-iems.onrender.com/v1/placements/status/${id}`,
   //   JSON.stringify({
   //     status: status,
   //   }),

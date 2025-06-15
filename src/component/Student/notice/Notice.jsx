@@ -22,7 +22,7 @@ const Notice = () => {
   useEffect(() => {
     const data = async () => {
       const response = await axios.get(
-        "https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/notices",
+        "https://cvmu3-0-iems.onrender.com/v1/notices",
         { headers: { Authorization: `Bearer ${cook}` } }
       );
       console.log(response);

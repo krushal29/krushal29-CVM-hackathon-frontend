@@ -35,7 +35,7 @@
 //   useEffect(() => {
 //     const data = async () => {
 //       const response1 = await axios.get(
-//         `https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/fees/student/${student_id}`,
+//         `https://cvmu3-0-iems.onrender.com/v1/fees/student/${student_id}`,
 //         {
 //           headers: {
 //             Authorization: `Bearer ${cook}`,
@@ -183,7 +183,7 @@ const FeesTable = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/fees/student/${student_id}`,
+          `https://cvmu3-0-iems.onrender.com/v1/fees/student/${student_id}`,
           {
             headers: {
               Authorization: `Bearer ${cook}`,
@@ -206,7 +206,7 @@ const FeesTable = () => {
   const generate_data=async(data)=>{
     try {
       const response = await axios.get(
-        `https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/students/${student_id}`,
+        `https://cvmu3-0-iems.onrender.com/v1/students/${student_id}`,
         {
           headers: {
             Authorization: `Bearer ${cook}`,
@@ -216,7 +216,7 @@ const FeesTable = () => {
 
 
       const response1 = await axios.get(
-        `https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/batch/${response.data.batch_id}`,
+        `https://cvmu3-0-iems.onrender.com/v1/batch/${response.data.batch_id}`,
         {
           headers: {
             Authorization: `Bearer ${cook}`,
@@ -226,7 +226,7 @@ const FeesTable = () => {
 
 
       const response2 = await axios.get(
-        `https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/semister/${response.data.current_sem}`,
+        `https://cvmu3-0-iems.onrender.com/v1/semister/${response.data.current_sem}`,
         {
           headers: {
             Authorization: `Bearer ${cook}`,

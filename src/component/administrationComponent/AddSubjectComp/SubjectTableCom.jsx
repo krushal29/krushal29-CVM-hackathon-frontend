@@ -15,7 +15,7 @@ const SubjectTableCom = () => {
 
   useEffect(()=>{
     const data=async()=>{
-      const res=await axios.get('https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/subjects',{
+      const res=await axios.get('https://cvmu3-0-iems.onrender.com/v1/subjects',{
         headers:{
           Authorization:cook
         }

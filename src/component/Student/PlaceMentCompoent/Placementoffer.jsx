@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "./Placement.css"; // Import CSS file
+import "./placement.css"; // Import CSS file
 import { useLocation, useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
 import axios from "axios";
@@ -20,7 +20,7 @@ const PlacementOffers = () => {
     console.log(cook);
 
     const response1 = await axios.post(
-      `https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/placements/status/${id}`,
+      `https://cvmu3-0-iems.onrender.com/v1/placements/status/${id}`,
       JSON.stringify({
         status: status,
       }),
@@ -35,7 +35,7 @@ const PlacementOffers = () => {
 
   const data = async () => {
     const resopse1 = await axios.get(
-      `https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/placements/student/${student_id}`,
+      `https://cvmu3-0-iems.onrender.com/v1/placements/student/${student_id}`,
       {
         headers: {
           Authorization: `Bearer ${cook}`,
@@ -68,7 +68,7 @@ const PlacementOffers = () => {
                   <td>{offer.company_name}</td>
                   <td>
                     <a
-                      href={`https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/files/${offer.letter_uid}`}
+                      href={`https://cvmu3-0-iems.onrender.com/v1/files/${offer.letter_uid}`}
                       className="view-offer"
                     >
                       View offer

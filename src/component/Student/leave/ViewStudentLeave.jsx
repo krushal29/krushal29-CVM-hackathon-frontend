@@ -41,7 +41,7 @@ const ViewStudentLeave = () => {
   useEffect(() => {
     const data = async () => {
       const response1 = await axios.get(
-        `https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/leave/student/${student_id}`,
+        `https://cvmu3-0-iems.onrender.com/v1/leave/student/${student_id}`,
         {
           headers: {
             Authorization: `Bearer ${cook}`,
@@ -101,7 +101,7 @@ const ViewStudentLeave = () => {
     //             <td>{value.from_date}</td>
     //             <td>{value.to_date}</td>
     //             <td>{value.reason}</td>
-    //             <td><a href={`https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/files/${value.document_id}`}><button>View</button></a></td>
+    //             <td><a href={`https://cvmu3-0-iems.onrender.com/v1/files/${value.document_id}`}><button>View</button></a></td>
     //             <td>
     //               {value.Status == "Accepted" ? "✔️ Accepted" : "🕐 Pending"}
     //             </td>
@@ -142,7 +142,7 @@ const ViewStudentLeave = () => {
                     <td>{value.from_date}</td>
                     <td>{value.to_date}</td>
                     <td>{value.reason}</td>
-                    <td><a href={`https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/files/${value.document_id}`}><button>View</button></a></td>
+                    <td><a href={`https://cvmu3-0-iems.onrender.com/v1/files/${value.document_id}`}><button>View</button></a></td>
                     <td>
                       <span className={`status-badge ${value.status.toLowerCase()}`}>
                         {value.status}

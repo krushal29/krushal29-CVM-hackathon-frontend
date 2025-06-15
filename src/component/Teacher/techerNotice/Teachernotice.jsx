@@ -18,7 +18,7 @@ const Teachernotice = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/notices",
+          "https://cvmu3-0-iems.onrender.com/v1/notices",
           { headers: { Authorization: `Bearer ${cook}` } }
         );
         setNotices(response.data.notices);
@@ -38,7 +38,7 @@ const Teachernotice = () => {
     if (!selectedNoticeId) return;
     try {
       await axios.delete(
-        `https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/notices/${selectedNoticeId}`,
+        `https://cvmu3-0-iems.onrender.com/v1/notices/${selectedNoticeId}`,
         {
           headers: { Authorization: `Bearer ${cook}` },
         }
@@ -107,7 +107,7 @@ const Teachernotice = () => {
                 <div className="NoticeTime">
                   <p>{notice.time}</p>
                 </div>
-                <a href={`https://humble-spork-g6vw4qjw5wqfv7px-8000.app.github.dev/v1/files/${notice.docs_id}`}>
+                <a href={`https://cvmu3-0-iems.onrender.com/v1/files/${notice.docs_id}`}>
                   
                   <button className="delete-btn">View</button>
                 </a>
